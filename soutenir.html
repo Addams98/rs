@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nous Soutenir — Réveil Spirituel</title>
-  <meta name="description" content="Soutenez le ministère Réveil Spirituel par un don ponctuel ou mensuel. Votre partenariat finance l'évangélisation, les formations bibliques et l'équipement des nations." />
+  <meta name="description" content="Soutenez le ministère Réveil Spirituel par la prière, le partage ou un don. Votre partenariat finance l'évangélisation, les formations bibliques et l'équipement des nations." />
   <meta property="og:title" content="Nous Soutenir — Réveil Spirituel" />
   <meta property="og:description" content="Participez à l'avancement du Royaume — votre soutien transforme des vies, des familles et des nations pour la gloire de Dieu." />
   <meta property="og:image" content="imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" />
@@ -15,6 +15,44 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* ── Ways to support ── */
+    .support-ways-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .support-way-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(10,22,40,.08);
+      border-top: 4px solid var(--brand-blue);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .support-way-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(10,22,40,.14); }
+    .support-way-card.gold-top { border-top-color: var(--gold); }
+    .support-way-icon {
+      width: 70px; height: 70px;
+      background: var(--ivory-bg);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.7rem;
+      color: var(--brand-blue);
+    }
+    .support-way-card.gold-top .support-way-icon { color: var(--gold); }
+    .support-way-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--navy); margin-bottom: .9rem;
+    }
+    .support-way-card p {
+      color: #555; font-size: .92rem; line-height: 1.75;
+    }
+
+    /* ── Donate cards ── */
     .donate-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -41,47 +79,26 @@
     }
     .donate-card.featured-card::before {
       content: 'Recommandé';
-      position: absolute;
-      top: -12px;
-      left: 50%;
+      position: absolute; top: -12px; left: 50%;
       transform: translateX(-50%);
-      background: var(--gold);
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .3rem 1rem;
-      border-radius: 2rem;
-      white-space: nowrap;
+      background: var(--gold); color: var(--navy);
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .3rem 1rem; border-radius: 2rem; white-space: nowrap;
     }
     .donate-icon {
-      width: 64px;
-      height: 64px;
+      width: 64px; height: 64px;
       background: rgba(212,168,67,.15);
       border: 1.5px solid var(--gold);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1.5rem;
-      font-size: 1.5rem;
-      color: var(--gold);
+      font-size: 1.5rem; color: var(--gold);
     }
-    .donate-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--ivory);
-      margin-bottom: 1rem;
-    }
-    .donate-card p {
-      color: rgba(245,241,232,.7);
-      font-size: .9rem;
-      line-height: 1.8;
-      margin-bottom: 1.8rem;
-    }
+    .donate-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--ivory); margin-bottom:1rem; }
+    .donate-card p  { color:rgba(245,241,232,.7); font-size:.9rem; line-height:1.8; margin-bottom:1.8rem; }
+
+    /* ── Contact boxes ── */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -89,64 +106,94 @@
       margin-top: 3rem;
     }
     .contact-box {
-      background: #fff;
-      border-radius: 8px;
+      background: #fff; border-radius: 8px;
       padding: 2.5rem;
       box-shadow: 0 4px 24px rgba(10,22,40,.08);
       border-top: 4px solid var(--gold);
     }
     .contact-box h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(10,22,40,.1);
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.6rem; font-weight:600; color:var(--navy);
+      margin-bottom:2rem; padding-bottom:1rem;
+      border-bottom:1px solid rgba(10,22,40,.1);
     }
     .contact-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.2rem;
-      padding: .9rem 0;
-      border-bottom: 1px solid rgba(10,22,40,.06);
+      display:flex; align-items:flex-start; gap:1.2rem;
+      padding:.9rem 0; border-bottom:1px solid rgba(10,22,40,.06);
     }
-    .contact-row:last-child {
-      border-bottom: none;
-    }
+    .contact-row:last-child { border-bottom:none; }
     .contact-row-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(10,22,40,.06);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--navy);
-      font-size: .85rem;
-      flex-shrink: 0;
+      width:36px; height:36px;
+      background:rgba(10,22,40,.06); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--navy); font-size:.85rem; flex-shrink:0;
     }
-    .contact-row-info {
-      flex: 1;
-    }
+    .contact-row-info { flex:1; }
     .contact-row-label {
-      font-family: 'Inter', sans-serif;
-      font-size: .73rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--gold);
-      margin-bottom: .2rem;
+      font-size:.73rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:.1em;
+      color:var(--gold); margin-bottom:.2rem;
     }
     .contact-row-val {
-      font-family: 'Inter', sans-serif;
-      font-size: .92rem;
-      color: var(--navy);
-      font-weight: 500;
+      font-size:.92rem; color:var(--navy); font-weight:500;
     }
-    @media (max-width: 768px) {
-      .donate-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
+    .contact-row-note {
+      font-size:.78rem; color:#888; margin-top:.15rem;
+    }
+
+    /* ── Persons grid ── */
+    .persons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .person-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 20px rgba(10,22,40,.07);
+      border-left: 4px solid var(--brand-blue);
+    }
+    .person-name {
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.15rem; font-weight:700;
+      color:var(--navy); margin-bottom:.6rem;
+    }
+    .person-phone {
+      display:flex; align-items:center; gap:.6rem;
+      color:var(--navy); font-size:.92rem; font-weight:500;
+      text-decoration:none;
+    }
+    .person-phone i { color:var(--brand-blue); }
+    .person-phone:hover { color:var(--brand-blue); }
+
+    /* ── Tagline banner ── */
+    .soutenir-tagline {
+      background: var(--navy);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .soutenir-tagline p {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(1.4rem,3vw,2rem);
+      font-style:italic;
+      color:rgba(255,255,255,.85);
+      max-width:700px;
+      margin:0 auto 1rem;
+      line-height:1.5;
+    }
+    .soutenir-tagline cite {
+      font-size:.8rem; font-weight:700;
+      letter-spacing:.1em; text-transform:uppercase;
+      color:var(--gold);
+    }
+
+    @media (max-width:768px) {
+      .support-ways-grid { grid-template-columns:1fr; }
+      .donate-grid        { grid-template-columns:1fr; }
+      .contact-grid       { grid-template-columns:1fr; }
+      .persons-grid       { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -193,33 +240,39 @@
       </nav>
       <h1>Nous Soutenir</h1>
       <p>Participez à l'avancement du Royaume — votre soutien transforme des vies, des familles et des nations pour la gloire de Dieu.</p>
+      <div class="page-hero-verse">
+        <p>"Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie."</p>
+        <cite>2 Corinthiens 9:7</cite>
+      </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 1 — POURQUOI SOUTENIR ═══════════════ -->
+  <!-- ═══════════════ SECTION 1 — 3 FAÇONS DE SOUTENIR ═══════════════ -->
   <section class="pillars-section white-bg">
     <div class="container">
       <div class="section-header reveal">
         <p class="section-num centered">01</p>
-        <h2 class="section-title centered">Pourquoi Soutenir</h2>
+        <h2 class="section-title centered">3 Façons de Soutenir</h2>
         <div class="gold-rule centered"></div>
-        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">Votre partenariat avec Réveil Spirituel est un investissement éternel dans le Royaume de Dieu. Chaque don contribue à trois axes essentiels du ministère.</p>
+        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
+          Le soutien au ministère ne se limite pas aux dons financiers. Vous pouvez participer à l'œuvre de Dieu de bien des façons.
+        </p>
       </div>
-      <div class="values-grid pillars-grid">
-        <div class="value-card pillar-card stagger">
-          <div class="num pillar-icon" style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);display:flex;align-items:center;justify-content:center;">01</div>
-          <h3>Financer l'Évangélisation</h3>
-          <p>Chaque don permet d'organiser des campagnes d'évangélisation, de financer des missions dans des zones non atteintes et de produire des ressources d'éveil pour les croyants et les non-croyants.</p>
+      <div class="support-ways-grid">
+        <div class="support-way-card stagger">
+          <div class="support-way-icon"><i class="fa fa-pray"></i></div>
+          <h3>La Prière</h3>
+          <p>Intercédez pour le ministère, ses projets et ses équipes. La prière est le fondement de toute œuvre de Dieu — elle est la première forme de soutien que vous puissiez offrir.</p>
         </div>
-        <div class="value-card pillar-card stagger">
-          <div class="num pillar-icon" style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);display:flex;align-items:center;justify-content:center;">02</div>
-          <h3>Soutenir les Formations</h3>
-          <p>Votre soutien finance des écoles bibliques, des séminaires de formation et des bourses pour des jeunes appelés qui désirent approfondir leur connaissance de la Parole et être envoyés dans les nations.</p>
+        <div class="support-way-card stagger">
+          <div class="support-way-icon"><i class="fa fa-bullhorn"></i></div>
+          <h3>La Communication</h3>
+          <p>Partagez la vision, parlez du ministère autour de vous, diffusez nos ressources et devenez ambassadeur de l'œuvre de Réveil Spirituel dans votre entourage et votre nation.</p>
         </div>
-        <div class="value-card pillar-card stagger">
-          <div class="num pillar-icon" style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);display:flex;align-items:center;justify-content:center;">03</div>
-          <h3>Équiper les Nations</h3>
-          <p>Votre partenariat permet de traduire et distribuer des ouvrages dans des langues locales africaines, d'équiper des assemblées et de soutenir des pasteurs dans des régions défavorisées.</p>
+        <div class="support-way-card gold-top stagger">
+          <div class="support-way-icon"><i class="fa fa-hand-holding-heart"></i></div>
+          <h3>Les Dons</h3>
+          <p>Votre soutien financier ou matériel est un investissement précieux dans le Royaume de Dieu — il finance l'évangélisation, les formations et l'équipement des nations.</p>
         </div>
       </div>
     </div>
@@ -232,61 +285,114 @@
         <p class="section-num centered">02</p>
         <h2 class="section-title centered">Modes de Don</h2>
         <div class="gold-rule centered"></div>
-        <p style="text-align:center;max-width:600px;margin:0 auto;color:rgba(245,241,232,.75);">Que votre contribution soit ponctuelle ou régulière, petite ou grande, elle est précieuse aux yeux de Dieu et du ministère.</p>
+        <p style="text-align:center;max-width:600px;margin:0 auto;color:rgba(245,241,232,.75);">
+          Que votre contribution soit ponctuelle ou régulière, petite ou grande, elle est précieuse aux yeux de Dieu et du ministère.
+        </p>
       </div>
       <div class="donate-grid">
         <div class="donate-card stagger">
-          <div class="donate-icon">
-            <i class="fa fa-hand-holding-usd"></i>
-          </div>
+          <div class="donate-icon"><i class="fa fa-hand-holding-usd"></i></div>
           <h3>Don Ponctuel</h3>
           <p>Contribuez selon votre cœur et vos possibilités, à tout moment. Un don unique, aussi modeste soit-il, fait une réelle différence dans l'avancement du Royaume.</p>
-          <a href="#coordonnees" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Faire un Don <i class="fa fa-arrow-down"></i></a>
+          <a href="#coordonnees" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Voir les Coordonnées <i class="fa fa-arrow-down"></i></a>
         </div>
         <div class="donate-card featured-card stagger">
-          <div class="donate-icon">
-            <i class="fa fa-calendar-check"></i>
-          </div>
+          <div class="donate-icon"><i class="fa fa-calendar-check"></i></div>
           <h3>Don Mensuel</h3>
           <p>Devenez un partenaire régulier du ministère. Un engagement mensuel nous permet de planifier des projets à long terme et d'avoir un impact durable sur les nations.</p>
           <a href="#coordonnees" class="btn btn-gold" style="width:100%;text-align:center;display:block;">Devenir Partenaire <i class="fa fa-heart"></i></a>
         </div>
         <div class="donate-card stagger">
-          <div class="donate-icon">
-            <i class="fa fa-box-open"></i>
-          </div>
+          <div class="donate-icon"><i class="fa fa-box-open"></i></div>
           <h3>Don en Nature</h3>
           <p>Vous pouvez également soutenir le ministère par des dons en nature : matériel informatique, livres, équipements audiovisuels ou tout autre bien utile à l'œuvre.</p>
-          <a href="mailto:contact@reveilspirituel.org" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Nous Contacter <i class="fa fa-envelope"></i></a>
+          <a href="mailto:reunion2reveilspirituel@gmail.com" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Nous Contacter <i class="fa fa-envelope"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 3 — COORDONNÉES BANCAIRES ═══════════════ -->
+  <!-- ═══════════════ SECTION 3 — COORDONNÉES ═══════════════ -->
   <section class="books-section light-bg" id="coordonnees" style="padding:7rem 0;">
     <div class="container">
       <div class="section-header reveal">
         <p class="section-num centered">03</p>
-        <h2 class="section-title centered">Coordonnées Bancaires</h2>
+        <h2 class="section-title centered">Coordonnées &amp; Contact</h2>
         <div class="gold-rule centered"></div>
-        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">Choisissez le mode de paiement qui vous convient. Pour tout virement, merci d'indiquer votre nom et "Don RS" en référence.</p>
+        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">
+          Pour tout envoi ou virement, merci d'indiquer votre nom et <strong>"Don RS"</strong> en référence. Vous pouvez aussi contacter directement nos responsables ci-dessous.
+        </p>
       </div>
+
+      <!-- Personnes à contacter -->
+      <div class="persons-grid reveal" style="max-width:700px;margin:0 auto 3.5rem;">
+        <div class="person-card">
+          <div class="person-name"><i class="fa fa-user" style="color:var(--brand-blue);margin-right:.5rem;font-size:.9rem;"></i>Engonga Stephanas Grace</div>
+          <a class="person-phone" href="tel:+24174255323">
+            <i class="fa fa-phone"></i> +241 74 255 323
+          </a>
+        </div>
+        <div class="person-card">
+          <div class="person-name"><i class="fa fa-user" style="color:var(--brand-blue);margin-right:.5rem;font-size:.9rem;"></i>Nfono Nzogobe Germaine</div>
+          <a class="person-phone" href="tel:+24162438323">
+            <i class="fa fa-phone"></i> +241 62 438 323
+          </a>
+        </div>
+      </div>
+
       <div class="contact-grid reveal">
+        <!-- Mobile Money -->
+        <div class="contact-box">
+          <h3><i class="fa fa-mobile-alt" style="color:var(--gold);margin-right:.8rem;"></i>Mobile Money</h3>
+          <div class="contact-row">
+            <div class="contact-row-icon" style="background:rgba(255,102,0,.12);"><i class="fa fa-phone" style="color:#FF6600;"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">Airtel Money / Moov</div>
+              <div class="contact-row-val">+241 74 255 323</div>
+              <div class="contact-row-note">Engonga Stephanas Grace</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon" style="background:rgba(255,102,0,.12);"><i class="fa fa-phone" style="color:#FF6600;"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">Airtel Money / Moov</div>
+              <div class="contact-row-val">+241 62 438 323</div>
+              <div class="contact-row-note">Nfono Nzogobe Germaine</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon" style="background:rgba(0,112,196,.12);"><i class="fab fa-paypal" style="color:#0070C4;"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">PayPal</div>
+              <div class="contact-row-val" style="color:#aaa;font-style:italic;">En cours de configuration</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa fa-envelope"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">Email</div>
+              <div class="contact-row-val">
+                <a href="mailto:reunion2reveilspirituel@gmail.com" style="color:var(--navy);text-decoration:none;">reunion2reveilspirituel@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Virement Bancaire -->
         <div class="contact-box">
           <h3><i class="fa fa-university" style="color:var(--gold);margin-right:.8rem;"></i>Virement Bancaire</h3>
           <div class="contact-row">
             <div class="contact-row-icon"><i class="fa fa-building"></i></div>
             <div class="contact-row-info">
               <div class="contact-row-label">Banque</div>
-              <div class="contact-row-val">CCA Bank Cameroun</div>
+              <div class="contact-row-val">À confirmer</div>
             </div>
           </div>
           <div class="contact-row">
             <div class="contact-row-icon"><i class="fa fa-hashtag"></i></div>
             <div class="contact-row-info">
               <div class="contact-row-label">IBAN / RIB</div>
-              <div class="contact-row-val">RS-0000-0000-0000</div>
+              <div class="contact-row-val">À communiquer sur demande</div>
             </div>
           </div>
           <div class="contact-row">
@@ -297,47 +403,24 @@
             </div>
           </div>
           <div class="contact-row">
-            <div class="contact-row-icon"><i class="fa fa-globe"></i></div>
+            <div class="contact-row-icon"><i class="fa fa-info-circle"></i></div>
             <div class="contact-row-info">
-              <div class="contact-row-label">BIC / SWIFT</div>
-              <div class="contact-row-val">CCABCMXXX</div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-box">
-          <h3><i class="fa fa-mobile-alt" style="color:var(--gold);margin-right:.8rem;"></i>Mobile Money &amp; Autres</h3>
-          <div class="contact-row">
-            <div class="contact-row-icon" style="background:rgba(255,204,0,.12);"><i class="fa fa-phone" style="color:#FFCC00;"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">MTN MoMo</div>
-              <div class="contact-row-val">+237 6XX XXX XXX</div>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon" style="background:rgba(255,102,0,.12);"><i class="fa fa-phone" style="color:#FF6600;"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Orange Money</div>
-              <div class="contact-row-val">+237 6XX XXX XXX</div>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon" style="background:rgba(0,112,196,.12);"><i class="fab fa-paypal" style="color:#0070C4;"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">PayPal</div>
-              <div class="contact-row-val">dons@reveilspirituel.org</div>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon"><i class="fa fa-envelope"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Contact Général</div>
-              <div class="contact-row-val">contact@reveilspirituel.org</div>
+              <div class="contact-row-label">Pour obtenir les coordonnées</div>
+              <div class="contact-row-val">
+                <a href="mailto:reunion2reveilspirituel@gmail.com" style="color:var(--brand-blue);text-decoration:none;font-size:.88rem;">Écrire au ministère <i class="fa fa-arrow-right" style="font-size:.75rem;"></i></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════ TAGLINE FINALE ═══════════════ -->
+  <div class="soutenir-tagline">
+    <p>"Le réveil des peuples est en marche avec Yéhoshou'a !"</p>
+    <cite>— Réveil Spirituel, Gabon</cite>
+  </div>
 
   <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
@@ -367,14 +450,14 @@
       </div>
       <div class="footer-contact">
         <h5>Contact</h5>
-        <p><i class="fa fa-envelope"></i> contact@reveilspirituel.org</p>
-        <p><i class="fa fa-phone"></i> +237 000 000 000</p>
-        <p><i class="fa fa-map-marker-alt"></i> Douala, Cameroun</p>
+        <p><i class="fa fa-envelope"></i> reunion2reveilspirituel@gmail.com</p>
+        <p><i class="fa fa-phone"></i> +241 74 255 323</p>
+        <p><i class="fa fa-map-marker-alt"></i> Libreville, Gabon</p>
       </div>
       <div class="footer-verse">
         <h5>Verset du Jour</h5>
-        <blockquote>"Arrêtez-vous sur les routes, regardez, et demandez quels sont les anciens sentiers, quelle est la bonne voie."</blockquote>
-        <cite>— Jérémie 6:16</cite>
+        <blockquote>"Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie."</blockquote>
+        <cite>— 2 Corinthiens 9:7</cite>
       </div>
     </div>
     <div class="footer-bottom">

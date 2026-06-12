@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Médiathèque — Réveil Spirituel</title>
-  <meta name="description" content="Accédez aux enseignements bibliques, conférences et témoignages du ministère Réveil Spirituel en vidéo — librement disponibles pour votre édification." />
-  <meta property="og:title" content="Médiathèque — Réveil Spirituel" />
-  <meta property="og:description" content="Enseignements bibliques, conférences et témoignages — plongez dans la Parole vivante à travers nos ressources vidéo." />
+  <title>Vidéos — Réveil Spirituel</title>
+  <meta name="description" content="Accédez aux enseignements bibliques, formations, louanges et exhortations du ministère Réveil Spirituel en vidéo sur YouTube." />
+  <meta property="og:title" content="Vidéos — Réveil Spirituel" />
+  <meta property="og:description" content="Enseignements, formation biblique, louange et exhortations — la Parole vivante en vidéo." />
   <meta property="og:image" content="imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,8 +48,7 @@
   </header>
 
   <!-- ═══════════════ PAGE HERO ═══════════════ -->
-  <section class="page-hero">
-    <img src="imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="" class="page-hero-deco" loading="lazy" />
+  <section class="page-hero has-bg" style="background-image:url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1920&auto=format&fit=crop');">
     <div class="container page-hero-inner">
       <nav class="breadcrumb">
         <a href="index.html">Accueil</a>
@@ -57,147 +56,111 @@
         <span>Vidéos</span>
       </nav>
       <h1>Médiathèque</h1>
-      <p>Enseignements bibliques, conférences et témoignages — plongez dans la Parole vivante à travers nos ressources vidéo.</p>
+      <p>Enseignements bibliques, formation, louange et exhortations — la Parole vivante accessible à tous, gratuitement.</p>
+      <div class="page-hero-verse">
+        <p>"Ma Parole qui sort de ma bouche ne reviendra pas vers moi sans effet."</p>
+        <cite>Ésaïe 55:11</cite>
+      </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 1 — DERNIÈRE VIDÉO ═══════════════ -->
-  <section class="events-section" style="padding:7rem 0;">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-num centered">01</p>
-        <h2 class="section-title centered">Dernière Vidéo</h2>
-        <div class="gold-rule centered"></div>
-      </div>
-      <div class="video-featured reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem;">
-        <div class="video-featured-thumb" style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:16/9;">
-          <img src="imag/Screenshot 2026-04-01 154245.png" alt="Les Fondements du Réveil" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
-          <a href="#" class="play-btn" aria-label="Lire la vidéo" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.5rem;text-decoration:none;transition:transform .3s,box-shadow .3s;box-shadow:0 0 0 12px rgba(212,168,67,.2);">
-            <i class="fa fa-play" style="margin-left:4px;"></i>
-          </a>
-          <div style="position:absolute;top:1rem;left:1rem;background:var(--gold);color:var(--navy);padding:.3rem .8rem;border-radius:3px;font-size:.78rem;font-weight:700;font-family:'Inter',sans-serif;">NOUVEAU</div>
-        </div>
-        <div class="video-featured-info">
-          <span class="video-cat news-tag" style="background:var(--gold);color:var(--navy);padding:.3rem .9rem;border-radius:2rem;font-size:.78rem;font-weight:600;letter-spacing:.05em;display:inline-block;margin-bottom:1.5rem;">Enseignement</span>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--ivory);line-height:1.3;margin-bottom:1.5rem;">Les Fondements du Réveil</h3>
-          <p style="color:rgba(245,241,232,.75);line-height:1.8;margin-bottom:2rem;">Dans cet enseignement puissant, découvrez les clés spirituelles qui ouvrent les portes d'un vrai réveil biblique. Fondé sur les Écritures, cet enseignement vous guidera vers une foi plus profonde et une marche plus fidèle avec Dieu.</p>
-          <div style="display:flex;gap:1.5rem;align-items:center;margin-bottom:2rem;color:rgba(245,241,232,.6);font-size:.9rem;">
-            <span><i class="fa fa-clock" style="color:var(--gold);margin-right:.4rem;"></i> 1h 12min</span>
-            <span><i class="fa fa-eye" style="color:var(--gold);margin-right:.4rem;"></i> 8 420 vues</span>
-            <span><i class="fa fa-calendar" style="color:var(--gold);margin-right:.4rem;"></i> 20 Mai 2026</span>
-          </div>
-          <a href="#" class="btn btn-gold-outline">Regarder <i class="fa fa-play"></i></a>
+  <!-- ═══════════════ BANNIÈRE ABONNEMENT ═══════════════ -->
+  <div class="yt-sub-banner">
+    <div class="container yt-sub-inner">
+      <div class="yt-sub-left">
+        <i class="fab fa-youtube yt-sub-icon"></i>
+        <div class="yt-sub-text">
+          <strong>Réveil Spirituel</strong>
+          <span>Ne manquez aucun enseignement — abonnez-vous à notre chaîne YouTube</span>
         </div>
       </div>
+      <a id="btnSubscribe"
+         href="https://www.youtube.com/@ReveilSpirituel?sub_confirmation=1"
+         target="_blank" rel="noopener"
+         class="yt-sub-btn">
+        <i class="fab fa-youtube"></i> S'abonner
+      </a>
     </div>
-  </section>
+  </div>
 
-  <!-- ═══════════════ SECTION 2 — TOUTES LES VIDÉOS ═══════════════ -->
-  <section class="news-section light-bg" style="padding:7rem 0;">
+  <!-- ═══════════════ SEARCH + FILTER ═══════════════ -->
+  <section class="vid-controls-section">
     <div class="container">
-      <div class="section-header reveal">
-        <p class="section-num centered">02</p>
-        <h2 class="section-title centered">Toutes les Vidéos</h2>
-        <div class="gold-rule centered"></div>
-      </div>
-
-      <!-- Tabs -->
-      <div class="tab-nav reveal" style="display:flex;gap:1rem;justify-content:center;margin:2rem 0 3rem;flex-wrap:wrap;">
-        <button class="tab-btn" style="padding:.6rem 1.5rem;border:2px solid var(--navy);background:var(--navy);color:var(--gold);font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em;border-radius:3px;cursor:pointer;">Tout</button>
-        <button class="tab-btn" style="padding:.6rem 1.5rem;border:2px solid var(--navy);background:transparent;color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em;border-radius:3px;cursor:pointer;">Enseignements</button>
-        <button class="tab-btn" style="padding:.6rem 1.5rem;border:2px solid var(--navy);background:transparent;color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em;border-radius:3px;cursor:pointer;">Conférences</button>
-        <button class="tab-btn" style="padding:.6rem 1.5rem;border:2px solid var(--navy);background:transparent;color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em;border-radius:3px;cursor:pointer;">Témoignages</button>
-      </div>
-
-      <!-- Video Grid -->
-      <div class="video-grid news-grid" style="grid-template-columns:repeat(3,1fr);gap:2rem;">
-        <article class="video-card news-card stagger">
-          <div class="video-thumb news-img" style="position:relative;">
-            <img src="imag/Screenshot 2026-04-01 154245.png" alt="Vidéo 1" />
-            <a href="#" class="play-btn" aria-label="Lire" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;text-decoration:none;">
-              <i class="fa fa-play" style="margin-left:3px;"></i>
-            </a>
-            <span class="news-tag">Enseignement</span>
-          </div>
-          <div class="video-info news-body">
-            <span class="video-cat" style="color:var(--gold);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Torah &amp; Réveil</span>
-            <h4>Les Fondements du Réveil</h4>
-            <small style="color:#888;"><i class="fa fa-clock" style="margin-right:.3rem;"></i>45 min</small>
-          </div>
-        </article>
-        <article class="video-card news-card stagger">
-          <div class="video-thumb news-img" style="position:relative;">
-            <img src="imag/Fichier 1-1.png" alt="Vidéo 2" />
-            <a href="#" class="play-btn" aria-label="Lire" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;text-decoration:none;">
-              <i class="fa fa-play" style="margin-left:3px;"></i>
-            </a>
-            <span class="news-tag">Conférence</span>
-          </div>
-          <div class="video-info news-body">
-            <span class="video-cat" style="color:var(--gold);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Nations &amp; Prophétie</span>
-            <h4>L'Éveil des Nations</h4>
-            <small style="color:#888;"><i class="fa fa-clock" style="margin-right:.3rem;"></i>1h 20min</small>
-          </div>
-        </article>
-        <article class="video-card news-card stagger">
-          <div class="video-thumb news-img" style="position:relative;">
-            <img src="imag/Screenshot 2026-04-01 154245.png" alt="Vidéo 3" />
-            <a href="#" class="play-btn" aria-label="Lire" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;text-decoration:none;">
-              <i class="fa fa-play" style="margin-left:3px;"></i>
-            </a>
-            <span class="news-tag">Enseignement</span>
-          </div>
-          <div class="video-info news-body">
-            <span class="video-cat" style="color:var(--gold);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Prière &amp; Intercession</span>
-            <h4>La Puissance de la Prière</h4>
-            <small style="color:#888;"><i class="fa fa-clock" style="margin-right:.3rem;"></i>38 min</small>
-          </div>
-        </article>
-        <article class="video-card news-card stagger">
-          <div class="video-thumb news-img" style="position:relative;">
-            <img src="imag/Fichier 1-1.png" alt="Vidéo 4" />
-            <a href="#" class="play-btn" aria-label="Lire" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;text-decoration:none;">
-              <i class="fa fa-play" style="margin-left:3px;"></i>
-            </a>
-            <span class="news-tag">Témoignage</span>
-          </div>
-          <div class="video-info news-body">
-            <span class="video-cat" style="color:var(--gold);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Transformation</span>
-            <h4>De l'Obscurité à la Lumière</h4>
-            <small style="color:#888;"><i class="fa fa-clock" style="margin-right:.3rem;"></i>22 min</small>
-          </div>
-        </article>
-        <article class="video-card news-card stagger">
-          <div class="video-thumb news-img" style="position:relative;">
-            <img src="imag/Screenshot 2026-04-01 154245.png" alt="Vidéo 5" />
-            <a href="#" class="play-btn" aria-label="Lire" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;text-decoration:none;">
-              <i class="fa fa-play" style="margin-left:3px;"></i>
-            </a>
-            <span class="news-tag">Conférence</span>
-          </div>
-          <div class="video-info news-body">
-            <span class="video-cat" style="color:var(--gold);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Famille &amp; Restauration</span>
-            <h4>Restaurer l'Autel Familial</h4>
-            <small style="color:#888;"><i class="fa fa-clock" style="margin-right:.3rem;"></i>55 min</small>
-          </div>
-        </article>
-        <article class="video-card news-card stagger">
-          <div class="video-thumb news-img" style="position:relative;">
-            <img src="imag/Fichier 1-1.png" alt="Vidéo 6" />
-            <a href="#" class="play-btn" aria-label="Lire" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;text-decoration:none;">
-              <i class="fa fa-play" style="margin-left:3px;"></i>
-            </a>
-            <span class="news-tag">Enseignement</span>
-          </div>
-          <div class="video-info news-body">
-            <span class="video-cat" style="color:var(--gold);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Prophètes &amp; Temps de la Fin</span>
-            <h4>Les Signes des Derniers Temps</h4>
-            <small style="color:#888;"><i class="fa fa-clock" style="margin-right:.3rem;"></i>1h 05min</small>
-          </div>
-        </article>
+      <div class="vid-controls-inner">
+        <div class="vid-search-wrap">
+          <i class="fa fa-search vid-search-icon"></i>
+          <input type="search" id="vidSearch" class="vid-search-input"
+                 placeholder="Rechercher une vidéo…" autocomplete="off" />
+        </div>
+        <div class="vid-tabs" role="tablist">
+          <button class="vid-tab active" data-cat="tout" role="tab">Tout</button>
+          <button class="vid-tab" data-cat="enseignement" role="tab">Enseignements</button>
+          <button class="vid-tab" data-cat="formation" role="tab">Formation Biblique</button>
+          <button class="vid-tab" data-cat="louange" role="tab">Louange &amp; Prière</button>
+          <button class="vid-tab" data-cat="exhortation" role="tab">Exhortations</button>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════ GRILLE VIDÉOS ═══════════════ -->
+  <section class="vid-library-section">
+    <div class="container">
+
+      <!-- Skeleton loader -->
+      <div class="vid-grid" id="vidSkeleton">
+        <div class="vid-skeleton"></div>
+        <div class="vid-skeleton"></div>
+        <div class="vid-skeleton"></div>
+        <div class="vid-skeleton"></div>
+        <div class="vid-skeleton"></div>
+        <div class="vid-skeleton"></div>
+      </div>
+
+      <!-- Grille réelle -->
+      <div class="vid-grid" id="vidGrid" style="display:none;"></div>
+
+      <!-- Aucun résultat -->
+      <p class="vid-no-results" id="vidNoResults" style="display:none;">
+        <i class="fa fa-search"></i> Aucune vidéo ne correspond à votre recherche.
+      </p>
+
+      <!-- Erreur API -->
+      <div class="vid-api-error" id="vidApiError" style="display:none;">
+        <i class="fab fa-youtube"></i>
+        <h3>Configuration requise</h3>
+        <p id="vidApiErrorMsg">Pour afficher les vidéos, configurez la clé API YouTube et l'ID de la chaîne dans le fichier <code>videos.html</code>.</p>
+        <a id="vidFallbackLink" href="https://www.youtube.com/@ReveilSpirituel" target="_blank" rel="noopener" class="btn btn-gold-outline">
+          <i class="fab fa-youtube"></i> Voir les vidéos sur YouTube
+        </a>
+      </div>
+
+      <!-- Bouton Afficher plus -->
+      <div class="vid-more-wrap" id="vidMoreWrap" style="display:none;">
+        <button class="btn btn-gold-outline" id="btnLoadMore">
+          <i class="fa fa-plus-circle"></i> Afficher plus de vidéos
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ MODAL VIDÉO ═══════════════ -->
+  <div id="vidModal" class="vid-modal" role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
+    <div class="vid-modal-box">
+      <div class="vid-modal-header">
+        <span class="vid-modal-title" id="vidModalTitle"></span>
+        <button class="vid-modal-close" id="vidModalClose" aria-label="Fermer">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+      <div class="vid-iframe-wrap">
+        <iframe id="vidFrame" src="" title="Lecteur YouTube" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
@@ -207,7 +170,7 @@
         <p>Un ministère international dédié à l'éveil des nations par la Parole de Dieu vivante et éternelle.</p>
         <div class="footer-socials">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@ReveilSpirituel" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
         </div>
@@ -228,13 +191,13 @@
       <div class="footer-contact">
         <h5>Contact</h5>
         <p><i class="fa fa-envelope"></i> contact@reveilspirituel.org</p>
-        <p><i class="fa fa-phone"></i> +237 000 000 000</p>
-        <p><i class="fa fa-map-marker-alt"></i> Douala, Cameroun</p>
+        <p><i class="fa fa-phone"></i> +241 000 000 000</p>
+        <p><i class="fa fa-map-marker-alt"></i> Libreville, Gabon</p>
       </div>
       <div class="footer-verse">
         <h5>Verset du Jour</h5>
-        <blockquote>"Arrêtez-vous sur les routes, regardez, et demandez quels sont les anciens sentiers, quelle est la bonne voie."</blockquote>
-        <cite>— Jérémie 6:16</cite>
+        <blockquote>"Ma Parole qui sort de ma bouche ne reviendra pas vers moi sans effet."</blockquote>
+        <cite>— Ésaïe 55:11</cite>
       </div>
     </div>
     <div class="footer-bottom">
@@ -245,5 +208,250 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  /* ═══════════════════════════════════════════════════════════════
+     CONFIGURATION YOUTUBE
+     ─────────────────────────────────────────────────────────────
+     1. Allez sur https://console.cloud.google.com
+     2. Créez un projet, activez "YouTube Data API v3"
+     3. Créez une clé API (Credentials > Create credentials > API key)
+     4. Collez la clé dans YT_API_KEY ci-dessous
+     5. Remplacez YT_CHANNEL_ID par l'ID de votre chaîne YouTube
+        (YouTube Studio > Paramètres > Informations sur la chaîne > ID de la chaîne)
+  ═══════════════════════════════════════════════════════════════ */
+  const YT_API_KEY    = 'VOTRE_CLE_API';       // ex: AIzaSyBxxxxxxxxxxxxxxxxxxxxxx
+  const YT_CHANNEL_ID = 'VOTRE_CHANNEL_ID';    // ex: UCxxxxxxxxxxxxxxxxxxxxxxxxxx
+  const YT_CHANNEL_URL= 'https://www.youtube.com/@ReveilSpirituel';
+
+  /* ─── Catégorie automatique par mots-clés du titre ─── */
+  function detectCategory(title) {
+    const t = title.toLowerCase();
+    if (/louange|adoration|cantique|worship|praise/.test(t)) return 'louange';
+    if (/formation|repentance|identité|identite|baptême|bapteme|héritier|heritier|nouveau/.test(t)) return 'formation';
+    if (/exhortation|partage|encouragement|message/.test(t)) return 'exhortation';
+    return 'enseignement';
+  }
+
+  function categoryLabel(cat) {
+    return { enseignement:'Enseignement', formation:'Formation', louange:'Louange', exhortation:'Exhortation' }[cat] || 'Enseignement';
+  }
+  function categoryClass(cat) {
+    return { enseignement:'', formation:'badge-formation', louange:'badge-louange', exhortation:'badge-exhortation' }[cat] || '';
+  }
+
+  /* ─── Créer une carte vidéo ─── */
+  function buildCard(item) {
+    const sn    = item.snippet;
+    const ytid  = sn.resourceId?.videoId || sn.videoId || '';
+    const title = sn.title;
+    const thumb = sn.thumbnails?.maxres?.url
+               || sn.thumbnails?.high?.url
+               || sn.thumbnails?.medium?.url
+               || `https://img.youtube.com/vi/${ytid}/hqdefault.jpg`;
+    const date  = new Date(sn.publishedAt).toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
+    const cat   = detectCategory(title);
+
+    const art = document.createElement('article');
+    art.className = 'vid-card';
+    art.dataset.category = cat;
+    art.dataset.title    = title.toLowerCase();
+    art.dataset.ytid     = ytid;
+    art.innerHTML = `
+      <div class="vid-thumb">
+        <img src="${thumb}" alt="${title.replace(/"/g,'&quot;')}" loading="lazy"
+             onerror="this.src='https://img.youtube.com/vi/${ytid}/hqdefault.jpg'" />
+        <button class="vid-play-btn" aria-label="Regarder la vidéo"><i class="fa fa-play"></i></button>
+        <span class="vid-badge ${categoryClass(cat)}">${categoryLabel(cat)}</span>
+      </div>
+      <div class="vid-info">
+        <span class="vid-series">${date}</span>
+        <h3 class="vid-title">${title}</h3>
+        <div class="vid-meta"><i class="fa fa-calendar-alt"></i> ${date}</div>
+      </div>`;
+    art.addEventListener('click', () => openModal(ytid, title));
+    return art;
+  }
+
+  /* ─── Variables d'état ─── */
+  let nextPageToken    = null;
+  let uploadsPlaylistId = null;
+  let allVideos        = [];     // toutes les vidéos chargées
+  let activeCategory   = 'tout';
+  let searchQuery      = '';
+
+  const grid       = document.getElementById('vidGrid');
+  const skeleton   = document.getElementById('vidSkeleton');
+  const noResults  = document.getElementById('vidNoResults');
+  const apiError   = document.getElementById('vidApiError');
+  const moreWrap   = document.getElementById('vidMoreWrap');
+  const btnMore    = document.getElementById('btnLoadMore');
+  const searchInput= document.getElementById('vidSearch');
+
+  /* ─── Étape 1 : récupérer l'ID de la playlist "uploads" ─── */
+  async function fetchUploadsPlaylistId() {
+    const url = `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${YT_CHANNEL_ID}&key=${YT_API_KEY}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.error) throw new Error(data.error.message);
+    if (!data.items || data.items.length === 0) throw new Error('Chaîne introuvable. Vérifiez YT_CHANNEL_ID.');
+    return data.items[0].contentDetails.relatedPlaylists.uploads;
+  }
+
+  /* ─── Étape 2 : charger 20 vidéos depuis la playlist ─── */
+  async function fetchVideos(pageToken = '') {
+    const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=${uploadsPlaylistId}&key=${YT_API_KEY}${pageToken ? '&pageToken=' + pageToken : ''}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.error) throw new Error(data.error.message);
+    return data;
+  }
+
+  /* ─── Rendu / filtre ─── */
+  function renderVideos() {
+    const filtered = allVideos.filter(v => {
+      const matchCat    = activeCategory === 'tout' || v.dataset.category === activeCategory;
+      const matchSearch = v.dataset.title.includes(searchQuery);
+      return matchCat && matchSearch;
+    });
+    grid.innerHTML = '';
+    filtered.forEach(card => grid.appendChild(card));
+    noResults.style.display = filtered.length === 0 ? 'block' : 'none';
+  }
+
+  /* ─── Données statiques (affichées tant que l'API n'est pas configurée) ─── */
+  const STATIC_VIDEOS = [
+    { title:'La Gestion de l\'Onction — Partie 1', series:'Série · La Gestion de l\'Onction', cat:'enseignement', dur:'~45 min', thumb:'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=640&auto=format&fit=crop' },
+    { title:'La Gestion de l\'Onction — Partie 2', series:'Série · La Gestion de l\'Onction', cat:'enseignement', dur:'~48 min', thumb:'https://images.unsplash.com/photo-1519326844852-704caea5679e?q=80&w=640&auto=format&fit=crop' },
+    { title:'La Gestion de l\'Onction — Partie 3', series:'Série · La Gestion de l\'Onction', cat:'enseignement', dur:'~52 min', thumb:'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=640&auto=format&fit=crop' },
+    { title:'La Gestion de l\'Onction — Partie 4', series:'Série · La Gestion de l\'Onction', cat:'enseignement', dur:'~50 min', thumb:'https://images.unsplash.com/photo-1529651737248-dad5e287768e?q=80&w=640&auto=format&fit=crop' },
+    { title:'La Puissance qui Agit',               series:'Enseignement',                     cat:'enseignement', dur:'~1h 10min', thumb:'https://images.unsplash.com/photo-1445243433598-d6e026abf534?q=80&w=640&auto=format&fit=crop' },
+    { title:'Les Pièges rattachés à l\'Onction',   series:'Enseignement',                     cat:'enseignement', dur:'~55 min', thumb:'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=640&auto=format&fit=crop' },
+    { title:'La Repentance',                        series:'Formation Biblique',               cat:'formation',    dur:'~40 min', thumb:'https://images.unsplash.com/photo-1473177104440-ffee2f376098?q=80&w=640&auto=format&fit=crop' },
+    { title:'L\'Identité Chrétienne',              series:'Formation Biblique',               cat:'formation',    dur:'~38 min', thumb:'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=640&auto=format&fit=crop' },
+    { title:'L\'Homme Nouveau',                    series:'Formation Biblique',               cat:'formation',    dur:'~42 min', thumb:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=640&auto=format&fit=crop' },
+    { title:'Discerne la Source de tes Souffrances', series:'Formation Biblique',             cat:'formation',    dur:'~1h 05min', thumb:'https://images.unsplash.com/photo-1445243433598-d6e026abf534?q=80&w=640&auto=format&fit=crop' },
+    { title:'Moment de Louange — Partie 1',        series:'Louange & Prière',                 cat:'louange',      dur:'~30 min', thumb:'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?q=80&w=640&auto=format&fit=crop' },
+    { title:'Moment de Louange — Partie 2',        series:'Louange & Prière',                 cat:'louange',      dur:'~28 min', thumb:'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=640&auto=format&fit=crop' },
+    { title:'Le Renouvellement Spirituel',          series:'Exhortation',                     cat:'exhortation',  dur:'~22 min', thumb:'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=640&auto=format&fit=crop' },
+    { title:'Les Héritiers du Royaume',            series:'Exhortation',                     cat:'exhortation',  dur:'~18 min', thumb:'https://images.unsplash.com/photo-1519326844852-704caea5679e?q=80&w=640&auto=format&fit=crop' },
+  ];
+
+  function buildStaticCard(v) {
+    const cat = v.cat;
+    const art = document.createElement('article');
+    art.className = 'vid-card';
+    art.dataset.category = cat;
+    art.dataset.title    = v.title.toLowerCase();
+    art.dataset.ytid     = '';
+    art.innerHTML = `
+      <div class="vid-thumb">
+        <img src="${v.thumb}" alt="${v.title}" loading="lazy" />
+        <button class="vid-play-btn" aria-label="Regarder la vidéo"><i class="fa fa-play"></i></button>
+        <span class="vid-badge ${categoryClass(cat)}">${categoryLabel(cat)}</span>
+      </div>
+      <div class="vid-info">
+        <span class="vid-series">${v.series}</span>
+        <h3 class="vid-title">${v.title}</h3>
+        <div class="vid-meta"><i class="fa fa-clock"></i> ${v.dur}</div>
+      </div>`;
+    art.addEventListener('click', () => {
+      alert('L\'identifiant YouTube de cette vidéo n\'est pas encore configuré.\nRenseignez YT_API_KEY et YT_CHANNEL_ID dans videos.html pour activer la lecture.');
+    });
+    return art;
+  }
+
+  /* ─── Init ─── */
+  async function init() {
+    /* Pas encore configuré → cartes statiques */
+    if (YT_API_KEY === 'VOTRE_CLE_API' || YT_CHANNEL_ID === 'VOTRE_CHANNEL_ID') {
+      skeleton.style.display = 'none';
+      STATIC_VIDEOS.forEach(v => allVideos.push(buildStaticCard(v)));
+      grid.style.display = 'grid';
+      renderVideos();
+      moreWrap.style.display = 'none';
+      return;
+    }
+    /* API configurée → chargement YouTube */
+    try {
+      uploadsPlaylistId = await fetchUploadsPlaylistId();
+      const data = await fetchVideos();
+      nextPageToken = data.nextPageToken || null;
+      data.items.forEach(item => allVideos.push(buildCard(item)));
+      skeleton.style.display = 'none';
+      grid.style.display     = 'grid';
+      renderVideos();
+      moreWrap.style.display = nextPageToken ? 'flex' : 'none';
+    } catch (err) {
+      skeleton.style.display = 'none';
+      apiError.style.display = 'block';
+      document.getElementById('vidApiErrorMsg').textContent = 'Erreur : ' + err.message;
+    }
+  }
+
+  /* ─── Afficher plus ─── */
+  btnMore.addEventListener('click', async () => {
+    if (!nextPageToken) return;
+    btnMore.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Chargement…';
+    btnMore.disabled = true;
+    try {
+      const data = await fetchVideos(nextPageToken);
+      nextPageToken = data.nextPageToken || null;
+      data.items.forEach(item => allVideos.push(buildCard(item)));
+      renderVideos();
+      moreWrap.style.display = nextPageToken ? 'flex' : 'none';
+    } catch (err) {
+      console.error(err);
+    } finally {
+      btnMore.innerHTML = '<i class="fa fa-plus-circle"></i> Afficher plus de vidéos';
+      btnMore.disabled = false;
+    }
+  });
+
+  /* ─── Recherche ─── */
+  searchInput.addEventListener('input', () => {
+    searchQuery = searchInput.value.toLowerCase().trim();
+    renderVideos();
+  });
+
+  /* ─── Onglets ─── */
+  document.querySelectorAll('.vid-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.vid-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.cat;
+      renderVideos();
+    });
+  });
+
+  /* ─── Modal ─── */
+  const modal      = document.getElementById('vidModal');
+  const frame      = document.getElementById('vidFrame');
+  const modalTitle = document.getElementById('vidModalTitle');
+
+  function openModal(ytid, title) {
+    frame.src = `https://www.youtube.com/embed/${ytid}?autoplay=1&rel=0`;
+    modalTitle.textContent = title;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    frame.src = '';
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('vidModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ─── Mettre à jour le lien S'abonner avec l'ID réel ─── */
+  if (YT_CHANNEL_ID !== 'VOTRE_CHANNEL_ID') {
+    const subUrl = `https://www.youtube.com/channel/${YT_CHANNEL_ID}?sub_confirmation=1`;
+    document.getElementById('btnSubscribe').href = subUrl;
+    document.getElementById('vidFallbackLink').href = `https://www.youtube.com/channel/${YT_CHANNEL_ID}`;
+  }
+
+  init();
+  </script>
 </body>
 </html>
