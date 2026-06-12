@@ -2273,3 +2273,142 @@ body {
   margin-top: 0.15rem;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+
+/* ═══════════════════════════════════════════════
+   PAGE HERO — variante avec image de fond
+═══════════════════════════════════════════════ */
+.page-hero.has-bg {
+  background-size: cover;
+  background-position: center;
+  min-height: 440px;
+}
+.page-hero.has-bg::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 80%, rgba(234,169,0,0.07) 0%, transparent 55%),
+    linear-gradient(160deg, rgba(22,23,78,0.75) 0%, rgba(30,31,98,0.68) 100%);
+}
+.page-hero-verse {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.5rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(234,169,0,0.06);
+  border-radius: 0 6px 6px 0;
+  max-width: 640px;
+}
+.page-hero-verse p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-style: italic;
+  color: var(--ivory); line-height: 1.7; margin: 0 0 0.4rem;
+}
+.page-hero-verse cite { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* ═══════════════════════════════════════════════
+   VISION — colonnes Apostolat / Prophétique
+═══════════════════════════════════════════════ */
+.vision-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3.5rem;
+}
+@media (max-width: 768px) { .vision-2col { grid-template-columns: 1fr; } }
+.vision-col {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  border-top: 3px solid var(--gold);
+}
+.vision-col-icon {
+  width: 56px; height: 56px;
+  background: rgba(234,169,0,0.12);
+  border: 1px solid rgba(234,169,0,0.3);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+.vision-col h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--ivory); margin-bottom: 1rem;
+}
+.vision-col p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+
+/* ═══════════════════════════════════════════════
+   MISSIONS — 6 cartes
+═══════════════════════════════════════════════ */
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+@media (max-width: 900px) { .missions-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .missions-grid { grid-template-columns: 1fr; } }
+.mission-card-item {
+  background: var(--white-bg);
+  border: 1px solid rgba(85,87,203,0.1);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  transition: all var(--ease);
+  border-top: 3px solid transparent;
+}
+.mission-card-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(22,23,78,0.12);
+  border-top-color: var(--brand-blue);
+}
+.mci-icon {
+  width: 52px; height: 52px;
+  background: var(--brand-blue);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+.mci-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--brand-blue);
+  margin-bottom: 0.5rem; display: block;
+}
+.mission-card-item h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 0.75rem;
+}
+.mission-card-item p { font-size: 0.9rem; color: var(--muted-dark); line-height: 1.75; }
+
+/* ═══════════════════════════════════════════════
+   ORIGINE — récit narratif
+═══════════════════════════════════════════════ */
+.origin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+@media (max-width: 768px) { .origin-grid { grid-template-columns: 1fr; } }
+.origin-text p { font-size: 0.97rem; color: var(--ivory); line-height: 1.9; margin-bottom: 1.25rem; }
+.origin-prophecy {
+  background: rgba(234,169,0,0.07);
+  border-left: 3px solid var(--gold);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+.origin-prophecy p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--ivory); line-height: 1.8; margin: 0; }
+.origin-img-wrap { position: relative; border-radius: var(--radius); overflow: hidden; }
+.origin-img-wrap img { width: 100%; height: 420px; object-fit: cover; display: block; }
+.origin-img-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(22,23,78,0.5) 0%, transparent 50%);
+}
+.origin-date-badge {
+  position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 1;
+  background: var(--gold); color: var(--navy);
+  padding: 0.6rem 1.2rem; border-radius: 6px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em;
+}
