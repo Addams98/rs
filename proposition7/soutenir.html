@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nous Soutenir — Réveil Spirituel</title>
+  <meta name="description" content="Soutenez le ministère Réveil Spirituel par un don ponctuel ou mensuel. Votre partenariat finance l'évangélisation, les formations bibliques et l'équipement des nations." />
+  <meta property="og:title" content="Nous Soutenir — Réveil Spirituel" />
+  <meta property="og:description" content="Participez à l'avancement du Royaume — votre soutien transforme des vies, des familles et des nations pour la gloire de Dieu." />
+  <meta property="og:image" content="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .donate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .donate-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(212,168,67,.18);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .donate-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 16px 40px rgba(0,0,0,.3);
+    }
+    .donate-card.featured-card {
+      background: rgba(212,168,67,.12);
+      border-color: var(--gold);
+      position: relative;
+    }
+    .donate-card.featured-card::before {
+      content: 'Recommandé';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem 1rem;
+      border-radius: 2rem;
+      white-space: nowrap;
+    }
+    .donate-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(212,168,67,.15);
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+    .donate-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--ivory);
+      margin-bottom: 1rem;
+    }
+    .donate-card p {
+      color: rgba(245,241,232,.7);
+      font-size: .9rem;
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    .contact-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px rgba(10,22,40,.08);
+      border-top: 4px solid var(--gold);
+    }
+    .contact-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(10,22,40,.1);
+    }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid rgba(10,22,40,.06);
+    }
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+    .contact-row-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(10,22,40,.06);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-size: .85rem;
+      flex-shrink: 0;
+    }
+    .contact-row-info {
+      flex: 1;
+    }
+    .contact-row-label {
+      font-family: 'Inter', sans-serif;
+      font-size: .73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--gold);
+      margin-bottom: .2rem;
+    }
+    .contact-row-val {
+      font-family: 'Inter', sans-serif;
+      font-size: .92rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .donate-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-inner">
+      <img src="../imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="RS" class="loader-logo" />
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="../imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="RS" class="nav-logo-icon" />
+        <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="Réveil Spirituel" class="nav-logo-text" />
+      </a>
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="vision.html" class="nav-link">La Vision</a>
+        <a href="projets.html" class="nav-link">Projets</a>
+        <a href="videos.html" class="nav-link">Vidéos</a>
+        <a href="ouvrages.html" class="nav-link">Ouvrages</a>
+        <a href="bible.html" class="nav-link">Lire la Bible</a>
+        <a href="soutenir.html" class="nav-link nav-cta active">Nous Soutenir</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <section class="page-hero">
+    <img src="../imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="" class="page-hero-deco" loading="lazy" />
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="sep">/</span>
+        <span>Nous Soutenir</span>
+      </nav>
+      <h1>Nous Soutenir</h1>
+      <p>Participez à l'avancement du Royaume — votre soutien transforme des vies, des familles et des nations pour la gloire de Dieu.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 1 — POURQUOI SOUTENIR ═══════════════ -->
+  <section class="pillars-section white-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-num centered">01</p>
+        <h2 class="section-title centered">Pourquoi Soutenir</h2>
+        <div class="gold-rule centered"></div>
+        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">Votre partenariat avec Réveil Spirituel est un investissement éternel dans le Royaume de Dieu. Chaque don contribue à trois axes essentiels du ministère.</p>
+      </div>
+      <div class="values-grid pillars-grid">
+        <div class="value-card pillar-card stagger">
+          <div class="num pillar-icon" style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);display:flex;align-items:center;justify-content:center;">01</div>
+          <h3>Financer l'Évangélisation</h3>
+          <p>Chaque don permet d'organiser des campagnes d'évangélisation, de financer des missions dans des zones non atteintes et de produire des ressources d'éveil pour les croyants et les non-croyants.</p>
+        </div>
+        <div class="value-card pillar-card stagger">
+          <div class="num pillar-icon" style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);display:flex;align-items:center;justify-content:center;">02</div>
+          <h3>Soutenir les Formations</h3>
+          <p>Votre soutien finance des écoles bibliques, des séminaires de formation et des bourses pour des jeunes appelés qui désirent approfondir leur connaissance de la Parole et être envoyés dans les nations.</p>
+        </div>
+        <div class="value-card pillar-card stagger">
+          <div class="num pillar-icon" style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);display:flex;align-items:center;justify-content:center;">03</div>
+          <h3>Équiper les Nations</h3>
+          <p>Votre partenariat permet de traduire et distribuer des ouvrages dans des langues locales africaines, d'équiper des assemblées et de soutenir des pasteurs dans des régions défavorisées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 2 — MODES DE DON ═══════════════ -->
+  <section class="events-section" style="padding:7rem 0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-num centered">02</p>
+        <h2 class="section-title centered">Modes de Don</h2>
+        <div class="gold-rule centered"></div>
+        <p style="text-align:center;max-width:600px;margin:0 auto;color:rgba(245,241,232,.75);">Que votre contribution soit ponctuelle ou régulière, petite ou grande, elle est précieuse aux yeux de Dieu et du ministère.</p>
+      </div>
+      <div class="donate-grid">
+        <div class="donate-card stagger">
+          <div class="donate-icon">
+            <i class="fa fa-hand-holding-usd"></i>
+          </div>
+          <h3>Don Ponctuel</h3>
+          <p>Contribuez selon votre cœur et vos possibilités, à tout moment. Un don unique, aussi modeste soit-il, fait une réelle différence dans l'avancement du Royaume.</p>
+          <a href="#coordonnees" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Faire un Don <i class="fa fa-arrow-down"></i></a>
+        </div>
+        <div class="donate-card featured-card stagger">
+          <div class="donate-icon">
+            <i class="fa fa-calendar-check"></i>
+          </div>
+          <h3>Don Mensuel</h3>
+          <p>Devenez un partenaire régulier du ministère. Un engagement mensuel nous permet de planifier des projets à long terme et d'avoir un impact durable sur les nations.</p>
+          <a href="#coordonnees" class="btn btn-gold" style="width:100%;text-align:center;display:block;">Devenir Partenaire <i class="fa fa-heart"></i></a>
+        </div>
+        <div class="donate-card stagger">
+          <div class="donate-icon">
+            <i class="fa fa-box-open"></i>
+          </div>
+          <h3>Don en Nature</h3>
+          <p>Vous pouvez également soutenir le ministère par des dons en nature : matériel informatique, livres, équipements audiovisuels ou tout autre bien utile à l'œuvre.</p>
+          <a href="mailto:contact@reveilspirituel.org" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Nous Contacter <i class="fa fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 3 — COORDONNÉES BANCAIRES ═══════════════ -->
+  <section class="books-section light-bg" id="coordonnees" style="padding:7rem 0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-num centered">03</p>
+        <h2 class="section-title centered">Coordonnées Bancaires</h2>
+        <div class="gold-rule centered"></div>
+        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">Choisissez le mode de paiement qui vous convient. Pour tout virement, merci d'indiquer votre nom et "Don RS" en référence.</p>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="contact-box">
+          <h3><i class="fa fa-university" style="color:var(--gold);margin-right:.8rem;"></i>Virement Bancaire</h3>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa fa-building"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">Banque</div>
+              <div class="contact-row-val">CCA Bank Cameroun</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa fa-hashtag"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">IBAN / RIB</div>
+              <div class="contact-row-val">RS-0000-0000-0000</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa fa-user"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">Titulaire du Compte</div>
+              <div class="contact-row-val">Réveil Spirituel</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa fa-globe"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">BIC / SWIFT</div>
+              <div class="contact-row-val">CCABCMXXX</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-box">
+          <h3><i class="fa fa-mobile-alt" style="color:var(--gold);margin-right:.8rem;"></i>Mobile Money &amp; Autres</h3>
+          <div class="contact-row">
+            <div class="contact-row-icon" style="background:rgba(255,204,0,.12);"><i class="fa fa-phone" style="color:#FFCC00;"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">MTN MoMo</div>
+              <div class="contact-row-val">+237 6XX XXX XXX</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon" style="background:rgba(255,102,0,.12);"><i class="fa fa-phone" style="color:#FF6600;"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">Orange Money</div>
+              <div class="contact-row-val">+237 6XX XXX XXX</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon" style="background:rgba(0,112,196,.12);"><i class="fab fa-paypal" style="color:#0070C4;"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">PayPal</div>
+              <div class="contact-row-val">dons@reveilspirituel.org</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa fa-envelope"></i></div>
+            <div class="contact-row-info">
+              <div class="contact-row-label">Contact Général</div>
+              <div class="contact-row-val">contact@reveilspirituel.org</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="Réveil Spirituel" class="footer-logo" loading="lazy" />
+        <p>Un ministère international dédié à l'éveil des nations par la Parole de Dieu vivante et éternelle.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="vision.html">La Vision</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="videos.html">Vidéos</a></li>
+          <li><a href="ouvrages.html">Ouvrages</a></li>
+          <li><a href="bible.html">Lire la Bible</a></li>
+          <li><a href="soutenir.html">Nous Soutenir</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h5>Contact</h5>
+        <p><i class="fa fa-envelope"></i> contact@reveilspirituel.org</p>
+        <p><i class="fa fa-phone"></i> +237 000 000 000</p>
+        <p><i class="fa fa-map-marker-alt"></i> Douala, Cameroun</p>
+      </div>
+      <div class="footer-verse">
+        <h5>Verset du Jour</h5>
+        <blockquote>"Arrêtez-vous sur les routes, regardez, et demandez quels sont les anciens sentiers, quelle est la bonne voie."</blockquote>
+        <cite>— Jérémie 6:16</cite>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Réveil Spirituel — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

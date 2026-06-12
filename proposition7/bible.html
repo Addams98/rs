@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lire la Bible — Réveil Spirituel</title>
+  <meta name="description" content="Lisez la Bible en ligne sur Réveil Spirituel — Torah, Prophètes, Évangiles et Épîtres. Verset du jour et accès à tous les livres de l'Ancien et Nouveau Testament." />
+  <meta property="og:title" content="Lire la Bible — Réveil Spirituel" />
+  <meta property="og:description" content="Plongez dans la Parole de Dieu — l'Ancien et le Nouveau Testament, disponibles pour votre édification quotidienne." />
+  <meta property="og:image" content="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .bible-verse-day {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .bible-verse-day .verse-flame {
+      display: block;
+      margin: 0 auto 2rem;
+    }
+    .bible-verse-day blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ivory);
+      line-height: 1.9;
+      border: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+    .bible-verse-day cite {
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .bible-books-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+    .bible-book-btn {
+      display: inline-block;
+      padding: .55rem 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      border: 1.5px solid;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background .25s, color .25s, transform .2s;
+      cursor: pointer;
+    }
+    .bible-book-btn.testament-ot {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: transparent;
+    }
+    .bible-book-btn.testament-ot:hover {
+      background: var(--navy);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .bible-book-btn.testament-nt {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: transparent;
+    }
+    .bible-book-btn.testament-nt:hover {
+      background: var(--navy);
+      color: var(--ivory);
+      transform: translateY(-2px);
+    }
+    .testament-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: .18em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .testament-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: currentColor;
+      opacity: .3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-inner">
+      <img src="../imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="RS" class="loader-logo" />
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="../imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="RS" class="nav-logo-icon" />
+        <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="Réveil Spirituel" class="nav-logo-text" />
+      </a>
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="vision.html" class="nav-link">La Vision</a>
+        <a href="projets.html" class="nav-link">Projets</a>
+        <a href="videos.html" class="nav-link">Vidéos</a>
+        <a href="ouvrages.html" class="nav-link">Ouvrages</a>
+        <a href="bible.html" class="nav-link active">Lire la Bible</a>
+        <a href="soutenir.html" class="nav-link nav-cta">Nous Soutenir</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <section class="page-hero">
+    <img src="../imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="" class="page-hero-deco" loading="lazy" />
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="sep">/</span>
+        <span>Lire la Bible</span>
+      </nav>
+      <h1>Lire la Bible</h1>
+      <p>Plongez dans la Parole de Dieu — l'Ancien et le Nouveau Testament, disponibles pour votre édification quotidienne.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 1 — VERSET DU JOUR ═══════════════ -->
+  <section class="verse-section" style="padding:5rem 0;">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:3rem;">
+        <p class="section-num centered">01</p>
+        <h2 class="section-title centered">Verset du Jour</h2>
+        <div class="gold-rule centered"></div>
+      </div>
+      <div class="bible-verse-day reveal">
+        <img src="../imag/Fichier 2.png" alt="Flamme" class="verse-flame" loading="lazy" />
+        <blockquote>
+          "Que ce livre de la loi ne s'éloigne point de ta bouche ; médite-le jour et nuit, pour agir fidèlement selon tout ce qui y est écrit ; car c'est alors que tu auras du succès dans tes entreprises, c'est alors que tu réussiras."
+        </blockquote>
+        <cite>— Josué 1:8</cite>
+        <img src="../imag/Fichier 2.png" alt="Flamme" class="verse-flame flipped" style="margin-top:2rem;" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 2 — ANCIEN TESTAMENT ═══════════════ -->
+  <section class="books-section light-bg" style="padding:7rem 0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-num centered">02</p>
+        <h2 class="section-title centered">L'Ancien Testament</h2>
+        <div class="gold-rule centered"></div>
+        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">La Torah, les Prophètes et les Écrits — le fondement éternel sur lequel repose toute révélation divine. Sélectionnez un livre pour commencer votre lecture.</p>
+      </div>
+      <div class="reveal">
+        <div class="testament-label">Torah — Les Cinq Livres de Moïse</div>
+        <div class="bible-books-grid">
+          <a href="#" class="bible-book-btn testament-ot">Genèse</a>
+          <a href="#" class="bible-book-btn testament-ot">Exode</a>
+          <a href="#" class="bible-book-btn testament-ot">Lévitique</a>
+          <a href="#" class="bible-book-btn testament-ot">Nombres</a>
+          <a href="#" class="bible-book-btn testament-ot">Deutéronome</a>
+        </div>
+        <div class="testament-label" style="margin-top:2.5rem;">Livres Historiques</div>
+        <div class="bible-books-grid">
+          <a href="#" class="bible-book-btn testament-ot">Josué</a>
+          <a href="#" class="bible-book-btn testament-ot">Juges</a>
+          <a href="#" class="bible-book-btn testament-ot">Ruth</a>
+          <a href="#" class="bible-book-btn testament-ot">1 Samuel</a>
+          <a href="#" class="bible-book-btn testament-ot">2 Samuel</a>
+          <a href="#" class="bible-book-btn testament-ot">1 Rois</a>
+          <a href="#" class="bible-book-btn testament-ot">2 Rois</a>
+        </div>
+        <div class="testament-label" style="margin-top:2.5rem;">Livres Poétiques &amp; Sagesse</div>
+        <div class="bible-books-grid">
+          <a href="#" class="bible-book-btn testament-ot">Psaumes</a>
+          <a href="#" class="bible-book-btn testament-ot">Proverbes</a>
+        </div>
+        <div class="testament-label" style="margin-top:2.5rem;">Livres Prophétiques</div>
+        <div class="bible-books-grid">
+          <a href="#" class="bible-book-btn testament-ot">Ésaïe</a>
+          <a href="#" class="bible-book-btn testament-ot">Jérémie</a>
+          <a href="#" class="bible-book-btn testament-ot">Ézéchiel</a>
+          <a href="#" class="bible-book-btn testament-ot">Daniel</a>
+          <a href="#" class="bible-book-btn testament-ot">Osée</a>
+          <a href="#" class="bible-book-btn testament-ot">Malachie</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 3 — NOUVEAU TESTAMENT ═══════════════ -->
+  <section class="books-section white-bg" style="padding:7rem 0 4rem;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-num centered">03</p>
+        <h2 class="section-title centered">Le Nouveau Testament</h2>
+        <div class="gold-rule centered"></div>
+        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">L'accomplissement des promesses prophétiques de l'Ancien Testament en Yéshoua le Messie. Les Évangiles, les Épîtres et la Révélation pour votre édification.</p>
+      </div>
+      <div class="reveal">
+        <div class="testament-label" style="color:var(--navy);">Les Évangiles &amp; Actes</div>
+        <div class="bible-books-grid">
+          <a href="#" class="bible-book-btn testament-nt">Matthieu</a>
+          <a href="#" class="bible-book-btn testament-nt">Marc</a>
+          <a href="#" class="bible-book-btn testament-nt">Luc</a>
+          <a href="#" class="bible-book-btn testament-nt">Jean</a>
+          <a href="#" class="bible-book-btn testament-nt">Actes</a>
+        </div>
+        <div class="testament-label" style="margin-top:2.5rem;color:var(--navy);">Les Épîtres</div>
+        <div class="bible-books-grid">
+          <a href="#" class="bible-book-btn testament-nt">Romains</a>
+          <a href="#" class="bible-book-btn testament-nt">1 Corinthiens</a>
+          <a href="#" class="bible-book-btn testament-nt">2 Corinthiens</a>
+          <a href="#" class="bible-book-btn testament-nt">Galates</a>
+          <a href="#" class="bible-book-btn testament-nt">Éphésiens</a>
+          <a href="#" class="bible-book-btn testament-nt">Philippiens</a>
+          <a href="#" class="bible-book-btn testament-nt">Colossiens</a>
+          <a href="#" class="bible-book-btn testament-nt">1 Thessaloniciens</a>
+          <a href="#" class="bible-book-btn testament-nt">Hébreux</a>
+        </div>
+        <div class="testament-label" style="margin-top:2.5rem;color:var(--navy);">La Révélation</div>
+        <div class="bible-books-grid">
+          <a href="#" class="bible-book-btn testament-nt">Apocalypse</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="Réveil Spirituel" class="footer-logo" loading="lazy" />
+        <p>Un ministère international dédié à l'éveil des nations par la Parole de Dieu vivante et éternelle.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="vision.html">La Vision</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="videos.html">Vidéos</a></li>
+          <li><a href="ouvrages.html">Ouvrages</a></li>
+          <li><a href="bible.html">Lire la Bible</a></li>
+          <li><a href="soutenir.html">Nous Soutenir</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h5>Contact</h5>
+        <p><i class="fa fa-envelope"></i> contact@reveilspirituel.org</p>
+        <p><i class="fa fa-phone"></i> +237 000 000 000</p>
+        <p><i class="fa fa-map-marker-alt"></i> Douala, Cameroun</p>
+      </div>
+      <div class="footer-verse">
+        <h5>Verset du Jour</h5>
+        <blockquote>"Arrêtez-vous sur les routes, regardez, et demandez quels sont les anciens sentiers, quelle est la bonne voie."</blockquote>
+        <cite>— Jérémie 6:16</cite>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Réveil Spirituel — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
