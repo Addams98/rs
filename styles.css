@@ -2532,3 +2532,101 @@ body {
   letter-spacing: 0.08em; text-transform: uppercase;
   color: #fff;
 }
+
+/* ═══════════════════════════════════════════════
+   MISSIONS — cartes avec image de fond
+═══════════════════════════════════════════════ */
+.missions-img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 1.25rem;
+  margin-top: 3.5rem;
+}
+/* Première carte: large (2 colonnes) */
+.missions-img-grid .mic:first-child { grid-column: span 2; }
+/* Dernière carte: large (2 colonnes) */
+.missions-img-grid .mic:last-child  { grid-column: span 2; }
+
+@media (max-width: 900px) {
+  .missions-img-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .missions-img-grid .mic:first-child,
+  .missions-img-grid .mic:last-child { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .missions-img-grid { grid-template-columns: 1fr; }
+  .missions-img-grid .mic:first-child,
+  .missions-img-grid .mic:last-child { grid-column: auto; }
+}
+
+.mic {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  cursor: default;
+}
+.mic-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.6s ease;
+}
+.mic:hover .mic-bg { transform: scale(1.06); }
+.mic-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(16,17,58,0.96) 0%,
+    rgba(22,23,78,0.65) 45%,
+    rgba(22,23,78,0.18) 100%
+  );
+  transition: background 0.4s;
+}
+.mic:hover .mic-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(16,17,58,0.98) 0%,
+    rgba(22,23,78,0.82) 55%,
+    rgba(22,23,78,0.35) 100%
+  );
+}
+.mic-content {
+  position: relative; z-index: 1;
+  padding: 1.75rem 1.75rem 1.5rem;
+}
+.mic-icon {
+  width: 46px; height: 46px;
+  background: var(--gold);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy); font-size: 1.1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(234,169,0,0.4);
+}
+.mic-tag {
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 0.35rem;
+}
+.mic-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #fff; line-height: 1.2;
+  margin-bottom: 0;
+}
+.mic:first-child .mic-title { font-size: 1.65rem; }
+.mic-text {
+  font-size: 0.84rem; color: rgba(255,255,255,0.75);
+  line-height: 1.75; margin-top: 0.75rem;
+  max-height: 0; overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+.mic:hover .mic-text,
+.mic:first-child .mic-text,
+.mic:last-child  .mic-text {
+  max-height: 150px; opacity: 1;
+}
