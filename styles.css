@@ -2539,7 +2539,7 @@ body {
 .missions-img-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 280px 280px;
+  grid-template-rows: auto;
   gap: 1.25rem;
   margin-top: 3.5rem;
 }
@@ -2567,6 +2567,7 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 320px;
   cursor: default;
 }
 .mic-bg {
@@ -2619,14 +2620,6 @@ body {
 }
 .mic:first-child .mic-title { font-size: 1.65rem; }
 .mic-text {
-  font-size: 0.84rem; color: rgba(255,255,255,0.75);
+  font-size: 0.84rem; color: rgba(255,255,255,0.78);
   line-height: 1.75; margin-top: 0.75rem;
-  max-height: 0; overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.45s ease, opacity 0.35s ease;
-}
-.mic:hover .mic-text,
-.mic:first-child .mic-text,
-.mic:last-child  .mic-text {
-  max-height: 150px; opacity: 1;
 }
