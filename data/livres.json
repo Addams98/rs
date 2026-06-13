@@ -1,0 +1,62 @@
+[
+  {
+    "id": "yhwh-echad",
+    "titre": "YHWH Echad, Peuple Un",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "theologie",
+    "description": "Une étude profonde de l'unicité de Dieu selon les Écritures hébraïques et son rapport avec le peuple de l'alliance — de la Genèse à l'Apocalypse.",
+    "couverture": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=480&auto=format&fit=crop",
+    "lien_pdf": "",
+    "publie": true,
+    "dans_carousel": true,
+    "date_publication": "2024-01-01"
+  },
+  {
+    "id": "babylone",
+    "titre": "Babylone le Système Dénominationnel",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "theologie",
+    "description": "Une analyse prophétique du système religieux babylonien qui s'est infiltré dans l'Église — et un appel courageux à la séparation et à la pureté doctrinale.",
+    "couverture": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=480&auto=format&fit=crop",
+    "lien_pdf": "",
+    "publie": true,
+    "dans_carousel": true,
+    "date_publication": "2024-02-01"
+  },
+  {
+    "id": "torah-vivante",
+    "titre": "La Torah Vivante",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "torah",
+    "description": "Un voyage au cœur des cinq livres de Moïse — leur pertinence pour le croyant d'aujourd'hui et leur plein accomplissement en Yéshoua le Messie.",
+    "couverture": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?q=80&w=480&auto=format&fit=crop",
+    "lien_pdf": "",
+    "publie": true,
+    "dans_carousel": true,
+    "date_publication": "2024-03-01"
+  },
+  {
+    "id": "reveil-des-nations",
+    "titre": "Le Réveil des Nations",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "prophetie",
+    "description": "Une exploration prophétique de l'appel de Dieu adressé aux peuples de la terre, fondée sur les textes de l'Ancien et du Nouveau Testament.",
+    "couverture": "https://images.unsplash.com/photo-1529651737248-dad5e287768e?q=80&w=480&auto=format&fit=crop",
+    "lien_pdf": "",
+    "publie": true,
+    "dans_carousel": false,
+    "date_publication": "2024-04-01"
+  },
+  {
+    "id": "fondements-royaume",
+    "titre": "Les Fondements du Royaume",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "formation",
+    "description": "Un manuel pratique pour comprendre les principes immuables du Royaume de Dieu et les appliquer concrètement dans chaque sphère de la vie quotidienne.",
+    "couverture": "https://images.unsplash.com/photo-1519326844852-704caea5679e?q=80&w=480&auto=format&fit=crop",
+    "lien_pdf": "",
+    "publie": true,
+    "dans_carousel": false,
+    "date_publication": "2024-05-01"
+  }
+]

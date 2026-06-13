@@ -76,70 +76,8 @@
         </div>
       </div>
 
-      <div class="lib-hero-slide" style="background-image:url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1920&auto=format&fit=crop')">
-        <div class="lib-hero-overlay"></div>
-        <div class="lib-hero-content container">
-          <span class="lib-hero-type"><i class="fa fa-book"></i> Livre</span>
-          <h1 class="lib-hero-title">YHWH Echad, Peuple Un</h1>
-          <p class="lib-hero-desc">Une étude profonde de l'unicité de Dieu selon les Écritures hébraïques et son rapport avec le peuple de l'alliance.</p>
-          <div class="lib-hero-btns">
-            <button class="lib-hero-btn-read" data-pdf="PDF_URL_YHWH" data-title="YHWH Echad, Peuple Un"><i class="fa fa-book-open"></i> Lire en ligne</button>
-            <a class="lib-hero-btn-dl" href="PDF_URL_YHWH" download><i class="fa fa-download"></i> Télécharger</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lib-hero-slide" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1920&auto=format&fit=crop')">
-        <div class="lib-hero-overlay"></div>
-        <div class="lib-hero-content container">
-          <span class="lib-hero-type"><i class="fa fa-book"></i> Livre</span>
-          <h1 class="lib-hero-title">Babylone le Système Dénominationnel</h1>
-          <p class="lib-hero-desc">Une analyse prophétique du système religieux babylonien — un appel courageux à la séparation et à la pureté doctrinale.</p>
-          <div class="lib-hero-btns">
-            <button class="lib-hero-btn-read" data-pdf="PDF_URL_BABYLONE" data-title="Babylone le Système Dénominationnel"><i class="fa fa-book-open"></i> Lire en ligne</button>
-            <a class="lib-hero-btn-dl" href="PDF_URL_BABYLONE" download><i class="fa fa-download"></i> Télécharger</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lib-hero-slide" style="background-image:url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1920&auto=format&fit=crop')">
-        <div class="lib-hero-overlay"></div>
-        <div class="lib-hero-content container">
-          <span class="lib-hero-type lib-hero-type-audio"><i class="fa fa-headphones"></i> Audio</span>
-          <h1 class="lib-hero-title">Combattre dans la Prière</h1>
-          <p class="lib-hero-desc">Un enseignement puissant sur les stratégies de la prière combative — intercéder avec autorité pour les nations.</p>
-          <div class="lib-hero-btns">
-            <button class="lib-hero-btn-read lib-hero-btn-listen" data-audio="AUDIO_URL_1" data-title="Combattre dans la Prière"><i class="fa fa-play-circle"></i> Écouter</button>
-            <a class="lib-hero-btn-dl" href="AUDIO_URL_1" download><i class="fa fa-download"></i> Télécharger</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lib-hero-slide" style="background-image:url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?q=80&w=1920&auto=format&fit=crop')">
-        <div class="lib-hero-overlay"></div>
-        <div class="lib-hero-content container">
-          <span class="lib-hero-type"><i class="fa fa-book"></i> Livre</span>
-          <h1 class="lib-hero-title">La Torah Vivante</h1>
-          <p class="lib-hero-desc">Un voyage au cœur des cinq livres de Moïse et leur plein accomplissement en Yéshoua le Messie.</p>
-          <div class="lib-hero-btns">
-            <button class="lib-hero-btn-read" data-pdf="PDF_URL_TORAH" data-title="La Torah Vivante"><i class="fa fa-book-open"></i> Lire en ligne</button>
-            <a class="lib-hero-btn-dl" href="PDF_URL_TORAH" download><i class="fa fa-download"></i> Télécharger</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lib-hero-slide" style="background-image:url('https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=1920&auto=format&fit=crop')">
-        <div class="lib-hero-overlay"></div>
-        <div class="lib-hero-content container">
-          <span class="lib-hero-type lib-hero-type-audio"><i class="fa fa-headphones"></i> Audio</span>
-          <h1 class="lib-hero-title">Principes et Règles pour la Marche</h1>
-          <p class="lib-hero-desc">Les règles fondamentales pour une marche juste devant Dieu — discipline, intégrité et crainte de l'Éternel.</p>
-          <div class="lib-hero-btns">
-            <button class="lib-hero-btn-read lib-hero-btn-listen" data-audio="AUDIO_URL_3" data-title="Principes et Règles pour la Marche"><i class="fa fa-play-circle"></i> Écouter</button>
-            <a class="lib-hero-btn-dl" href="AUDIO_URL_3" download><i class="fa fa-download"></i> Télécharger</a>
-          </div>
-        </div>
-      </div>
+      <!-- Slides 1-5 rendered dynamically via JS from JSON (see below) -->
+      <div id="heroCarouselExtra"></div>
 
     </div><!-- /lib-hero-slides -->
 
@@ -150,11 +88,6 @@
     <!-- Points de navigation -->
     <div class="lib-hero-dots" id="libHeroDots">
       <button class="lib-dot active" data-index="0"></button>
-      <button class="lib-dot" data-index="1"></button>
-      <button class="lib-dot" data-index="2"></button>
-      <button class="lib-dot" data-index="3"></button>
-      <button class="lib-dot" data-index="4"></button>
-      <button class="lib-dot" data-index="5"></button>
     </div>
 
   </section>
@@ -182,6 +115,7 @@
           <option value="prophetie">Prophétie</option>
           <option value="formation">Formation</option>
           <option value="vie-chretienne">Vie Chrétienne</option>
+          <option value="louange">Louange</option>
         </select>
       </div>
     </div>
@@ -205,327 +139,32 @@
       </p>
 
       <!-- ══════════ SECTION LIVRES ══════════ -->
-      <div class="lib-type-section" id="sectionLivres">
+      <div class="lib-type-section" id="sectionLivres" style="display:none;">
         <div class="lib-type-header">
           <i class="fa fa-book"></i> Livres
         </div>
-        <div class="lib-grid" id="gridLivres">
-
-        <!-- Livre 1 -->
-        <article class="lib-card"
-          data-type="livre" data-cat="theologie"
-          data-title="yhwh echad peuple un" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-book">
-            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=480&auto=format&fit=crop"
-                 alt="YHWH Echad, Peuple Un" loading="lazy" />
-            <span class="lib-type-badge"><i class="fa fa-book"></i> Livre</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag">Théologie</span>
-            <h3 class="lib-title">YHWH Echad, Peuple Un</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Une étude profonde de l'unicité de Dieu selon les Écritures hébraïques et son rapport avec le peuple de l'alliance — de la Genèse à l'Apocalypse.</p>
-            <div class="lib-actions">
-              <!-- Remplacez PDF_URL_YHWH par le lien réel du PDF (Google Drive, Dropbox, etc.) -->
-              <button class="lib-btn-read" data-pdf="PDF_URL_YHWH" data-title="YHWH Echad, Peuple Un">
-                <i class="fa fa-book-open"></i> Lire
-              </button>
-              <a class="lib-btn-dl" href="PDF_URL_YHWH" download="YHWH-Echad-Peuple-Un.pdf">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Livre 2 -->
-        <article class="lib-card"
-          data-type="livre" data-cat="theologie"
-          data-title="babylone le système dénominationnel" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-book">
-            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=480&auto=format&fit=crop"
-                 alt="Babylone le Système Dénominationnel" loading="lazy" />
-            <span class="lib-type-badge"><i class="fa fa-book"></i> Livre</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag">Théologie</span>
-            <h3 class="lib-title">Babylone le Système Dénominationnel</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Une analyse prophétique du système religieux babylonien qui s'est infiltré dans l'Église — et un appel courageux à la séparation et à la pureté doctrinale.</p>
-            <div class="lib-actions">
-              <button class="lib-btn-read" data-pdf="PDF_URL_BABYLONE" data-title="Babylone le Système Dénominationnel">
-                <i class="fa fa-book-open"></i> Lire
-              </button>
-              <a class="lib-btn-dl" href="PDF_URL_BABYLONE" download="Babylone-Systeme-Denominationnel.pdf">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Livre 3 -->
-        <article class="lib-card"
-          data-type="livre" data-cat="torah"
-          data-title="la torah vivante" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-book">
-            <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?q=80&w=480&auto=format&fit=crop"
-                 alt="La Torah Vivante" loading="lazy" />
-            <span class="lib-type-badge"><i class="fa fa-book"></i> Livre</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag lib-cat-torah">Torah &amp; Réveil</span>
-            <h3 class="lib-title">La Torah Vivante</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Un voyage au cœur des cinq livres de Moïse — leur pertinence pour le croyant d'aujourd'hui et leur plein accomplissement en Yéshoua le Messie.</p>
-            <div class="lib-actions">
-              <button class="lib-btn-read" data-pdf="PDF_URL_TORAH" data-title="La Torah Vivante">
-                <i class="fa fa-book-open"></i> Lire
-              </button>
-              <a class="lib-btn-dl" href="PDF_URL_TORAH" download="La-Torah-Vivante.pdf">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Livre 4 -->
-        <article class="lib-card"
-          data-type="livre" data-cat="prophetie"
-          data-title="le réveil des nations" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-book">
-            <img src="https://images.unsplash.com/photo-1529651737248-dad5e287768e?q=80&w=480&auto=format&fit=crop"
-                 alt="Le Réveil des Nations" loading="lazy" />
-            <span class="lib-type-badge"><i class="fa fa-book"></i> Livre</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag lib-cat-prophetie">Prophétie</span>
-            <h3 class="lib-title">Le Réveil des Nations</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Une exploration prophétique de l'appel de Dieu adressé aux peuples de la terre, fondée sur les textes de l'Ancien et du Nouveau Testament.</p>
-            <div class="lib-actions">
-              <button class="lib-btn-read" data-pdf="PDF_URL_NATIONS" data-title="Le Réveil des Nations">
-                <i class="fa fa-book-open"></i> Lire
-              </button>
-              <a class="lib-btn-dl" href="PDF_URL_NATIONS" download="Le-Reveil-des-Nations.pdf">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Livre 5 -->
-        <article class="lib-card"
-          data-type="livre" data-cat="formation"
-          data-title="les fondements du royaume" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-book">
-            <img src="https://images.unsplash.com/photo-1519326844852-704caea5679e?q=80&w=480&auto=format&fit=crop"
-                 alt="Les Fondements du Royaume" loading="lazy" />
-            <span class="lib-type-badge"><i class="fa fa-book"></i> Livre</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag lib-cat-formation">Formation</span>
-            <h3 class="lib-title">Les Fondements du Royaume</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Un manuel pratique pour comprendre les principes immuables du Royaume de Dieu et les appliquer concrètement dans chaque sphère de la vie quotidienne.</p>
-            <div class="lib-actions">
-              <button class="lib-btn-read" data-pdf="PDF_URL_FONDEMENTS" data-title="Les Fondements du Royaume">
-                <i class="fa fa-book-open"></i> Lire
-              </button>
-              <a class="lib-btn-dl" href="PDF_URL_FONDEMENTS" download="Les-Fondements-du-Royaume.pdf">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        </div><!-- /gridLivres -->
+        <div class="lib-grid" id="gridLivres"></div>
         <div class="lib-more-wrap" id="livresMoreWrap" style="display:none;">
           <button class="btn btn-gold-outline" id="btnLivresMore"><i class="fa fa-plus-circle"></i> Afficher plus de livres</button>
         </div>
-      </div><!-- /sectionLivres -->
+      </div>
 
       <!-- ══════════ SECTION AUDIOS ══════════ -->
-      <div class="lib-type-section" id="sectionAudios">
+      <div class="lib-type-section" id="sectionAudios" style="display:none;">
         <div class="lib-type-header lib-type-header-audio">
           <i class="fa fa-headphones"></i> Audios
         </div>
-        <div class="lib-grid" id="gridAudios">
-
-        <!-- Audio 1 -->
-        <article class="lib-card"
-          data-type="audio" data-cat="priere"
-          data-title="combattre dans la prière" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-audio">
-            <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=480&auto=format&fit=crop"
-                 alt="Combattre dans la Prière" loading="lazy" />
-            <span class="lib-type-badge lib-badge-audio"><i class="fa fa-headphones"></i> Audio</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag lib-cat-priere">Prière &amp; Intercession</span>
-            <h3 class="lib-title">Combattre dans la Prière</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Un enseignement puissant sur les stratégies de la prière combative — comment intercéder avec autorité et persévérance pour les nations et les individus.</p>
-            <!-- Remplacez AUDIO_URL_1 par le lien réel de l'audio (MP3, etc.) -->
-            <div class="lib-audio-player">
-              <button class="lib-audio-btn" data-audio="AUDIO_URL_1" data-title="Combattre dans la Prière">
-                <i class="fa fa-play"></i>
-              </button>
-              <div class="lib-audio-info">
-                <span class="lib-audio-name">Combattre dans la Prière</span>
-                <span class="lib-audio-time" id="audioTime1">Cliquez pour écouter</span>
-              </div>
-            </div>
-            <div class="lib-actions">
-              <button class="lib-btn-read lib-btn-listen" data-audio="AUDIO_URL_1" data-title="Combattre dans la Prière">
-                <i class="fa fa-play-circle"></i> Écouter
-              </button>
-              <a class="lib-btn-dl" href="AUDIO_URL_1" download="Combattre-dans-la-Priere.mp3">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Audio 2 -->
-        <article class="lib-card"
-          data-type="audio" data-cat="vie-chretienne"
-          data-title="ne soit pas distrait travaille" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-audio">
-            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=480&auto=format&fit=crop"
-                 alt="Ne soit pas distrait, travaille !" loading="lazy" />
-            <span class="lib-type-badge lib-badge-audio"><i class="fa fa-headphones"></i> Audio</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag lib-cat-vie">Vie Chrétienne</span>
-            <h3 class="lib-title">Ne soit pas distrait, Travaille !</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Un appel prophétique à la concentration et à la diligence dans la vocation spirituelle confiée par Dieu — contre les distractions du monde et de l'ennemi.</p>
-            <div class="lib-audio-player">
-              <button class="lib-audio-btn" data-audio="AUDIO_URL_2" data-title="Ne soit pas distrait, Travaille !">
-                <i class="fa fa-play"></i>
-              </button>
-              <div class="lib-audio-info">
-                <span class="lib-audio-name">Ne soit pas distrait, Travaille !</span>
-                <span class="lib-audio-time">Cliquez pour écouter</span>
-              </div>
-            </div>
-            <div class="lib-actions">
-              <button class="lib-btn-read lib-btn-listen" data-audio="AUDIO_URL_2" data-title="Ne soit pas distrait, Travaille !">
-                <i class="fa fa-play-circle"></i> Écouter
-              </button>
-              <a class="lib-btn-dl" href="AUDIO_URL_2" download="Ne-soit-pas-distrait-Travaille.mp3">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Audio 3 -->
-        <article class="lib-card"
-          data-type="audio" data-cat="formation"
-          data-title="principes et règles pour la marche" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-audio">
-            <img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=480&auto=format&fit=crop"
-                 alt="Principes et Règles pour la Marche" loading="lazy" />
-            <span class="lib-type-badge lib-badge-audio"><i class="fa fa-headphones"></i> Audio</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag lib-cat-formation">Formation</span>
-            <h3 class="lib-title">Principes et Règles pour la Marche</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Les règles fondamentales pour une marche juste devant Dieu — discipline personnelle, intégrité, fidélité et la crainte de l'Éternel comme fondement de la vie spirituelle.</p>
-            <div class="lib-audio-player">
-              <button class="lib-audio-btn" data-audio="AUDIO_URL_3" data-title="Principes et Règles pour la Marche">
-                <i class="fa fa-play"></i>
-              </button>
-              <div class="lib-audio-info">
-                <span class="lib-audio-name">Principes et Règles pour la Marche</span>
-                <span class="lib-audio-time">Cliquez pour écouter</span>
-              </div>
-            </div>
-            <div class="lib-actions">
-              <button class="lib-btn-read lib-btn-listen" data-audio="AUDIO_URL_3" data-title="Principes et Règles pour la Marche">
-                <i class="fa fa-play-circle"></i> Écouter
-              </button>
-              <a class="lib-btn-dl" href="AUDIO_URL_3" download="Principes-et-Regles-pour-la-Marche.mp3">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Audio 4 -->
-        <article class="lib-card"
-          data-type="audio" data-cat="formation"
-          data-title="la gestion de l'onction" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-audio">
-            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=480&auto=format&fit=crop"
-                 alt="La Gestion de l'Onction" loading="lazy" />
-            <span class="lib-type-badge lib-badge-audio"><i class="fa fa-headphones"></i> Audio</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag lib-cat-formation">Formation</span>
-            <h3 class="lib-title">La Gestion de l'Onction</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Série complète en 4 parties sur comment gérer correctement l'onction de l'Esprit Saint — ne pas l'éteindre, ne pas la simuler, la porter avec humilité.</p>
-            <div class="lib-audio-player">
-              <button class="lib-audio-btn" data-audio="AUDIO_URL_4" data-title="La Gestion de l'Onction">
-                <i class="fa fa-play"></i>
-              </button>
-              <div class="lib-audio-info">
-                <span class="lib-audio-name">La Gestion de l'Onction</span>
-                <span class="lib-audio-time">Cliquez pour écouter</span>
-              </div>
-            </div>
-            <div class="lib-actions">
-              <button class="lib-btn-read lib-btn-listen" data-audio="AUDIO_URL_4" data-title="La Gestion de l'Onction">
-                <i class="fa fa-play-circle"></i> Écouter
-              </button>
-              <a class="lib-btn-dl" href="AUDIO_URL_4" download="La-Gestion-de-l-Onction.mp3">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Audio 5 -->
-        <article class="lib-card"
-          data-type="audio" data-cat="theologie"
-          data-title="la puissance qui agit" data-author="ministère réveil spirituel">
-          <div class="lib-cover lib-cover-audio">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=480&auto=format&fit=crop"
-                 alt="La Puissance qui Agit" loading="lazy" />
-            <span class="lib-type-badge lib-badge-audio"><i class="fa fa-headphones"></i> Audio</span>
-          </div>
-          <div class="lib-body">
-            <span class="lib-cat-tag">Théologie</span>
-            <h3 class="lib-title">La Puissance qui Agit</h3>
-            <p class="lib-author"><i class="fa fa-user"></i> Ministère Réveil Spirituel</p>
-            <p class="lib-desc">Enseignement sur la puissance de l'Esprit Saint qui agit en nous et à travers nous — comment discerner son action et y collaborer pleinement.</p>
-            <div class="lib-audio-player">
-              <button class="lib-audio-btn" data-audio="AUDIO_URL_5" data-title="La Puissance qui Agit">
-                <i class="fa fa-play"></i>
-              </button>
-              <div class="lib-audio-info">
-                <span class="lib-audio-name">La Puissance qui Agit</span>
-                <span class="lib-audio-time">Cliquez pour écouter</span>
-              </div>
-            </div>
-            <div class="lib-actions">
-              <button class="lib-btn-read lib-btn-listen" data-audio="AUDIO_URL_5" data-title="La Puissance qui Agit">
-                <i class="fa fa-play-circle"></i> Écouter
-              </button>
-              <a class="lib-btn-dl" href="AUDIO_URL_5" download="La-Puissance-qui-Agit.mp3">
-                <i class="fa fa-download"></i> Télécharger
-              </a>
-            </div>
-          </div>
-        </article>
-
-        </div><!-- /gridAudios -->
+        <div class="lib-grid" id="gridAudios"></div>
         <div class="lib-more-wrap" id="audiosMoreWrap" style="display:none;">
           <button class="btn btn-gold-outline" id="btnAudiosMore"><i class="fa fa-plus-circle"></i> Afficher plus d'audios</button>
         </div>
-      </div><!-- /sectionAudios -->
+      </div>
+
+      <!-- État de chargement -->
+      <div id="libLoadingState" style="text-align:center;padding:4rem 0;color:rgba(255,255,255,.4);">
+        <i class="fa fa-spinner fa-spin" style="font-size:2rem;margin-bottom:1rem;display:block;"></i>
+        Chargement des ressources…
+      </div>
 
     </div>
   </section>
@@ -584,7 +223,7 @@
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-nav">
@@ -597,13 +236,12 @@
           <li><a href="ouvrages.html">Ouvrages</a></li>
           <li><a href="bible.html">Lire la Bible</a></li>
           <li><a href="soutenir.html">Nous Soutenir</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
         <h5>Contact</h5>
-        <p><i class="fa fa-envelope"></i> contact@reveilspirituel.org</p>
-        <p><i class="fa fa-phone"></i> +241 000 000 000</p>
+        <p><i class="fa fa-envelope"></i> reunion2reveilspirituel@gmail.com</p>
+        <p><i class="fa fa-phone"></i> +241 74 255 323</p>
         <p><i class="fa fa-map-marker-alt"></i> Libreville, Gabon</p>
       </div>
       <div class="footer-verse">
@@ -614,7 +252,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2026 Réveil Spirituel — Tous droits réservés</p>
+        <p>© 2026 Réveil Spirituel — Tous droits réservés · Libreville, Gabon</p>
       </div>
     </div>
   </footer>
@@ -622,221 +260,314 @@
   <script src="script.js"></script>
   <script>
   (function () {
-    const PER = 6;
-    let shownL = PER, shownA = PER;
+    /* ── Catégories ── */
+    var CAT_LABELS = {
+      theologie: 'Théologie', torah: 'Torah & Réveil',
+      priere: 'Prière & Intercession', prophetie: 'Prophétie',
+      formation: 'Formation', 'vie-chretienne': 'Vie Chrétienne',
+      louange: 'Louange', prophetie: 'Prophétie'
+    };
+    var CAT_CLASS = {
+      torah: 'lib-cat-torah', priere: 'lib-cat-priere',
+      prophetie: 'lib-cat-prophetie', formation: 'lib-cat-formation',
+      'vie-chretienne': 'lib-cat-vie'
+    };
+    function catLabel(c) { return CAT_LABELS[c] || c; }
+    function catClass(c) { return CAT_CLASS[c] || ''; }
 
-    const livres       = [...document.querySelectorAll('#gridLivres .lib-card')];
-    const audios       = [...document.querySelectorAll('#gridAudios .lib-card')];
-    const secLivres    = document.getElementById('sectionLivres');
-    const secAudios    = document.getElementById('sectionAudios');
-    const noResults    = document.getElementById('libNoResults');
-    const livresMore   = document.getElementById('livresMoreWrap');
-    const audiosMore   = document.getElementById('audiosMoreWrap');
-    const searchInput  = document.getElementById('libSearch');
-    const catSelect    = document.getElementById('libCatFilter');
+    /* ── Génération des cartes ── */
+    function buildLivreCard(l) {
+      var cover = l.couverture || 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=480&auto=format&fit=crop';
+      var pdfUrl = l.lien_pdf || '';
+      var slug   = l.titre.replace(/\s+/g, '-');
+      return '<article class="lib-card" data-type="livre" data-cat="' + l.categorie + '" data-title="' + l.titre.toLowerCase() + '" data-author="' + (l.auteur || '').toLowerCase() + '">' +
+        '<div class="lib-cover lib-cover-book">' +
+          '<img src="' + cover + '" alt="' + l.titre + '" loading="lazy" />' +
+          '<span class="lib-type-badge"><i class="fa fa-book"></i> Livre</span>' +
+        '</div>' +
+        '<div class="lib-body">' +
+          '<span class="lib-cat-tag ' + catClass(l.categorie) + '">' + catLabel(l.categorie) + '</span>' +
+          '<h3 class="lib-title">' + l.titre + '</h3>' +
+          '<p class="lib-author"><i class="fa fa-user"></i> ' + (l.auteur || 'Ministère Réveil Spirituel') + '</p>' +
+          '<p class="lib-desc">' + (l.description || '') + '</p>' +
+          '<div class="lib-actions">' +
+            '<button class="lib-btn-read" data-pdf="' + pdfUrl + '" data-title="' + l.titre + '"><i class="fa fa-book-open"></i> Lire</button>' +
+            '<a class="lib-btn-dl" href="' + pdfUrl + '" download="' + slug + '.pdf"><i class="fa fa-download"></i> Télécharger</a>' +
+          '</div>' +
+        '</div></article>';
+    }
 
-    function match(c) {
-      const q   = searchInput.value.toLowerCase().trim();
-      const cat = catSelect.value;
-      const mCat    = cat === 'tout' || c.dataset.cat === cat;
-      const mSearch = !q || c.dataset.title.includes(q) || c.dataset.author.includes(q);
+    function buildAudioCard(a) {
+      var cover    = a.couverture || 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=480&auto=format&fit=crop';
+      var audioUrl = a.lien_audio || '';
+      var slug     = a.titre.replace(/\s+/g, '-');
+      return '<article class="lib-card" data-type="audio" data-cat="' + a.categorie + '" data-title="' + a.titre.toLowerCase() + '" data-author="' + (a.auteur || '').toLowerCase() + '">' +
+        '<div class="lib-cover lib-cover-audio">' +
+          '<img src="' + cover + '" alt="' + a.titre + '" loading="lazy" />' +
+          '<span class="lib-type-badge lib-badge-audio"><i class="fa fa-headphones"></i> Audio</span>' +
+        '</div>' +
+        '<div class="lib-body">' +
+          '<span class="lib-cat-tag ' + catClass(a.categorie) + '">' + catLabel(a.categorie) + '</span>' +
+          '<h3 class="lib-title">' + a.titre + '</h3>' +
+          '<p class="lib-author"><i class="fa fa-user"></i> ' + (a.auteur || 'Ministère Réveil Spirituel') + '</p>' +
+          (a.duree ? '<p class="lib-author" style="color:var(--gold);"><i class="fa fa-clock"></i> ' + a.duree + '</p>' : '') +
+          '<p class="lib-desc">' + (a.description || '') + '</p>' +
+          '<div class="lib-audio-player">' +
+            '<button class="lib-audio-btn" data-audio="' + audioUrl + '" data-title="' + a.titre + '"><i class="fa fa-play"></i></button>' +
+            '<div class="lib-audio-info"><span class="lib-audio-name">' + a.titre + '</span><span class="lib-audio-time">Cliquez pour écouter</span></div>' +
+          '</div>' +
+          '<div class="lib-actions">' +
+            '<button class="lib-btn-read lib-btn-listen" data-audio="' + audioUrl + '" data-title="' + a.titre + '"><i class="fa fa-play-circle"></i> Écouter</button>' +
+            '<a class="lib-btn-dl" href="' + audioUrl + '" download="' + slug + '.mp3"><i class="fa fa-download"></i> Télécharger</a>' +
+          '</div>' +
+        '</div></article>';
+    }
+
+    /* ── État des filtres ── */
+    var PER = 6;
+    var shownL = PER, shownA = PER;
+    var allLivres = [], allAudios = [];
+
+    function match(el) {
+      var q   = document.getElementById('libSearch').value.toLowerCase().trim();
+      var cat = document.getElementById('libCatFilter').value;
+      var mCat    = cat === 'tout' || el.dataset.cat === cat;
+      var mSearch = !q || el.dataset.title.includes(q) || el.dataset.author.includes(q);
       return mCat && mSearch;
     }
 
     function render() {
-      const type = document.querySelector('.lib-tab.active').dataset.type;
+      var type = document.querySelector('.lib-tab.active').dataset.type;
+      var filtL = allLivres.filter(match);
+      var filtA = allAudios.filter(match);
+      var showL = type === 'tout' || type === 'livre';
+      var showA = type === 'tout' || type === 'audio';
 
-      const filtL = livres.filter(match);
-      const filtA = audios.filter(match);
+      allLivres.forEach(function(c) { c.style.display = 'none'; });
+      var secL = document.getElementById('sectionLivres');
+      var moreL = document.getElementById('livresMoreWrap');
+      if (showL) {
+        filtL.slice(0, shownL).forEach(function(c) { c.style.display = ''; });
+        secL.style.display = filtL.length > 0 ? '' : 'none';
+        moreL.style.display = filtL.length > shownL ? 'flex' : 'none';
+      } else { secL.style.display = 'none'; moreL.style.display = 'none'; }
 
-      const showLivres = type === 'tout' || type === 'livre';
-      const showAudios = type === 'tout' || type === 'audio';
+      allAudios.forEach(function(c) { c.style.display = 'none'; });
+      var secA = document.getElementById('sectionAudios');
+      var moreA = document.getElementById('audiosMoreWrap');
+      if (showA) {
+        filtA.slice(0, shownA).forEach(function(c) { c.style.display = ''; });
+        secA.style.display = filtA.length > 0 ? '' : 'none';
+        moreA.style.display = filtA.length > shownA ? 'flex' : 'none';
+      } else { secA.style.display = 'none'; moreA.style.display = 'none'; }
 
-      /* ── Livres ── */
-      livres.forEach(c => c.style.display = 'none');
-      if (showLivres) {
-        filtL.slice(0, shownL).forEach(c => c.style.display = '');
-        secLivres.style.display = filtL.length > 0 ? '' : 'none';
-        livresMore.style.display = filtL.length > shownL ? 'flex' : 'none';
-      } else {
-        secLivres.style.display = 'none';
-        livresMore.style.display = 'none';
-      }
-
-      /* ── Audios ── */
-      audios.forEach(c => c.style.display = 'none');
-      if (showAudios) {
-        filtA.slice(0, shownA).forEach(c => c.style.display = '');
-        secAudios.style.display = filtA.length > 0 ? '' : 'none';
-        audiosMore.style.display = filtA.length > shownA ? 'flex' : 'none';
-      } else {
-        secAudios.style.display = 'none';
-        audiosMore.style.display = 'none';
-      }
-
-      /* ── Aucun résultat ── */
-      const total = (showLivres ? filtL.length : 0) + (showAudios ? filtA.length : 0);
-      noResults.style.display = total === 0 ? 'block' : 'none';
+      var total = (showL ? filtL.length : 0) + (showA ? filtA.length : 0);
+      document.getElementById('libNoResults').style.display = total === 0 ? 'block' : 'none';
     }
 
-    searchInput.addEventListener('input', () => { shownL = PER; shownA = PER; render(); });
-    catSelect.addEventListener('change',  () => { shownL = PER; shownA = PER; render(); });
-
-    document.querySelectorAll('.lib-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.lib-tab').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        shownL = PER; shownA = PER;
-        render();
+    /* ── Initialisation des événements filtres ── */
+    function initFilters() {
+      var search = document.getElementById('libSearch');
+      var cat    = document.getElementById('libCatFilter');
+      search.addEventListener('input', function() { shownL = PER; shownA = PER; render(); });
+      cat.addEventListener('change', function() { shownL = PER; shownA = PER; render(); });
+      document.querySelectorAll('.lib-tab').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.lib-tab').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          shownL = PER; shownA = PER; render();
+        });
       });
-    });
+      document.getElementById('btnLivresMore').addEventListener('click', function() { shownL += PER; render(); });
+      document.getElementById('btnAudiosMore').addEventListener('click', function() { shownA += PER; render(); });
+    }
 
-    document.getElementById('btnLivresMore').addEventListener('click', () => { shownL += PER; render(); });
-    document.getElementById('btnAudiosMore').addEventListener('click', () => { shownA += PER; render(); });
+    /* ── Modals ── */
+    function initModals() {
+      var pdfModal   = document.getElementById('pdfModal');
+      var pdfFrame   = document.getElementById('pdfFrame');
+      var pdfTitle   = document.getElementById('pdfModalTitle');
+      var pdfDl      = document.getElementById('pdfModalDl');
+      var audioModal  = document.getElementById('audioModal');
+      var audioPlayer = document.getElementById('audioPlayer');
+      var audioTitle  = document.getElementById('audioModalTitle');
+      var audioDl     = document.getElementById('audioModalDl');
 
-    render();
-
-    /* ── Modal PDF ── */
-    const pdfModal   = document.getElementById('pdfModal');
-    const pdfFrame   = document.getElementById('pdfFrame');
-    const pdfTitle   = document.getElementById('pdfModalTitle');
-    const pdfDl      = document.getElementById('pdfModalDl');
-
-    document.querySelectorAll('.lib-btn-read:not(.lib-btn-listen), .lib-slide-btn-read:not(.lib-slide-btn-listen)').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const url   = btn.dataset.pdf;
-        const title = btn.dataset.title;
-        if (!url || url.startsWith('PDF_URL')) {
-          alert('Le fichier PDF de cet ouvrage n\'est pas encore configuré.\nRemplacez PDF_URL_XXX par le lien réel du fichier PDF dans ouvrages.html.');
-          return;
-        }
-        pdfFrame.src    = 'https://docs.google.com/viewer?url=' + encodeURIComponent(url) + '&embedded=true';
+      function openPdf(url, title) {
+        if (!url) { alert('Le fichier PDF de cet ouvrage n\'est pas encore configuré. Ajoutez le lien depuis le panel d\'administration.'); return; }
+        pdfFrame.src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(url) + '&embedded=true';
         pdfTitle.textContent = title;
-        pdfDl.href      = url;
-        pdfDl.download  = title.replace(/\s+/g, '-') + '.pdf';
+        pdfDl.href = url;
+        pdfDl.download = title.replace(/\s+/g, '-') + '.pdf';
         pdfModal.classList.add('active');
         document.body.style.overflow = 'hidden';
-      });
-    });
+      }
 
-    document.getElementById('pdfModalClose').addEventListener('click', () => {
-      pdfFrame.src = '';
-      pdfModal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-    pdfModal.addEventListener('click', e => {
-      if (e.target === pdfModal) { pdfFrame.src = ''; pdfModal.classList.remove('active'); document.body.style.overflow = ''; }
-    });
-
-    /* ── Modal Audio ── */
-    const audioModal  = document.getElementById('audioModal');
-    const audioPlayer = document.getElementById('audioPlayer');
-    const audioTitle  = document.getElementById('audioModalTitle');
-    const audioDl     = document.getElementById('audioModalDl');
-
-    document.querySelectorAll('.lib-btn-listen').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const url   = btn.dataset.audio;
-        const title = btn.dataset.title;
-        if (!url || url.startsWith('AUDIO_URL')) {
-          alert('Le fichier audio n\'est pas encore configuré.\nRemplacez AUDIO_URL_X par le lien réel du fichier audio dans ouvrages.html.');
-          return;
-        }
-        audioPlayer.src  = url;
+      function openAudio(url, title) {
+        if (!url) { alert('Le fichier audio n\'est pas encore configuré. Ajoutez le lien depuis le panel d\'administration.'); return; }
+        audioPlayer.src = url;
         audioTitle.textContent = title;
-        audioDl.href     = url;
+        audioDl.href = url;
         audioDl.download = title.replace(/\s+/g, '-') + '.mp3';
         audioModal.classList.add('active');
         document.body.style.overflow = 'hidden';
         audioPlayer.play();
-      });
-    });
-
-    function closeAudioModal() {
-      audioPlayer.pause();
-      audioPlayer.src = '';
-      audioModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    document.getElementById('audioModalClose').addEventListener('click', closeAudioModal);
-    audioModal.addEventListener('click', e => { if (e.target === audioModal) closeAudioModal(); });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        if (pdfModal.classList.contains('active'))   { pdfFrame.src = ''; pdfModal.classList.remove('active'); document.body.style.overflow = ''; }
-        if (audioModal.classList.contains('active')) closeAudioModal();
       }
-    });
-  })();
 
-  /* ═══ HERO CAROUSEL ═══ */
-  (function () {
-    const slides   = [...document.querySelectorAll('.lib-hero-slide')];
-    const dots     = [...document.querySelectorAll('.lib-dot')];
-    const prevBtn  = document.getElementById('libHeroPrev');
-    const nextBtn  = document.getElementById('libHeroNext');
-    if (!slides.length) return;
+      function closeAudioModal() {
+        audioPlayer.pause(); audioPlayer.src = '';
+        audioModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
 
-    let current = 0;
-    let timer;
+      document.getElementById('gridLivres').addEventListener('click', function(e) {
+        var btn = e.target.closest('.lib-btn-read:not(.lib-btn-listen)');
+        if (btn) openPdf(btn.dataset.pdf, btn.dataset.title);
+      });
+      document.getElementById('gridAudios').addEventListener('click', function(e) {
+        var btn = e.target.closest('.lib-btn-listen, .lib-audio-btn');
+        if (btn) openAudio(btn.dataset.audio, btn.dataset.title);
+      });
 
-    function goTo(i) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (i + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
+      document.getElementById('pdfModalClose').addEventListener('click', function() {
+        pdfFrame.src = ''; pdfModal.classList.remove('active'); document.body.style.overflow = '';
+      });
+      pdfModal.addEventListener('click', function(e) {
+        if (e.target === pdfModal) { pdfFrame.src = ''; pdfModal.classList.remove('active'); document.body.style.overflow = ''; }
+      });
+      document.getElementById('audioModalClose').addEventListener('click', closeAudioModal);
+      audioModal.addEventListener('click', function(e) { if (e.target === audioModal) closeAudioModal(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (pdfModal.classList.contains('active')) { pdfFrame.src = ''; pdfModal.classList.remove('active'); document.body.style.overflow = ''; }
+          if (audioModal.classList.contains('active')) closeAudioModal();
+        }
+      });
     }
 
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
+    /* ── Carousel ── */
+    function initCarousel(heroItems) {
+      var slidesContainer = document.getElementById('libHeroSlides');
+      var dotsContainer   = document.getElementById('libHeroDots');
+      var extra           = document.getElementById('heroCarouselExtra');
 
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(next, 5000);
+      heroItems.forEach(function(item, idx) {
+        var bg = item.couverture || 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1920&auto=format&fit=crop';
+        var isAudio = item._type === 'audio';
+        var url     = isAudio ? (item.lien_audio || '') : (item.lien_pdf || '');
+        var slide = document.createElement('div');
+        slide.className = 'lib-hero-slide';
+        slide.style.backgroundImage = 'url(' + bg + ')';
+        slide.innerHTML =
+          '<div class="lib-hero-overlay"></div>' +
+          '<div class="lib-hero-content container">' +
+            '<span class="lib-hero-type' + (isAudio ? ' lib-hero-type-audio' : '') + '"><i class="fa fa-' + (isAudio ? 'headphones' : 'book') + '"></i> ' + (isAudio ? 'Audio' : 'Livre') + '</span>' +
+            '<h1 class="lib-hero-title">' + item.titre + '</h1>' +
+            '<p class="lib-hero-desc">' + (item.description || '') + '</p>' +
+            '<div class="lib-hero-btns">' +
+              '<button class="lib-hero-btn-read' + (isAudio ? ' lib-hero-btn-listen' : '') + '" data-' + (isAudio ? 'audio' : 'pdf') + '="' + url + '" data-title="' + item.titre + '">' +
+                '<i class="fa fa-' + (isAudio ? 'play-circle' : 'book-open') + '"></i> ' + (isAudio ? 'Écouter' : 'Lire en ligne') +
+              '</button>' +
+              '<a class="lib-hero-btn-dl" href="' + url + '" download><i class="fa fa-download"></i> Télécharger</a>' +
+            '</div>' +
+          '</div>';
+        slidesContainer.insertBefore(slide, extra);
+
+        var dot = document.createElement('button');
+        dot.className = 'lib-dot';
+        dot.dataset.index = idx + 1;
+        dotsContainer.appendChild(dot);
+      });
+
+      extra.remove();
+
+      var slides  = [...document.querySelectorAll('.lib-hero-slide')];
+      var dots    = [...document.querySelectorAll('.lib-dot')];
+      var prevBtn = document.getElementById('libHeroPrev');
+      var nextBtn = document.getElementById('libHeroNext');
+      if (!slides.length) return;
+      var current = 0, timer;
+
+      function goTo(i) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (i + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      function next() { goTo(current + 1); }
+      function resetTimer() { clearInterval(timer); timer = setInterval(next, 5000); }
+
+      prevBtn.addEventListener('click', function() { goTo(current - 1); resetTimer(); });
+      nextBtn.addEventListener('click', function() { next(); resetTimer(); });
+      dots.forEach(function(d) { d.addEventListener('click', function() { goTo(+d.dataset.index); resetTimer(); }); });
+
+      /* Hero carousel PDF/audio modal buttons */
+      slidesContainer.addEventListener('click', function(e) {
+        var rb = e.target.closest('.lib-hero-btn-read:not(.lib-hero-btn-listen)');
+        var ab = e.target.closest('.lib-hero-btn-listen');
+        var pdfModal    = document.getElementById('pdfModal');
+        var audioModal  = document.getElementById('audioModal');
+        var audioPlayer = document.getElementById('audioPlayer');
+        if (rb) {
+          var url = rb.dataset.pdf, title = rb.dataset.title;
+          if (!url) { alert('PDF pas encore configuré.'); return; }
+          document.getElementById('pdfFrame').src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(url) + '&embedded=true';
+          document.getElementById('pdfModalTitle').textContent = title;
+          document.getElementById('pdfModalDl').href = url;
+          pdfModal.classList.add('active'); document.body.style.overflow = 'hidden';
+        }
+        if (ab) {
+          var url = ab.dataset.audio, title = ab.dataset.title;
+          if (!url) { alert('Audio pas encore configuré.'); return; }
+          audioPlayer.src = url;
+          document.getElementById('audioModalTitle').textContent = title;
+          document.getElementById('audioModalDl').href = url;
+          audioModal.classList.add('active'); document.body.style.overflow = 'hidden';
+          audioPlayer.play();
+        }
+      });
+
+      resetTimer();
     }
 
-    prevBtn.addEventListener('click', () => { prev(); resetTimer(); });
-    nextBtn.addEventListener('click', () => { next(); resetTimer(); });
-    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetTimer(); }));
+    /* ── Chargement principal ── */
+    Promise.all([
+      fetch('data/livres.json').then(function(r) { return r.json(); }),
+      fetch('data/audios.json').then(function(r) { return r.json(); })
+    ]).then(function(results) {
+      var livresData  = results[0].filter(function(l) { return l.publie !== false; });
+      var audiosData  = results[1].filter(function(a) { return a.publie !== false; });
 
-    /* Hero carousel buttons → PDF / Audio modals */
-    document.querySelectorAll('.lib-hero-btn-read:not(.lib-hero-btn-listen)').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const url   = btn.dataset.pdf;
-        const title = btn.dataset.title;
-        if (!url || url.startsWith('PDF_URL')) {
-          alert('Le fichier PDF de cet ouvrage n\'est pas encore configuré.');
-          return;
-        }
-        const pdfModal = document.getElementById('pdfModal');
-        document.getElementById('pdfFrame').src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(url) + '&embedded=true';
-        document.getElementById('pdfModalTitle').textContent = title;
-        document.getElementById('pdfModalDl').href = url;
-        pdfModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
+      /* Remplir les grilles */
+      document.getElementById('gridLivres').innerHTML  = livresData.map(buildLivreCard).join('');
+      document.getElementById('gridAudios').innerHTML  = audiosData.map(buildAudioCard).join('');
+      allLivres = [...document.querySelectorAll('#gridLivres .lib-card')];
+      allAudios = [...document.querySelectorAll('#gridAudios .lib-card')];
+
+      /* Préparer les slides du carousel — items marqués dans_carousel, sinon 3+2 par défaut */
+      var heroItems = [];
+      var carouselLivres = livresData.filter(function(l) { return l.dans_carousel; });
+      var carouselAudios = audiosData.filter(function(a) { return a.dans_carousel; });
+      if (carouselLivres.length === 0 && carouselAudios.length === 0) {
+        carouselLivres = livresData.slice(0, 3);
+        carouselAudios = audiosData.slice(0, 2);
+      }
+      carouselLivres.forEach(function(l) { l._type = 'livre'; heroItems.push(l); });
+      carouselAudios.forEach(function(a) { a._type = 'audio'; heroItems.push(a); });
+
+      document.getElementById('libLoadingState').style.display = 'none';
+      initFilters();
+      initModals();
+      initCarousel(heroItems);
+      render();
+    }).catch(function(err) {
+      document.getElementById('libLoadingState').innerHTML =
+        '<i class="fa fa-exclamation-triangle" style="font-size:2rem;margin-bottom:1rem;display:block;color:var(--gold);"></i>' +
+        'Impossible de charger les ressources.<br><small>Vérifiez la connexion ou contactez l\'administrateur.</small>';
     });
 
-    document.querySelectorAll('.lib-hero-btn-listen').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const url   = btn.dataset.audio;
-        const title = btn.dataset.title;
-        if (!url || url.startsWith('AUDIO_URL')) {
-          alert('Le fichier audio n\'est pas encore configuré.');
-          return;
-        }
-        const audioModal  = document.getElementById('audioModal');
-        const audioPlayer = document.getElementById('audioPlayer');
-        audioPlayer.src  = url;
-        document.getElementById('audioModalTitle').textContent = title;
-        document.getElementById('audioModalDl').href = url;
-        audioModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        audioPlayer.play();
-      });
-    });
-
-    resetTimer();
   })();
   </script>
 </body>

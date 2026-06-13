@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Tableau de Bord — RS Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="RS" />
+      <span>RS Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html" class="active"><i class="fa fa-th-large"></i> Tableau de Bord</a>
+      <a href="livres.html"><i class="fa fa-book"></i> Livres</a>
+      <a href="audios.html"><i class="fa fa-headphones"></i> Audios</a>
+      <a href="videos.html"><i class="fab fa-youtube"></i> Vidéos</a>
+      <a href="projets.html"><i class="fa fa-tasks"></i> Projets</a>
+      <div class="sidebar-section-label" style="margin-top:1rem;">Paramètres</div>
+      <a href="config.html"><i class="fa fa-cog"></i> Configuration</a>
+      <a href="../index.html" target="_blank"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user"><i class="fa fa-user-circle"></i> <span id="sidebarUser">...</span></div>
+      <button id="btnLogout" class="btn-admin btn-admin-ghost btn-sm" style="margin-top:.75rem;width:100%;justify-content:center;">
+        <i class="fa fa-sign-out-alt"></i> Déconnexion
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1><i class="fa fa-th-large"></i> Tableau de Bord</h1>
+    </div>
+    <div class="admin-content">
+
+      <!-- Stat cards -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue"><i class="fa fa-book"></i></div>
+          <div class="stat-num" id="statLivres">—</div>
+          <div class="stat-label">Livres publiés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon gold"><i class="fa fa-headphones"></i></div>
+          <div class="stat-num" id="statAudios">—</div>
+          <div class="stat-label">Audios publiés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon red"><i class="fab fa-youtube"></i></div>
+          <div class="stat-num" id="statVideos">—</div>
+          <div class="stat-label">Vidéos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fa fa-tasks"></i></div>
+          <div class="stat-num" id="statProjets">—</div>
+          <div class="stat-label">Projets actifs</div>
+        </div>
+      </div>
+
+      <!-- Quick actions -->
+      <div class="admin-card">
+        <div class="admin-card-header"><h2><i class="fa fa-bolt"></i> Actions Rapides</h2></div>
+        <div class="admin-card-body" style="display:flex;flex-wrap:wrap;gap:1rem;">
+          <a href="livres.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter un Livre</a>
+          <a href="audios.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter un Audio</a>
+          <a href="videos.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter une Vidéo</a>
+          <a href="projets.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter un Projet</a>
+          <a href="config.html" class="btn-admin btn-admin-ghost"><i class="fa fa-cog"></i> Configurer le Site</a>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="admin-card">
+        <div class="admin-card-header"><h2><i class="fa fa-info-circle"></i> Comment ça fonctionne</h2></div>
+        <div class="admin-card-body" style="color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.8;">
+          <p><i class="fa fa-check-circle" style="color:#22C55E;"></i> Les modifications sont committées directement sur le dépôt GitHub via l'API REST.</p>
+          <p><i class="fa fa-check-circle" style="color:#22C55E;"></i> GitHub Pages redéploie automatiquement en <strong style="color:rgba(255,255,255,.8);">1–2 minutes</strong> après chaque commit.</p>
+          <p><i class="fa fa-check-circle" style="color:#22C55E;"></i> Les livres et audios utilisent des <strong style="color:rgba(255,255,255,.8);">liens Google Drive</strong> (partage public requis).</p>
+          <p><i class="fa fa-check-circle" style="color:#22C55E;"></i> Les vidéos utilisent les <strong style="color:rgba(255,255,255,.8);">IDs YouTube</strong> (ex: <code style="color:#EAA900;">dQw4w9WgXcQ</code>).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+<script>
+requireAuth();
+Promise.all([
+  fetch('../data/livres.json').then(r=>r.json()),
+  fetch('../data/audios.json').then(r=>r.json()),
+  fetch('../data/videos.json').then(r=>r.json()),
+  fetch('../data/projets.json').then(r=>r.json())
+]).then(function([livres, audios, videos, projets]) {
+  document.getElementById('statLivres').textContent  = livres.filter(x=>x.publie).length;
+  document.getElementById('statAudios').textContent  = audios.filter(x=>x.publie).length;
+  document.getElementById('statVideos').textContent  = videos.filter(x=>x.publie).length;
+  document.getElementById('statProjets').textContent = projets.filter(x=>x.publie).length;
+}).catch(function(e) { console.error(e); });
+</script>
+</body>
+</html>

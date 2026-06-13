@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Projets — RS Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="RS" />
+      <span>RS Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html"><i class="fa fa-th-large"></i> Tableau de Bord</a>
+      <a href="livres.html"><i class="fa fa-book"></i> Livres</a>
+      <a href="audios.html"><i class="fa fa-headphones"></i> Audios</a>
+      <a href="videos.html"><i class="fab fa-youtube"></i> Vidéos</a>
+      <a href="projets.html" class="active"><i class="fa fa-tasks"></i> Projets</a>
+      <div class="sidebar-section-label" style="margin-top:1rem;">Paramètres</div>
+      <a href="config.html"><i class="fa fa-cog"></i> Configuration</a>
+      <a href="../index.html" target="_blank"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user"><i class="fa fa-user-circle"></i> <span id="sidebarUser">...</span></div>
+      <button id="btnLogout" class="btn-admin btn-admin-ghost btn-sm" style="margin-top:.75rem;width:100%;justify-content:center;">
+        <i class="fa fa-sign-out-alt"></i> Déconnexion
+      </button>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1><i class="fa fa-tasks"></i> Gestion des Projets</h1>
+      <button class="btn-admin btn-admin-gold" id="btnAdd"><i class="fa fa-plus"></i> Ajouter un Projet</button>
+    </div>
+    <div class="admin-content">
+      <div class="admin-card">
+        <div class="admin-card-header"><h2>Projets (<span id="projetCount">0</span>)</h2></div>
+        <div class="admin-card-body" style="padding:0;">
+          <div id="loadingMsg" style="padding:2rem;text-align:center;color:rgba(255,255,255,.4);"><i class="fa fa-spinner fa-spin"></i> Chargement...</div>
+          <table class="admin-table" id="projetsTable" style="display:none;">
+            <thead><tr><th>Image</th><th>Titre</th><th>Catégorie</th><th>Progression</th><th>Statut</th><th>Publié</th><th>Actions</th></tr></thead>
+            <tbody id="projetsTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Formulaire -->
+<div class="modal-overlay hidden" id="modalForm">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalTitle">Ajouter un Projet</h3>
+      <button class="modal-close" id="btnCloseForm">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="fId" />
+      <div class="form-group">
+        <label class="form-label">Titre *</label>
+        <input type="text" id="fTitre" class="form-control" placeholder="Titre du projet" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Catégorie</label>
+        <select id="fCat" class="form-control">
+          <option value="evangelisation">Évangélisation</option>
+          <option value="media">Médias</option>
+          <option value="formation">Formation</option>
+          <option value="social">Social</option>
+          <option value="international">International</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea id="fDesc" class="form-control" rows="4" placeholder="Description du projet..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Image (URL)</label>
+        <input type="url" id="fImage" class="form-control" placeholder="https://..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Progression (<span id="progLabel">50</span>%)</label>
+        <input type="range" id="fProg" class="form-control" min="0" max="100" value="50" style="padding:0;height:2rem;cursor:pointer;" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Statut</label>
+        <select id="fStatut" class="form-control">
+          <option value="planification">En planification</option>
+          <option value="en-cours">En cours</option>
+          <option value="actif">Actif</option>
+          <option value="termine">Terminé</option>
+          <option value="suspendu">Suspendu</option>
+        </select>
+      </div>
+      <div class="form-group" style="display:flex;align-items:center;gap:.75rem;">
+        <input type="checkbox" id="fPublie" style="width:18px;height:18px;accent-color:#EAA900;" />
+        <label class="form-label" for="fPublie" style="margin:0;cursor:pointer;">Publier ce projet</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-admin btn-admin-ghost" id="btnCancelForm">Annuler</button>
+      <button class="btn-admin btn-admin-gold" id="btnSave"><i class="fa fa-save"></i> Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Suppression -->
+<div class="modal-overlay hidden" id="modalDelete">
+  <div class="modal-box" style="max-width:420px;">
+    <div class="modal-header">
+      <h3 style="color:#ef4444;"><i class="fa fa-trash"></i> Supprimer</h3>
+      <button class="modal-close" id="btnCloseDelete">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="color:rgba(255,255,255,.7);">Supprimer <strong id="deleteTitle" style="color:#fff;"></strong> ? Action irréversible.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-admin btn-admin-ghost" id="btnCancelDelete">Annuler</button>
+      <button class="btn-admin btn-admin-danger" id="btnConfirmDelete"><i class="fa fa-trash"></i> Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+<script>
+requireAuth();
+var projets = [], fileSha = null, editIndex = -1, deleteIndex = -1;
+
+var STATUT_LABELS = { planification: 'En planification', 'en-cours': 'En cours', actif: 'Actif', termine: 'Terminé', suspendu: 'Suspendu' };
+function statutLabel(s) { return STATUT_LABELS[s] || s; }
+function statutColor(s) { return s === 'actif' ? '#22C55E' : s === 'en-cours' ? '#EAA900' : s === 'termine' ? '#5557CB' : s === 'suspendu' ? '#ef4444' : 'rgba(255,255,255,.4)'; }
+
+async function loadProjets() {
+  try {
+    var result = await ghGetFile('data/projets.json');
+    projets = result.data; fileSha = result.sha; renderTable();
+  } catch(e) { showToast('Erreur chargement : ' + e.message, 'error'); }
+}
+
+function renderTable() {
+  document.getElementById('projetCount').textContent = projets.length;
+  document.getElementById('loadingMsg').style.display = 'none';
+  document.getElementById('projetsTable').style.display = '';
+  document.getElementById('projetsTbody').innerHTML = projets.map(function(p, i) {
+    var img = p.image ? '<img src="' + p.image + '" class="thumb" />' : '—';
+    var prog = '<div style="background:rgba(255,255,255,.1);border-radius:4px;height:6px;width:80px;"><div style="background:#EAA900;height:6px;border-radius:4px;width:' + (p.progression || 0) + '%;"></div></div><small style="color:rgba(255,255,255,.5);">' + (p.progression || 0) + '%</small>';
+    var badge = p.publie ? '<span class="badge badge-publie">Publié</span>' : '<span class="badge badge-brouillon">Brouillon</span>';
+    var statut = '<span style="color:' + statutColor(p.statut) + ';font-size:.8rem;">' + statutLabel(p.statut) + '</span>';
+    return '<tr><td>' + img + '</td><td><strong>' + p.titre + '</strong></td><td>' + catLabel(p.categorie) + '</td><td>' + prog + '</td><td>' + statut + '</td><td>' + badge + '</td><td style="white-space:nowrap;"><button class="btn-admin btn-admin-ghost btn-sm" onclick="editProjet(' + i + ')"><i class="fa fa-edit"></i></button> <button class="btn-admin btn-admin-danger btn-sm" onclick="confirmDelete(' + i + ')"><i class="fa fa-trash"></i></button></td></tr>';
+  }).join('');
+}
+
+document.getElementById('fProg').addEventListener('input', function() {
+  document.getElementById('progLabel').textContent = this.value;
+});
+
+function openAddModal() {
+  editIndex = -1;
+  document.getElementById('modalTitle').textContent = 'Ajouter un Projet';
+  ['fId','fTitre','fDesc','fImage'].forEach(function(id) { document.getElementById(id).value = ''; });
+  document.getElementById('fCat').value = 'evangelisation';
+  document.getElementById('fProg').value = 20;
+  document.getElementById('progLabel').textContent = '20';
+  document.getElementById('fStatut').value = 'planification';
+  document.getElementById('fPublie').checked = true;
+  openModal('modalForm');
+}
+
+function editProjet(i) {
+  editIndex = i; var p = projets[i];
+  document.getElementById('modalTitle').textContent = 'Modifier le Projet';
+  document.getElementById('fId').value = p.id;
+  document.getElementById('fTitre').value = p.titre;
+  document.getElementById('fCat').value = p.categorie;
+  document.getElementById('fDesc').value = p.description;
+  document.getElementById('fImage').value = p.image || '';
+  document.getElementById('fProg').value = p.progression || 0;
+  document.getElementById('progLabel').textContent = p.progression || 0;
+  document.getElementById('fStatut').value = p.statut;
+  document.getElementById('fPublie').checked = p.publie;
+  openModal('modalForm');
+}
+
+document.getElementById('btnSave').addEventListener('click', async function() {
+  var titre = document.getElementById('fTitre').value.trim();
+  if (!titre) { showToast('Le titre est requis.', 'error'); return; }
+  var btn = document.getElementById('btnSave');
+  btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i>'; btn.disabled = true;
+  var item = {
+    id: document.getElementById('fId').value || genId(titre),
+    titre: titre,
+    categorie: document.getElementById('fCat').value,
+    description: document.getElementById('fDesc').value.trim(),
+    image: document.getElementById('fImage').value.trim(),
+    progression: parseInt(document.getElementById('fProg').value),
+    statut: document.getElementById('fStatut').value,
+    publie: document.getElementById('fPublie').checked
+  };
+  if (editIndex >= 0) { projets[editIndex] = item; } else { projets.push(item); }
+  try {
+    var res = await ghPutFile('data/projets.json', projets, fileSha, 'Admin: ' + (editIndex >= 0 ? 'modifier' : 'ajouter') + ' projet "' + titre + '"');
+    fileSha = res.content.sha; renderTable(); closeModal('modalForm');
+    showToast(editIndex >= 0 ? 'Projet modifié !' : 'Projet ajouté !');
+  } catch(e) { showToast('Erreur : ' + e.message, 'error'); }
+  btn.innerHTML = '<i class="fa fa-save"></i> Enregistrer'; btn.disabled = false;
+});
+
+function confirmDelete(i) {
+  deleteIndex = i; document.getElementById('deleteTitle').textContent = projets[i].titre; openModal('modalDelete');
+}
+document.getElementById('btnConfirmDelete').addEventListener('click', async function() {
+  projets.splice(deleteIndex, 1);
+  try {
+    var res = await ghPutFile('data/projets.json', projets, fileSha, 'Admin: supprimer projet');
+    fileSha = res.content.sha; renderTable(); closeModal('modalDelete'); showToast('Projet supprimé.');
+  } catch(e) { showToast('Erreur : ' + e.message, 'error'); }
+});
+
+document.getElementById('btnAdd').addEventListener('click', openAddModal);
+document.getElementById('btnCloseForm').addEventListener('click', function() { closeModal('modalForm'); });
+document.getElementById('btnCancelForm').addEventListener('click', function() { closeModal('modalForm'); });
+document.getElementById('btnCloseDelete').addEventListener('click', function() { closeModal('modalDelete'); });
+document.getElementById('btnCancelDelete').addEventListener('click', function() { closeModal('modalDelete'); });
+loadProjets();
+</script>
+</body>
+</html>

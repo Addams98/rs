@@ -1,0 +1,67 @@
+[
+  {
+    "id": "combattre-priere",
+    "titre": "Combattre dans la Prière",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "priere",
+    "description": "Un enseignement puissant sur les stratégies de la prière combative — comment intercéder avec autorité et persévérance pour les nations et les individus.",
+    "couverture": "https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=480&auto=format&fit=crop",
+    "lien_audio": "",
+    "duree": "",
+    "publie": true,
+    "dans_carousel": true,
+    "date_publication": "2024-01-15"
+  },
+  {
+    "id": "ne-sois-pas-distrait",
+    "titre": "Ne soit pas distrait, Travaille !",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "vie-chretienne",
+    "description": "Un appel prophétique à la concentration et à la diligence dans la vocation spirituelle confiée par Dieu — contre les distractions du monde et de l'ennemi.",
+    "couverture": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=480&auto=format&fit=crop",
+    "lien_audio": "",
+    "duree": "",
+    "publie": true,
+    "dans_carousel": true,
+    "date_publication": "2024-02-15"
+  },
+  {
+    "id": "principes-marche",
+    "titre": "Principes et Règles pour la Marche",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "formation",
+    "description": "Les règles fondamentales pour une marche juste devant Dieu — discipline personnelle, intégrité, fidélité et la crainte de l'Éternel comme fondement de la vie spirituelle.",
+    "couverture": "https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=480&auto=format&fit=crop",
+    "lien_audio": "",
+    "duree": "",
+    "publie": true,
+    "dans_carousel": false,
+    "date_publication": "2024-03-15"
+  },
+  {
+    "id": "gestion-onction",
+    "titre": "La Gestion de l'Onction",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "formation",
+    "description": "Série complète en 4 parties sur comment gérer correctement l'onction de l'Esprit Saint — ne pas l'éteindre, ne pas la simuler, la porter avec humilité.",
+    "couverture": "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=480&auto=format&fit=crop",
+    "lien_audio": "",
+    "duree": "",
+    "publie": true,
+    "dans_carousel": false,
+    "date_publication": "2024-04-15"
+  },
+  {
+    "id": "puissance-agit",
+    "titre": "La Puissance qui Agit",
+    "auteur": "Ministère Réveil Spirituel",
+    "categorie": "theologie",
+    "description": "Enseignement sur la puissance de l'Esprit Saint qui agit en nous et à travers nous — comment discerner son action et y collaborer pleinement.",
+    "couverture": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=480&auto=format&fit=crop",
+    "lien_audio": "",
+    "duree": "",
+    "publie": true,
+    "dans_carousel": false,
+    "date_publication": "2024-05-15"
+  }
+]

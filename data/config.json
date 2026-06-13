@@ -1,0 +1,30 @@
+{
+  "site": {
+    "nom": "Réveil Spirituel",
+    "slogan": "Le réveil des peuples est en marche avec Yéhoshou'a !",
+    "description": "Un ministère international dédié à l'éveil des nations par la Parole de Dieu vivante et éternelle.",
+    "email": "reunion2reveilspirituel@gmail.com",
+    "telephone": "+241 74 255 323",
+    "adresse": "Libreville, Gabon",
+    "annee_fondation": "2020"
+  },
+  "contacts": [
+    { "nom": "Engonga Stephanas Grace", "telephone": "+241 74 255 323", "role": "Responsable" },
+    { "nom": "Nfono Nzogobe Germaine", "telephone": "+241 62 438 323", "role": "Responsable" }
+  ],
+  "reseaux_sociaux": {
+    "facebook": "",
+    "youtube": "",
+    "instagram": "",
+    "telegram": ""
+  },
+  "youtube": {
+    "api_key": "",
+    "channel_id": ""
+  },
+  "github": {
+    "owner": "Addams98",
+    "repo": "rs",
+    "branch": "main"
+  }
+}

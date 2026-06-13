@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lire la Bible — Réveil Spirituel</title>
-  <meta name="description" content="Lisez la Bible en ligne sur Réveil Spirituel — Torah, Prophètes, Évangiles et Épîtres. Verset du jour et accès à tous les livres de l'Ancien et Nouveau Testament." />
+  <meta name="description" content="Lisez la Bible en ligne sur Réveil Spirituel — Torah, Prophètes, Évangiles et Épîtres. Verset du jour et accès à tous les livres." />
   <meta property="og:title" content="Lire la Bible — Réveil Spirituel" />
   <meta property="og:description" content="Plongez dans la Parole de Dieu — l'Ancien et le Nouveau Testament, disponibles pour votre édification quotidienne." />
   <meta property="og:image" content="imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" />
@@ -15,91 +15,83 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .bible-verse-day {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .bible-verse-day .verse-flame {
-      display: block;
-      margin: 0 auto 2rem;
-    }
+    /* ── verse ── */
+    .bible-verse-day { text-align:center; max-width:780px; margin:0 auto; }
+    .bible-verse-day .verse-flame { display:block; margin:0 auto 2rem; }
     .bible-verse-day blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-      font-style: italic;
-      font-weight: 300;
-      color: var(--ivory);
-      line-height: 1.9;
-      border: none;
-      padding: 0;
-      margin: 0 0 1rem;
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(1.3rem,2.5vw,1.8rem);
+      font-style:italic; font-weight:300;
+      color:var(--ivory); line-height:1.9;
+      border:none; padding:0; margin:0 0 1rem;
     }
     .bible-verse-day cite {
-      font-family: 'Inter', sans-serif;
-      font-size: .85rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--gold);
+      font-family:'Inter',sans-serif; font-size:.85rem;
+      font-weight:600; letter-spacing:.12em;
+      text-transform:uppercase; color:var(--gold);
     }
-    .bible-books-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-      margin-top: 2rem;
+    /* ── portal cards ── */
+    .bible-portals { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:3rem; }
+    @media(max-width:700px){ .bible-portals { grid-template-columns:1fr; } }
+    .bible-portal-card {
+      border-radius:12px; padding:2.5rem 2rem;
+      display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.2rem;
+      text-decoration:none; transition:transform .25s,box-shadow .25s;
+      border:1.5px solid rgba(255,255,255,.06);
     }
+    .bible-portal-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,.35); }
+    .bible-portal-card.card-primary { background:linear-gradient(145deg,var(--navy) 0%,#2a2c72 100%); }
+    .bible-portal-card.card-gold { background:linear-gradient(145deg,#4a3000 0%,#6b4800 100%); }
+    .bible-portal-card .portal-icon {
+      width:64px; height:64px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.8rem;
+    }
+    .card-primary .portal-icon { background:rgba(234,169,0,.15); color:var(--gold); }
+    .card-gold .portal-icon { background:rgba(255,255,255,.12); color:#fff; }
+    .bible-portal-card h3 {
+      font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+      font-weight:700; color:#fff; margin:0;
+    }
+    .bible-portal-card p { font-size:.9rem; color:rgba(255,255,255,.65); margin:0; line-height:1.6; }
+    .portal-btn {
+      margin-top:.5rem; padding:.65rem 1.8rem;
+      border-radius:4px; font-family:'Inter',sans-serif;
+      font-size:.85rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+      cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+      transition:opacity .2s;
+    }
+    .portal-btn:hover { opacity:.85; }
+    .card-primary .portal-btn { background:var(--gold); color:var(--navy); }
+    .card-gold .portal-btn { background:#fff; color:#4a3000; }
+    /* ── books ── */
+    .bible-books-grid { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.5rem; }
     .bible-book-btn {
-      display: inline-block;
-      padding: .55rem 1.2rem;
-      font-family: 'Inter', sans-serif;
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .04em;
-      border: 1.5px solid;
-      border-radius: 3px;
-      text-decoration: none;
-      transition: background .25s, color .25s, transform .2s;
-      cursor: pointer;
+      display:inline-block; padding:.5rem 1.1rem;
+      font-family:'Inter',sans-serif; font-size:.8rem; font-weight:500;
+      letter-spacing:.04em; border:1.5px solid; border-radius:3px;
+      text-decoration:none; transition:background .2s,color .2s,transform .15s;
     }
-    .bible-book-btn.testament-ot {
-      border-color: var(--navy);
-      color: var(--navy);
-      background: transparent;
-    }
-    .bible-book-btn.testament-ot:hover {
-      background: var(--navy);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-    .bible-book-btn.testament-nt {
-      border-color: var(--navy);
-      color: var(--navy);
-      background: transparent;
-    }
-    .bible-book-btn.testament-nt:hover {
-      background: var(--navy);
-      color: var(--ivory);
-      transform: translateY(-2px);
-    }
+    .bible-book-btn.testament-ot { border-color:var(--navy); color:var(--navy); background:transparent; }
+    .bible-book-btn.testament-ot:hover { background:var(--navy); color:var(--gold); transform:translateY(-2px); }
+    .bible-book-btn.testament-nt { border-color:var(--brand-blue); color:var(--brand-blue); background:transparent; }
+    .bible-book-btn.testament-nt:hover { background:var(--brand-blue); color:#fff; transform:translateY(-2px); }
     .testament-label {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: .18em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:.18em;
+      color:var(--gold); text-transform:uppercase; margin-top:2rem; margin-bottom:1rem;
+      display:flex; align-items:center; gap:1rem;
     }
-    .testament-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: currentColor;
-      opacity: .3;
+    .testament-label::after { content:''; flex:1; height:1px; background:currentColor; opacity:.25; }
+    .light-bg .testament-label { color:var(--navy); }
+    /* ── mobile note ── */
+    .bible-note {
+      background:rgba(85,87,203,.08); border:1px solid rgba(85,87,203,.2);
+      border-radius:8px; padding:1rem 1.4rem;
+      font-size:.85rem; color:rgba(22,23,78,.7);
+      display:flex; align-items:center; gap:.75rem;
+      margin-bottom:2.5rem;
     }
+    .bible-note i { color:var(--brand-blue); font-size:1.1rem; flex-shrink:0; }
   </style>
 </head>
 <body>
@@ -144,16 +136,16 @@
         <span>Lire la Bible</span>
       </nav>
       <h1>Lire la Bible</h1>
-      <p>Plongez dans la Parole de Dieu — l'Ancien et le Nouveau Testament, disponibles pour votre édification quotidienne.</p>
+      <p>Plongez dans la Parole de Dieu — Ancien et Nouveau Testament, disponibles pour votre édification quotidienne.</p>
     </div>
   </section>
 
   <!-- ═══════════════ SECTION 1 — VERSET DU JOUR ═══════════════ -->
-  <section class="verse-section" style="padding:5rem 0;">
+  <section style="padding:5rem 0;background:var(--navy);">
     <div class="container">
       <div class="section-header reveal" style="margin-bottom:3rem;">
-        <p class="section-num centered">01</p>
-        <h2 class="section-title centered">Verset du Jour</h2>
+        <p class="section-num centered" style="color:var(--gold);">01</p>
+        <h2 class="section-title centered" style="color:#fff;">Verset du Jour</h2>
         <div class="gold-rule centered"></div>
       </div>
       <div class="bible-verse-day reveal">
@@ -167,85 +159,161 @@
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 2 — ANCIEN TESTAMENT ═══════════════ -->
-  <section class="books-section light-bg" style="padding:7rem 0;">
+  <!-- ═══════════════ SECTION 2 — PORTAILS DE LECTURE ═══════════════ -->
+  <section class="light-bg" style="padding:6rem 0;">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:1rem;">
+        <p class="section-num centered">02</p>
+        <h2 class="section-title centered">Choisissez votre Bible</h2>
+        <div class="gold-rule centered"></div>
+        <p class="body-text" style="text-align:center;max-width:620px;margin:1.5rem auto 0;">Nous recommandons deux ressources en ligne pour lire et étudier la Parole de Dieu dans les meilleures traductions disponibles en français.</p>
+      </div>
+      <div class="bible-portals reveal">
+        <!-- Card 1 -->
+        <a href="https://www.bibledeyehoshouahamashiah.org" target="_blank" rel="noopener" class="bible-portal-card card-primary">
+          <div class="portal-icon"><i class="fa fa-book-open"></i></div>
+          <h3>Bible de Yéhoshou'a HaMashiah</h3>
+          <p>Traduction hébraïque restituée avec les noms propres en hébreu. Recommandée pour une étude approfondie de la Torah et de la prophétie.</p>
+          <span class="portal-btn"><i class="fa fa-external-link-alt"></i> Accéder à la Bible</span>
+        </a>
+        <!-- Card 2 -->
+        <a href="https://lueur.org/bible/lire/" target="_blank" rel="noopener" class="bible-portal-card card-gold">
+          <div class="portal-icon"><i class="fa fa-scroll"></i></div>
+          <h3>Bible Lueur.org</h3>
+          <p>Interface de lecture claire et épurée — tous les livres de la Bible, chapitre par chapitre. Idéale pour la lecture quotidienne et personnelle.</p>
+          <span class="portal-btn"><i class="fa fa-external-link-alt"></i> Accéder à la Bible</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 3 — ANCIEN TESTAMENT ═══════════════ -->
+  <section class="light-bg" style="padding:6rem 0;">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-num centered">02</p>
+        <p class="section-num centered">03</p>
         <h2 class="section-title centered">L'Ancien Testament</h2>
         <div class="gold-rule centered"></div>
-        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">La Torah, les Prophètes et les Écrits — le fondement éternel sur lequel repose toute révélation divine. Sélectionnez un livre pour commencer votre lecture.</p>
+        <p class="body-text" style="text-align:center;max-width:620px;margin:1.5rem auto 2.5rem;">La Torah, les Prophètes et les Écrits — le fondement éternel sur lequel repose toute révélation divine.</p>
+      </div>
+      <div class="bible-note reveal">
+        <i class="fa fa-info-circle"></i>
+        <span>Cliquez sur un livre pour le lire directement sur <strong>lueur.org</strong>. Les liens s'ouvrent dans un nouvel onglet.</span>
       </div>
       <div class="reveal">
         <div class="testament-label">Torah — Les Cinq Livres de Moïse</div>
         <div class="bible-books-grid">
-          <a href="#" class="bible-book-btn testament-ot">Genèse</a>
-          <a href="#" class="bible-book-btn testament-ot">Exode</a>
-          <a href="#" class="bible-book-btn testament-ot">Lévitique</a>
-          <a href="#" class="bible-book-btn testament-ot">Nombres</a>
-          <a href="#" class="bible-book-btn testament-ot">Deutéronome</a>
+          <a href="https://lueur.org/bible/lire/gen" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Genèse</a>
+          <a href="https://lueur.org/bible/lire/exo" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Exode</a>
+          <a href="https://lueur.org/bible/lire/lev" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Lévitique</a>
+          <a href="https://lueur.org/bible/lire/nom" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Nombres</a>
+          <a href="https://lueur.org/bible/lire/deu" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Deutéronome</a>
         </div>
-        <div class="testament-label" style="margin-top:2.5rem;">Livres Historiques</div>
+
+        <div class="testament-label">Livres Historiques</div>
         <div class="bible-books-grid">
-          <a href="#" class="bible-book-btn testament-ot">Josué</a>
-          <a href="#" class="bible-book-btn testament-ot">Juges</a>
-          <a href="#" class="bible-book-btn testament-ot">Ruth</a>
-          <a href="#" class="bible-book-btn testament-ot">1 Samuel</a>
-          <a href="#" class="bible-book-btn testament-ot">2 Samuel</a>
-          <a href="#" class="bible-book-btn testament-ot">1 Rois</a>
-          <a href="#" class="bible-book-btn testament-ot">2 Rois</a>
+          <a href="https://lueur.org/bible/lire/jos" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Josué</a>
+          <a href="https://lueur.org/bible/lire/jug" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Juges</a>
+          <a href="https://lueur.org/bible/lire/rut" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Ruth</a>
+          <a href="https://lueur.org/bible/lire/1sa" target="_blank" rel="noopener" class="bible-book-btn testament-ot">1 Samuel</a>
+          <a href="https://lueur.org/bible/lire/2sa" target="_blank" rel="noopener" class="bible-book-btn testament-ot">2 Samuel</a>
+          <a href="https://lueur.org/bible/lire/1ro" target="_blank" rel="noopener" class="bible-book-btn testament-ot">1 Rois</a>
+          <a href="https://lueur.org/bible/lire/2ro" target="_blank" rel="noopener" class="bible-book-btn testament-ot">2 Rois</a>
+          <a href="https://lueur.org/bible/lire/1ch" target="_blank" rel="noopener" class="bible-book-btn testament-ot">1 Chroniques</a>
+          <a href="https://lueur.org/bible/lire/2ch" target="_blank" rel="noopener" class="bible-book-btn testament-ot">2 Chroniques</a>
+          <a href="https://lueur.org/bible/lire/esd" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Esdras</a>
+          <a href="https://lueur.org/bible/lire/neh" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Néhémie</a>
+          <a href="https://lueur.org/bible/lire/est" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Esther</a>
         </div>
-        <div class="testament-label" style="margin-top:2.5rem;">Livres Poétiques &amp; Sagesse</div>
+
+        <div class="testament-label">Livres Poétiques &amp; Sagesse</div>
         <div class="bible-books-grid">
-          <a href="#" class="bible-book-btn testament-ot">Psaumes</a>
-          <a href="#" class="bible-book-btn testament-ot">Proverbes</a>
+          <a href="https://lueur.org/bible/lire/job" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Job</a>
+          <a href="https://lueur.org/bible/lire/psa" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Psaumes</a>
+          <a href="https://lueur.org/bible/lire/pro" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Proverbes</a>
+          <a href="https://lueur.org/bible/lire/ecc" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Ecclésiaste</a>
+          <a href="https://lueur.org/bible/lire/can" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Cantique des Cantiques</a>
         </div>
-        <div class="testament-label" style="margin-top:2.5rem;">Livres Prophétiques</div>
+
+        <div class="testament-label">Prophètes Majeurs</div>
         <div class="bible-books-grid">
-          <a href="#" class="bible-book-btn testament-ot">Ésaïe</a>
-          <a href="#" class="bible-book-btn testament-ot">Jérémie</a>
-          <a href="#" class="bible-book-btn testament-ot">Ézéchiel</a>
-          <a href="#" class="bible-book-btn testament-ot">Daniel</a>
-          <a href="#" class="bible-book-btn testament-ot">Osée</a>
-          <a href="#" class="bible-book-btn testament-ot">Malachie</a>
+          <a href="https://lueur.org/bible/lire/esa" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Ésaïe</a>
+          <a href="https://lueur.org/bible/lire/jer" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Jérémie</a>
+          <a href="https://lueur.org/bible/lire/lam" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Lamentations</a>
+          <a href="https://lueur.org/bible/lire/eze" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Ézéchiel</a>
+          <a href="https://lueur.org/bible/lire/dan" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Daniel</a>
+        </div>
+
+        <div class="testament-label">Prophètes Mineurs</div>
+        <div class="bible-books-grid">
+          <a href="https://lueur.org/bible/lire/ose" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Osée</a>
+          <a href="https://lueur.org/bible/lire/joe" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Joël</a>
+          <a href="https://lueur.org/bible/lire/amo" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Amos</a>
+          <a href="https://lueur.org/bible/lire/abd" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Abdias</a>
+          <a href="https://lueur.org/bible/lire/jon" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Jonas</a>
+          <a href="https://lueur.org/bible/lire/mic" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Michée</a>
+          <a href="https://lueur.org/bible/lire/nah" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Nahum</a>
+          <a href="https://lueur.org/bible/lire/hab" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Habacuc</a>
+          <a href="https://lueur.org/bible/lire/sop" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Sophonie</a>
+          <a href="https://lueur.org/bible/lire/agg" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Aggée</a>
+          <a href="https://lueur.org/bible/lire/zac" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Zacharie</a>
+          <a href="https://lueur.org/bible/lire/mal" target="_blank" rel="noopener" class="bible-book-btn testament-ot">Malachie</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 3 — NOUVEAU TESTAMENT ═══════════════ -->
-  <section class="books-section white-bg" style="padding:7rem 0 4rem;">
+  <!-- ═══════════════ SECTION 4 — NOUVEAU TESTAMENT ═══════════════ -->
+  <section class="white-bg" style="padding:6rem 0 5rem;">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-num centered">03</p>
+        <p class="section-num centered">04</p>
         <h2 class="section-title centered">Le Nouveau Testament</h2>
         <div class="gold-rule centered"></div>
-        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">L'accomplissement des promesses prophétiques de l'Ancien Testament en Yéshoua le Messie. Les Évangiles, les Épîtres et la Révélation pour votre édification.</p>
+        <p class="body-text" style="text-align:center;max-width:620px;margin:1.5rem auto 2.5rem;">L'accomplissement des promesses prophétiques en Yéhoshou'a HaMashiah — les Évangiles, les Épîtres et la Révélation.</p>
       </div>
       <div class="reveal">
-        <div class="testament-label" style="color:var(--navy);">Les Évangiles &amp; Actes</div>
+        <div class="testament-label" style="color:var(--brand-blue);">Les Évangiles &amp; Actes</div>
         <div class="bible-books-grid">
-          <a href="#" class="bible-book-btn testament-nt">Matthieu</a>
-          <a href="#" class="bible-book-btn testament-nt">Marc</a>
-          <a href="#" class="bible-book-btn testament-nt">Luc</a>
-          <a href="#" class="bible-book-btn testament-nt">Jean</a>
-          <a href="#" class="bible-book-btn testament-nt">Actes</a>
+          <a href="https://lueur.org/bible/lire/mat" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Matthieu</a>
+          <a href="https://lueur.org/bible/lire/mar" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Marc</a>
+          <a href="https://lueur.org/bible/lire/luc" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Luc</a>
+          <a href="https://lueur.org/bible/lire/jea" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Jean</a>
+          <a href="https://lueur.org/bible/lire/act" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Actes</a>
         </div>
-        <div class="testament-label" style="margin-top:2.5rem;color:var(--navy);">Les Épîtres</div>
+
+        <div class="testament-label" style="color:var(--brand-blue);">Épîtres de Paul</div>
         <div class="bible-books-grid">
-          <a href="#" class="bible-book-btn testament-nt">Romains</a>
-          <a href="#" class="bible-book-btn testament-nt">1 Corinthiens</a>
-          <a href="#" class="bible-book-btn testament-nt">2 Corinthiens</a>
-          <a href="#" class="bible-book-btn testament-nt">Galates</a>
-          <a href="#" class="bible-book-btn testament-nt">Éphésiens</a>
-          <a href="#" class="bible-book-btn testament-nt">Philippiens</a>
-          <a href="#" class="bible-book-btn testament-nt">Colossiens</a>
-          <a href="#" class="bible-book-btn testament-nt">1 Thessaloniciens</a>
-          <a href="#" class="bible-book-btn testament-nt">Hébreux</a>
+          <a href="https://lueur.org/bible/lire/rom" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Romains</a>
+          <a href="https://lueur.org/bible/lire/1co" target="_blank" rel="noopener" class="bible-book-btn testament-nt">1 Corinthiens</a>
+          <a href="https://lueur.org/bible/lire/2co" target="_blank" rel="noopener" class="bible-book-btn testament-nt">2 Corinthiens</a>
+          <a href="https://lueur.org/bible/lire/gal" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Galates</a>
+          <a href="https://lueur.org/bible/lire/eph" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Éphésiens</a>
+          <a href="https://lueur.org/bible/lire/phi" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Philippiens</a>
+          <a href="https://lueur.org/bible/lire/col" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Colossiens</a>
+          <a href="https://lueur.org/bible/lire/1th" target="_blank" rel="noopener" class="bible-book-btn testament-nt">1 Thessaloniciens</a>
+          <a href="https://lueur.org/bible/lire/2th" target="_blank" rel="noopener" class="bible-book-btn testament-nt">2 Thessaloniciens</a>
+          <a href="https://lueur.org/bible/lire/1ti" target="_blank" rel="noopener" class="bible-book-btn testament-nt">1 Timothée</a>
+          <a href="https://lueur.org/bible/lire/2ti" target="_blank" rel="noopener" class="bible-book-btn testament-nt">2 Timothée</a>
+          <a href="https://lueur.org/bible/lire/tit" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Tite</a>
+          <a href="https://lueur.org/bible/lire/phm" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Philémon</a>
         </div>
-        <div class="testament-label" style="margin-top:2.5rem;color:var(--navy);">La Révélation</div>
+
+        <div class="testament-label" style="color:var(--brand-blue);">Épîtres Générales</div>
         <div class="bible-books-grid">
-          <a href="#" class="bible-book-btn testament-nt">Apocalypse</a>
+          <a href="https://lueur.org/bible/lire/heb" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Hébreux</a>
+          <a href="https://lueur.org/bible/lire/jac" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Jacques</a>
+          <a href="https://lueur.org/bible/lire/1pi" target="_blank" rel="noopener" class="bible-book-btn testament-nt">1 Pierre</a>
+          <a href="https://lueur.org/bible/lire/2pi" target="_blank" rel="noopener" class="bible-book-btn testament-nt">2 Pierre</a>
+          <a href="https://lueur.org/bible/lire/1je" target="_blank" rel="noopener" class="bible-book-btn testament-nt">1 Jean</a>
+          <a href="https://lueur.org/bible/lire/2je" target="_blank" rel="noopener" class="bible-book-btn testament-nt">2 Jean</a>
+          <a href="https://lueur.org/bible/lire/3je" target="_blank" rel="noopener" class="bible-book-btn testament-nt">3 Jean</a>
+          <a href="https://lueur.org/bible/lire/jud" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Jude</a>
+        </div>
+
+        <div class="testament-label" style="color:var(--brand-blue);">La Révélation</div>
+        <div class="bible-books-grid">
+          <a href="https://lueur.org/bible/lire/apo" target="_blank" rel="noopener" class="bible-book-btn testament-nt">Apocalypse</a>
         </div>
       </div>
     </div>
@@ -261,7 +329,7 @@
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-nav">
@@ -274,24 +342,23 @@
           <li><a href="ouvrages.html">Ouvrages</a></li>
           <li><a href="bible.html">Lire la Bible</a></li>
           <li><a href="soutenir.html">Nous Soutenir</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
         <h5>Contact</h5>
-        <p><i class="fa fa-envelope"></i> contact@reveilspirituel.org</p>
-        <p><i class="fa fa-phone"></i> +237 000 000 000</p>
-        <p><i class="fa fa-map-marker-alt"></i> Douala, Cameroun</p>
+        <p><i class="fa fa-envelope"></i> reunion2reveilspirituel@gmail.com</p>
+        <p><i class="fa fa-phone"></i> +241 74 255 323</p>
+        <p><i class="fa fa-map-marker-alt"></i> Libreville, Gabon</p>
       </div>
       <div class="footer-verse">
         <h5>Verset du Jour</h5>
-        <blockquote>"Arrêtez-vous sur les routes, regardez, et demandez quels sont les anciens sentiers, quelle est la bonne voie."</blockquote>
-        <cite>— Jérémie 6:16</cite>
+        <blockquote>"Que ce livre de la loi ne s'éloigne point de ta bouche ; médite-le jour et nuit..."</blockquote>
+        <cite>— Josué 1:8</cite>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2026 Réveil Spirituel — Tous droits réservés</p>
+        <p>© 2026 Réveil Spirituel — Tous droits réservés · Libreville, Gabon</p>
       </div>
     </div>
   </footer>

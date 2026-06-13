@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Vidéos — RS Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="RS" />
+      <span>RS Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html"><i class="fa fa-th-large"></i> Tableau de Bord</a>
+      <a href="livres.html"><i class="fa fa-book"></i> Livres</a>
+      <a href="audios.html"><i class="fa fa-headphones"></i> Audios</a>
+      <a href="videos.html" class="active"><i class="fab fa-youtube"></i> Vidéos</a>
+      <a href="projets.html"><i class="fa fa-tasks"></i> Projets</a>
+      <div class="sidebar-section-label" style="margin-top:1rem;">Paramètres</div>
+      <a href="config.html"><i class="fa fa-cog"></i> Configuration</a>
+      <a href="../index.html" target="_blank"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user"><i class="fa fa-user-circle"></i> <span id="sidebarUser">...</span></div>
+      <button id="btnLogout" class="btn-admin btn-admin-ghost btn-sm" style="margin-top:.75rem;width:100%;justify-content:center;">
+        <i class="fa fa-sign-out-alt"></i> Déconnexion
+      </button>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1><i class="fab fa-youtube"></i> Gestion des Vidéos</h1>
+      <button class="btn-admin btn-admin-gold" id="btnAdd"><i class="fa fa-plus"></i> Ajouter une Vidéo</button>
+    </div>
+    <div class="admin-content">
+      <div class="admin-card">
+        <div class="admin-card-header"><h2>Vidéos (<span id="videoCount">0</span>)</h2></div>
+        <div class="admin-card-body" style="padding:0;">
+          <div id="loadingMsg" style="padding:2rem;text-align:center;color:rgba(255,255,255,.4);"><i class="fa fa-spinner fa-spin"></i> Chargement...</div>
+          <table class="admin-table" id="videosTable" style="display:none;">
+            <thead><tr><th>Miniature</th><th>Titre</th><th>Série</th><th>Catégorie</th><th>Durée</th><th>Statut</th><th>Actions</th></tr></thead>
+            <tbody id="videosTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Formulaire -->
+<div class="modal-overlay hidden" id="modalForm">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalTitle">Ajouter une Vidéo</h3>
+      <button class="modal-close" id="btnCloseForm">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="fId" />
+      <input type="hidden" id="fDate" />
+      <div class="form-group">
+        <label class="form-label">Titre *</label>
+        <input type="text" id="fTitre" class="form-control" placeholder="Titre de la vidéo" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Série / Playlist</label>
+        <input type="text" id="fSerie" class="form-control" placeholder="Ex: Réveil des Nations, Étude Torah..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Catégorie</label>
+        <select id="fCat" class="form-control">
+          <option value="predication">Prédication</option>
+          <option value="enseignement">Enseignement</option>
+          <option value="temoignage">Témoignage</option>
+          <option value="adoration">Adoration</option>
+          <option value="formation">Formation</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">ID YouTube *</label>
+        <input type="text" id="fYoutube" class="form-control" placeholder="dQw4w9WgXcQ" />
+        <div class="form-hint"><i class="fab fa-youtube" style="color:#ff0000;"></i> L'identifiant YouTube se trouve dans l'URL : <code style="color:#EAA900;">youtube.com/watch?v=<strong>dQw4w9WgXcQ</strong></code><br>
+        La miniature sera générée automatiquement.</div>
+      </div>
+      <div class="form-group" id="thumbnailPreviewGroup" style="display:none;">
+        <label class="form-label">Aperçu miniature</label>
+        <img id="thumbnailPreview" src="" alt="Miniature" style="width:100%;max-width:320px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Durée (ex: 45:32)</label>
+        <input type="text" id="fDuree" class="form-control" placeholder="45:32" />
+      </div>
+      <div class="form-group" style="display:flex;align-items:center;gap:.75rem;">
+        <input type="checkbox" id="fPublie" style="width:18px;height:18px;accent-color:#EAA900;" />
+        <label class="form-label" for="fPublie" style="margin:0;cursor:pointer;">Publier cette vidéo</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-admin btn-admin-ghost" id="btnCancelForm">Annuler</button>
+      <button class="btn-admin btn-admin-gold" id="btnSave"><i class="fa fa-save"></i> Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Suppression -->
+<div class="modal-overlay hidden" id="modalDelete">
+  <div class="modal-box" style="max-width:420px;">
+    <div class="modal-header">
+      <h3 style="color:#ef4444;"><i class="fa fa-trash"></i> Supprimer</h3>
+      <button class="modal-close" id="btnCloseDelete">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="color:rgba(255,255,255,.7);">Supprimer <strong id="deleteTitle" style="color:#fff;"></strong> ? Action irréversible.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-admin btn-admin-ghost" id="btnCancelDelete">Annuler</button>
+      <button class="btn-admin btn-admin-danger" id="btnConfirmDelete"><i class="fa fa-trash"></i> Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+<script>
+requireAuth();
+var videos = [], fileSha = null, editIndex = -1, deleteIndex = -1;
+
+function ytThumb(id) { return id ? 'https://img.youtube.com/vi/' + id + '/mqdefault.jpg' : ''; }
+
+async function loadVideos() {
+  try {
+    var result = await ghGetFile('data/videos.json');
+    videos = result.data; fileSha = result.sha; renderTable();
+  } catch(e) { showToast('Erreur chargement : ' + e.message, 'error'); }
+}
+
+function renderTable() {
+  document.getElementById('videoCount').textContent = videos.length;
+  document.getElementById('loadingMsg').style.display = 'none';
+  document.getElementById('videosTable').style.display = '';
+  document.getElementById('videosTbody').innerHTML = videos.map(function(v, i) {
+    var thumb = v.youtube_id ? '<img src="' + ytThumb(v.youtube_id) + '" class="thumb" style="width:80px;height:45px;object-fit:cover;" />' : '—';
+    var badge = v.publie ? '<span class="badge badge-publie">Publié</span>' : '<span class="badge badge-brouillon">Brouillon</span>';
+    return '<tr><td>' + thumb + '</td><td><strong>' + v.titre + '</strong></td><td><small style="color:rgba(255,255,255,.5);">' + (v.serie || '—') + '</small></td><td>' + catLabel(v.categorie) + '</td><td>' + (v.duree || '—') + '</td><td>' + badge + '</td><td style="white-space:nowrap;"><button class="btn-admin btn-admin-ghost btn-sm" onclick="editVideo(' + i + ')"><i class="fa fa-edit"></i></button> <button class="btn-admin btn-admin-danger btn-sm" onclick="confirmDelete(' + i + ')"><i class="fa fa-trash"></i></button></td></tr>';
+  }).join('');
+}
+
+function openAddModal() {
+  editIndex = -1;
+  document.getElementById('modalTitle').textContent = 'Ajouter une Vidéo';
+  ['fId','fTitre','fSerie','fYoutube','fDuree'].forEach(function(id) { document.getElementById(id).value = ''; });
+  document.getElementById('fCat').value = 'predication';
+  document.getElementById('fPublie').checked = true;
+  document.getElementById('fDate').value = today();
+  document.getElementById('thumbnailPreviewGroup').style.display = 'none';
+  openModal('modalForm');
+}
+
+function editVideo(i) {
+  editIndex = i; var v = videos[i];
+  document.getElementById('modalTitle').textContent = 'Modifier la Vidéo';
+  document.getElementById('fId').value = v.id;
+  document.getElementById('fTitre').value = v.titre;
+  document.getElementById('fSerie').value = v.serie || '';
+  document.getElementById('fCat').value = v.categorie;
+  document.getElementById('fYoutube').value = v.youtube_id || '';
+  document.getElementById('fDuree').value = v.duree || '';
+  document.getElementById('fPublie').checked = v.publie;
+  document.getElementById('fDate').value = v.date_publication;
+  if (v.youtube_id) {
+    document.getElementById('thumbnailPreview').src = ytThumb(v.youtube_id);
+    document.getElementById('thumbnailPreviewGroup').style.display = '';
+  }
+  openModal('modalForm');
+}
+
+document.getElementById('fYoutube').addEventListener('input', function() {
+  var id = this.value.trim();
+  if (id) {
+    document.getElementById('thumbnailPreview').src = ytThumb(id);
+    document.getElementById('thumbnailPreviewGroup').style.display = '';
+  } else {
+    document.getElementById('thumbnailPreviewGroup').style.display = 'none';
+  }
+});
+
+document.getElementById('btnSave').addEventListener('click', async function() {
+  var titre = document.getElementById('fTitre').value.trim();
+  if (!titre) { showToast('Le titre est requis.', 'error'); return; }
+  var ytId = document.getElementById('fYoutube').value.trim();
+  if (!ytId) { showToast("L'identifiant YouTube est requis.", 'error'); return; }
+  var btn = document.getElementById('btnSave');
+  btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i>'; btn.disabled = true;
+  var item = {
+    id: document.getElementById('fId').value || genId(titre),
+    titre: titre,
+    serie: document.getElementById('fSerie').value.trim(),
+    categorie: document.getElementById('fCat').value,
+    youtube_id: ytId,
+    miniature: ytThumb(ytId),
+    duree: document.getElementById('fDuree').value.trim(),
+    publie: document.getElementById('fPublie').checked,
+    date_publication: document.getElementById('fDate').value || today()
+  };
+  if (editIndex >= 0) { videos[editIndex] = item; } else { videos.push(item); }
+  try {
+    var res = await ghPutFile('data/videos.json', videos, fileSha, 'Admin: ' + (editIndex >= 0 ? 'modifier' : 'ajouter') + ' video "' + titre + '"');
+    fileSha = res.content.sha; renderTable(); closeModal('modalForm');
+    showToast(editIndex >= 0 ? 'Vidéo modifiée !' : 'Vidéo ajoutée !');
+  } catch(e) { showToast('Erreur : ' + e.message, 'error'); }
+  btn.innerHTML = '<i class="fa fa-save"></i> Enregistrer'; btn.disabled = false;
+});
+
+function confirmDelete(i) {
+  deleteIndex = i; document.getElementById('deleteTitle').textContent = videos[i].titre; openModal('modalDelete');
+}
+document.getElementById('btnConfirmDelete').addEventListener('click', async function() {
+  videos.splice(deleteIndex, 1);
+  try {
+    var res = await ghPutFile('data/videos.json', videos, fileSha, 'Admin: supprimer video');
+    fileSha = res.content.sha; renderTable(); closeModal('modalDelete'); showToast('Vidéo supprimée.');
+  } catch(e) { showToast('Erreur : ' + e.message, 'error'); }
+});
+
+document.getElementById('btnAdd').addEventListener('click', openAddModal);
+document.getElementById('btnCloseForm').addEventListener('click', function() { closeModal('modalForm'); });
+document.getElementById('btnCancelForm').addEventListener('click', function() { closeModal('modalForm'); });
+document.getElementById('btnCloseDelete').addEventListener('click', function() { closeModal('modalDelete'); });
+document.getElementById('btnCancelDelete').addEventListener('click', function() { closeModal('modalDelete'); });
+loadVideos();
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "vid-1",
+    "titre": "La Gestion de l'Onction — Partie 1",
+    "serie": "Gestion de l'Onction",
+    "categorie": "enseignement",
+    "youtube_id": "",
+    "miniature": "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=480&auto=format&fit=crop",
+    "duree": "~45 min",
+    "publie": true,
+    "date_publication": "2024-01-10"
+  },
+  {
+    "id": "vid-2",
+    "titre": "La Gestion de l'Onction — Partie 2",
+    "serie": "Gestion de l'Onction",
+    "categorie": "enseignement",
+    "youtube_id": "",
+    "miniature": "https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=480&auto=format&fit=crop",
+    "duree": "~42 min",
+    "publie": true,
+    "date_publication": "2024-01-17"
+  },
+  {
+    "id": "vid-3",
+    "titre": "Combattre dans la Prière",
+    "serie": "Prière & Intercession",
+    "categorie": "priere",
+    "youtube_id": "",
+    "miniature": "https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=480&auto=format&fit=crop",
+    "duree": "~55 min",
+    "publie": true,
+    "date_publication": "2024-02-05"
+  },
+  {
+    "id": "vid-4",
+    "titre": "YHWH Echad — L'unicité de Dieu",
+    "serie": "Enseignements Fondamentaux",
+    "categorie": "theologie",
+    "youtube_id": "",
+    "miniature": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=480&auto=format&fit=crop",
+    "duree": "~60 min",
+    "publie": true,
+    "date_publication": "2024-02-20"
+  },
+  {
+    "id": "vid-5",
+    "titre": "Ne sois pas distrait, Travaille !",
+    "serie": "Vie Chrétienne",
+    "categorie": "vie-chretienne",
+    "youtube_id": "",
+    "miniature": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=480&auto=format&fit=crop",
+    "duree": "~38 min",
+    "publie": true,
+    "date_publication": "2024-03-10"
+  },
+  {
+    "id": "vid-6",
+    "titre": "Le Réveil des Nations — Vision Prophétique",
+    "serie": "Prophétie",
+    "categorie": "prophetie",
+    "youtube_id": "",
+    "miniature": "https://images.unsplash.com/photo-1529651737248-dad5e287768e?q=80&w=480&auto=format&fit=crop",
+    "duree": "~50 min",
+    "publie": true,
+    "date_publication": "2024-03-25"
+  }
+]

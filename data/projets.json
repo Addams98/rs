@@ -1,0 +1,62 @@
+[
+  {
+    "id": "tour-52-depts",
+    "titre": "Tour des 52 Départements",
+    "categorie": "evangelisation",
+    "description": "Une campagne d'évangélisation couvrant les 52 départements du Gabon pour porter la Parole dans chaque ville, village et communauté du pays.",
+    "image": "https://images.unsplash.com/photo-1529651737248-dad5e287768e?q=80&w=600&auto=format&fit=crop",
+    "progression": 15,
+    "statut": "en-cours",
+    "publie": true
+  },
+  {
+    "id": "studio-rs-medias",
+    "titre": "Studio RS Médias",
+    "categorie": "medias",
+    "description": "Construction d'un studio d'enregistrement professionnel pour la production d'émissions bibliques, de podcasts et de ressources audiovisuelles pour les nations.",
+    "image": "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=600&auto=format&fit=crop",
+    "progression": 40,
+    "statut": "en-cours",
+    "publie": true
+  },
+  {
+    "id": "ecole-biblique",
+    "titre": "École Biblique Intensive",
+    "categorie": "formation",
+    "description": "Programme de formation théologique intensive pour équiper des ouvriers de la Parole, enracinés dans la Torah et le message du Nouveau Testament.",
+    "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop",
+    "progression": 55,
+    "statut": "en-cours",
+    "publie": true
+  },
+  {
+    "id": "ecole-musique",
+    "titre": "École de Musique RS",
+    "categorie": "louange",
+    "description": "Formation de musiciens et de chantres pour le service de l'autel — développer des adorateurs authentiques formés à la musique sacrée selon les principes scripturaires.",
+    "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600&auto=format&fit=crop",
+    "progression": 10,
+    "statut": "planification",
+    "publie": true
+  },
+  {
+    "id": "caravane-sociale",
+    "titre": "Caravane Sociale RS",
+    "categorie": "social",
+    "description": "Actions sociales, distribution alimentaire, soutien aux orphelins et aux veuves, et accompagnement des familles en difficulté dans les zones défavorisées du Gabon.",
+    "image": "https://images.unsplash.com/photo-1488521787991-ed7bbafc05b3?q=80&w=600&auto=format&fit=crop",
+    "progression": 20,
+    "statut": "en-cours",
+    "publie": true
+  },
+  {
+    "id": "reseau-international",
+    "titre": "Réseau International RS",
+    "categorie": "international",
+    "description": "Établissement d'un réseau international de cellules et de partenaires du ministère dans la diaspora africaine et à travers les nations pour accélérer le réveil mondial.",
+    "image": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=600&auto=format&fit=crop",
+    "progression": 8,
+    "statut": "planification",
+    "publie": true
+  }
+]

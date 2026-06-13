@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Configuration — RS Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="RS" />
+      <span>RS Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html"><i class="fa fa-th-large"></i> Tableau de Bord</a>
+      <a href="livres.html"><i class="fa fa-book"></i> Livres</a>
+      <a href="audios.html"><i class="fa fa-headphones"></i> Audios</a>
+      <a href="videos.html"><i class="fab fa-youtube"></i> Vidéos</a>
+      <a href="projets.html"><i class="fa fa-tasks"></i> Projets</a>
+      <div class="sidebar-section-label" style="margin-top:1rem;">Paramètres</div>
+      <a href="config.html" class="active"><i class="fa fa-cog"></i> Configuration</a>
+      <a href="../index.html" target="_blank"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user"><i class="fa fa-user-circle"></i> <span id="sidebarUser">...</span></div>
+      <button id="btnLogout" class="btn-admin btn-admin-ghost btn-sm" style="margin-top:.75rem;width:100%;justify-content:center;">
+        <i class="fa fa-sign-out-alt"></i> Déconnexion
+      </button>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1><i class="fa fa-cog"></i> Configuration du Site</h1>
+      <button class="btn-admin btn-admin-gold" id="btnSaveAll"><i class="fa fa-save"></i> Sauvegarder tout</button>
+    </div>
+    <div class="admin-content">
+
+      <!-- Infos du Site -->
+      <div class="admin-card" style="margin-bottom:1.5rem;">
+        <div class="admin-card-header"><h2><i class="fa fa-info-circle"></i> Informations du Site</h2></div>
+        <div class="admin-card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label class="form-label">Nom du site</label>
+              <input type="text" id="cNom" class="form-control" placeholder="Réveil Spirituel" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Slogan</label>
+              <input type="text" id="cSlogan" class="form-control" placeholder="Slogan..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" id="cEmail" class="form-control" placeholder="contact@example.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Téléphone</label>
+              <input type="text" id="cTel" class="form-control" placeholder="+241 74 255 323" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Adresse</label>
+              <input type="text" id="cAdresse" class="form-control" placeholder="Libreville, Gabon" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Année de fondation</label>
+              <input type="number" id="cAnnee" class="form-control" placeholder="2020" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Réseaux Sociaux -->
+      <div class="admin-card" style="margin-bottom:1.5rem;">
+        <div class="admin-card-header"><h2><i class="fa fa-share-alt"></i> Réseaux Sociaux</h2></div>
+        <div class="admin-card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label class="form-label"><i class="fab fa-youtube" style="color:#ff0000;"></i> YouTube</label>
+              <input type="url" id="cYoutube" class="form-control" placeholder="https://youtube.com/@..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label"><i class="fab fa-facebook" style="color:#1877F2;"></i> Facebook</label>
+              <input type="url" id="cFacebook" class="form-control" placeholder="https://facebook.com/..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label"><i class="fab fa-instagram" style="color:#E1306C;"></i> Instagram</label>
+              <input type="url" id="cInstagram" class="form-control" placeholder="https://instagram.com/..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label"><i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp</label>
+              <input type="text" id="cWhatsapp" class="form-control" placeholder="+241 74 255 323" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacts -->
+      <div class="admin-card" style="margin-bottom:1.5rem;">
+        <div class="admin-card-header" style="display:flex;align-items:center;justify-content:space-between;">
+          <h2><i class="fa fa-address-book"></i> Contacts</h2>
+          <button class="btn-admin btn-admin-ghost btn-sm" id="btnAddContact"><i class="fa fa-plus"></i> Ajouter</button>
+        </div>
+        <div class="admin-card-body" style="padding:0;">
+          <table class="admin-table" id="contactsTable">
+            <thead><tr><th>Nom</th><th>Rôle</th><th>Téléphone</th><th>Email</th><th>Action</th></tr></thead>
+            <tbody id="contactsTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- YouTube API -->
+      <div class="admin-card" style="margin-bottom:1.5rem;">
+        <div class="admin-card-header"><h2><i class="fab fa-youtube" style="color:#ff0000;"></i> YouTube API</h2></div>
+        <div class="admin-card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label class="form-label">Clé API YouTube</label>
+              <input type="text" id="cYtApiKey" class="form-control" placeholder="AIza..." />
+              <div class="form-hint"><i class="fa fa-info-circle"></i> Obtenir sur console.cloud.google.com → YouTube Data API v3</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ID Chaîne YouTube</label>
+              <input type="text" id="cYtChannelId" class="form-control" placeholder="UCxxxxxxxxxx" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Contact -->
+<div class="modal-overlay hidden" id="modalContact">
+  <div class="modal-box" style="max-width:480px;">
+    <div class="modal-header">
+      <h3 id="contactModalTitle">Ajouter un Contact</h3>
+      <button class="modal-close" id="btnCloseContact">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="cContactIdx" value="-1" />
+      <div class="form-group">
+        <label class="form-label">Nom *</label>
+        <input type="text" id="cContactNom" class="form-control" placeholder="Prénom NOM" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Rôle</label>
+        <input type="text" id="cContactRole" class="form-control" placeholder="Responsable, Coordinateur..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Téléphone</label>
+        <input type="text" id="cContactTel" class="form-control" placeholder="+241 XX XXX XXX" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" id="cContactEmail" class="form-control" placeholder="nom@example.com" />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-admin btn-admin-ghost" id="btnCancelContact">Annuler</button>
+      <button class="btn-admin btn-admin-gold" id="btnSaveContact"><i class="fa fa-save"></i> Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+<script>
+requireAuth();
+var config = null, fileSha = null, contacts = [];
+
+async function loadConfig() {
+  try {
+    var result = await ghGetFile('data/config.json');
+    config = result.data; fileSha = result.sha; fillForm();
+  } catch(e) { showToast('Erreur chargement : ' + e.message, 'error'); }
+}
+
+function fillForm() {
+  var s = config.site || {};
+  document.getElementById('cNom').value = s.nom || '';
+  document.getElementById('cSlogan').value = s.slogan || '';
+  document.getElementById('cEmail').value = s.email || '';
+  document.getElementById('cTel').value = s.telephone || '';
+  document.getElementById('cAdresse').value = s.adresse || '';
+  document.getElementById('cAnnee').value = s.annee_fondation || '';
+  var rs = config.reseaux_sociaux || {};
+  document.getElementById('cYoutube').value = rs.youtube || '';
+  document.getElementById('cFacebook').value = rs.facebook || '';
+  document.getElementById('cInstagram').value = rs.instagram || '';
+  document.getElementById('cWhatsapp').value = rs.whatsapp || '';
+  var yt = config.youtube || {};
+  document.getElementById('cYtApiKey').value = yt.api_key || '';
+  document.getElementById('cYtChannelId').value = yt.channel_id || '';
+  contacts = config.contacts ? JSON.parse(JSON.stringify(config.contacts)) : [];
+  renderContacts();
+}
+
+function renderContacts() {
+  document.getElementById('contactsTbody').innerHTML = contacts.map(function(c, i) {
+    return '<tr><td><strong>' + c.nom + '</strong></td><td><small style="color:rgba(255,255,255,.5);">' + (c.role || '—') + '</small></td><td>' + (c.telephone || '—') + '</td><td>' + (c.email || '—') + '</td><td style="white-space:nowrap;"><button class="btn-admin btn-admin-ghost btn-sm" onclick="editContact(' + i + ')"><i class="fa fa-edit"></i></button> <button class="btn-admin btn-admin-danger btn-sm" onclick="removeContact(' + i + ')"><i class="fa fa-trash"></i></button></td></tr>';
+  }).join('') || '<tr><td colspan="5" style="text-align:center;color:rgba(255,255,255,.3);padding:1.5rem;">Aucun contact</td></tr>';
+}
+
+function editContact(i) {
+  document.getElementById('contactModalTitle').textContent = 'Modifier le Contact';
+  document.getElementById('cContactIdx').value = i;
+  var c = contacts[i];
+  document.getElementById('cContactNom').value = c.nom || '';
+  document.getElementById('cContactRole').value = c.role || '';
+  document.getElementById('cContactTel').value = c.telephone || '';
+  document.getElementById('cContactEmail').value = c.email || '';
+  openModal('modalContact');
+}
+
+function removeContact(i) {
+  contacts.splice(i, 1); renderContacts();
+}
+
+document.getElementById('btnAddContact').addEventListener('click', function() {
+  document.getElementById('contactModalTitle').textContent = 'Ajouter un Contact';
+  document.getElementById('cContactIdx').value = -1;
+  ['cContactNom','cContactRole','cContactTel','cContactEmail'].forEach(function(id) { document.getElementById(id).value = ''; });
+  openModal('modalContact');
+});
+
+document.getElementById('btnSaveContact').addEventListener('click', function() {
+  var nom = document.getElementById('cContactNom').value.trim();
+  if (!nom) { showToast('Le nom est requis.', 'error'); return; }
+  var item = { nom: nom, role: document.getElementById('cContactRole').value.trim(), telephone: document.getElementById('cContactTel').value.trim(), email: document.getElementById('cContactEmail').value.trim() };
+  var idx = parseInt(document.getElementById('cContactIdx').value);
+  if (idx >= 0) { contacts[idx] = item; } else { contacts.push(item); }
+  renderContacts(); closeModal('modalContact');
+});
+
+document.getElementById('btnSaveAll').addEventListener('click', async function() {
+  var btn = document.getElementById('btnSaveAll');
+  btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i>'; btn.disabled = true;
+  config.site = {
+    nom: document.getElementById('cNom').value.trim(),
+    slogan: document.getElementById('cSlogan').value.trim(),
+    email: document.getElementById('cEmail').value.trim(),
+    telephone: document.getElementById('cTel').value.trim(),
+    adresse: document.getElementById('cAdresse').value.trim(),
+    annee_fondation: parseInt(document.getElementById('cAnnee').value) || config.site.annee_fondation
+  };
+  config.reseaux_sociaux = {
+    youtube: document.getElementById('cYoutube').value.trim(),
+    facebook: document.getElementById('cFacebook').value.trim(),
+    instagram: document.getElementById('cInstagram').value.trim(),
+    whatsapp: document.getElementById('cWhatsapp').value.trim()
+  };
+  config.youtube = {
+    api_key: document.getElementById('cYtApiKey').value.trim(),
+    channel_id: document.getElementById('cYtChannelId').value.trim()
+  };
+  config.contacts = contacts;
+  try {
+    var res = await ghPutFile('data/config.json', config, fileSha, 'Admin: mise à jour configuration');
+    fileSha = res.content.sha; showToast('Configuration sauvegardée !');
+  } catch(e) { showToast('Erreur : ' + e.message, 'error'); }
+  btn.innerHTML = '<i class="fa fa-save"></i> Sauvegarder tout'; btn.disabled = false;
+});
+
+document.getElementById('btnCloseContact').addEventListener('click', function() { closeModal('modalContact'); });
+document.getElementById('btnCancelContact').addEventListener('click', function() { closeModal('modalContact'); });
+loadConfig();
+</script>
+</body>
+</html>

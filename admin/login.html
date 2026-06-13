@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion — RS Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <img src="../imag/logo reveil spirituel blanc_Plan de travail 1 copie.png" alt="Réveil Spirituel" />
+      <h1>Espace Administrateur</h1>
+      <p>Réveil Spirituel — Gabon</p>
+    </div>
+
+    <div id="errorMsg" style="display:none;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:6px;padding:.75rem 1rem;color:#fca5a5;font-size:.85rem;margin-bottom:1rem;"></div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label class="form-label">GitHub Personal Access Token</label>
+        <input type="password" id="patInput" class="form-control" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" required autocomplete="off" />
+        <div class="form-hint">
+          <i class="fa fa-info-circle"></i>
+          GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens.<br>
+          Permissions requises : <strong style="color:rgba(255,255,255,.6);">Contents (read &amp; write)</strong> sur le dépôt <code style="color:#EAA900;">Addams98/rs</code>.
+        </div>
+      </div>
+      <button type="submit" class="btn-admin btn-admin-gold" style="width:100%;justify-content:center;padding:.8rem;" id="btnLogin">
+        <i class="fa fa-sign-in-alt"></i> Se connecter
+      </button>
+    </form>
+
+    <div class="login-divider"><span>accès sécurisé</span></div>
+    <p style="text-align:center;font-size:.75rem;color:rgba(255,255,255,.3);">
+      <i class="fa fa-lock"></i> Le token est stocké en mémoire de session uniquement.
+    </p>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const token = document.getElementById('patInput').value.trim();
+  const btn   = document.getElementById('btnLogin');
+  const err   = document.getElementById('errorMsg');
+  if (!token) return;
+
+  btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Vérification...';
+  btn.disabled = true;
+  err.style.display = 'none';
+
+  try {
+    const valid = await validateToken(token);
+    if (valid) {
+      setToken(token);
+      window.location.href = 'index.html';
+    } else {
+      err.textContent = 'Token invalide ou permissions insuffisantes. Vérifiez votre PAT GitHub.';
+      err.style.display = 'block';
+    }
+  } catch(ex) {
+    err.textContent = 'Erreur de connexion : ' + ex.message;
+    err.style.display = 'block';
+  } finally {
+    btn.innerHTML = '<i class="fa fa-sign-in-alt"></i> Se connecter';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
