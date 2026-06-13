@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <!-- Réveil Spirituel v2 -->
 <head>
@@ -548,148 +548,7 @@
     </div>
   </section>
 
-  <!-- ═══════════════ ÉVÉNEMENTS & PROGRAMMES ═══════════════ -->
-  <section class="events-section" id="evenements" style="padding:6rem 0;">
-    <div class="container">
-      <div class="section-header reveal" style="margin-bottom:3rem;">
-        <p class="section-num centered">08</p>
-        <h2 class="section-title centered" style="color:#fff;">Événements &amp; Programmes</h2>
-        <div class="gold-rule centered"></div>
-        <p style="text-align:center;max-width:600px;margin:.75rem auto 0;color:rgba(255,255,255,.6);font-size:.92rem;">
-          Rejoignez-nous pour nos prochains rassemblements, conférences et programmes de formation.
-        </p>
-      </div>
-
-      <!-- Carousel cards -->
-      <div style="position:relative;" id="evtCarouselWrap">
-        <div id="evtSlides" style="
-          display:flex; gap:1.5rem; overflow-x:auto; scroll-snap-type:x mandatory;
-          scrollbar-width:none; padding-bottom:.5rem; scroll-behavior:smooth;
-        "></div>
-        <!-- Arrows -->
-        <button id="evtPrev" style="
-          position:absolute;top:50%;left:-1.5rem;transform:translateY(-50%);
-          background:rgba(234,169,0,.9);border:none;color:#16174E;
-          width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem;
-          display:flex;align-items:center;justify-content:center;z-index:2;
-        " aria-label="Précédent"><i class="fa fa-chevron-left"></i></button>
-        <button id="evtNext" style="
-          position:absolute;top:50%;right:-1.5rem;transform:translateY(-50%);
-          background:rgba(234,169,0,.9);border:none;color:#16174E;
-          width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem;
-          display:flex;align-items:center;justify-content:center;z-index:2;
-        " aria-label="Suivant"><i class="fa fa-chevron-right"></i></button>
-      </div>
-
-      <div id="evtEmpty" style="display:none;text-align:center;color:rgba(255,255,255,.4);padding:3rem 0;">
-        <i class="fa fa-calendar-times" style="font-size:2.5rem;margin-bottom:1rem;display:block;"></i>
-        Aucun événement à venir pour le moment.
-      </div>
-      <div id="evtLoading" style="text-align:center;color:rgba(255,255,255,.3);padding:3rem 0;">
-        <i class="fa fa-spinner fa-spin" style="font-size:2rem;"></i>
-      </div>
-    </div>
-  </section>
-  <style>
-    #evtSlides::-webkit-scrollbar { display:none; }
-    .evt-card {
-      flex:0 0 320px; scroll-snap-align:start;
-      border-radius:12px; overflow:hidden;
-      background:#1e1f5c; border:1px solid rgba(255,255,255,.07);
-      display:flex; flex-direction:column;
-      transition:transform .25s, box-shadow .25s;
-      cursor:default;
-    }
-    .evt-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(0,0,0,.4); }
-    .evt-card-img {
-      height:180px; background-size:cover; background-position:center;
-      position:relative;
-    }
-    .evt-card-img-overlay {
-      position:absolute;inset:0;
-      background:linear-gradient(to bottom, transparent 30%, rgba(22,23,78,.9) 100%);
-    }
-    .evt-type-badge {
-      position:absolute;top:1rem;left:1rem;
-      background:var(--gold);color:var(--navy);
-      font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;
-      letter-spacing:.08em;text-transform:uppercase;
-      padding:.3rem .75rem;border-radius:3px;
-    }
-    .evt-card-body { padding:1.25rem 1.25rem 1.5rem; flex:1; display:flex;flex-direction:column;gap:.5rem; }
-    .evt-card-title {
-      font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;
-      color:#fff;line-height:1.3;margin:0;
-    }
-    .evt-card-meta { font-size:.82rem;color:rgba(255,255,255,.55);display:flex;flex-direction:column;gap:.3rem;margin-top:.25rem; }
-    .evt-card-meta span { display:flex;align-items:center;gap:.5rem; }
-    .evt-card-meta i { color:var(--gold);width:14px; }
-    .evt-card-btn {
-      margin-top:auto;padding-top:.75rem;
-      display:inline-flex;align-items:center;gap:.4rem;
-      color:var(--gold);font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;
-      text-decoration:none;letter-spacing:.04em;
-      transition:gap .2s;
-    }
-    .evt-card-btn:hover { gap:.65rem; }
-  </style>
-  <script>
-  (function() {
-    function fmtDate(d) {
-      if (!d) return '';
-      var p = d.split('-');
-      var months = ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
-      return p[2] + ' ' + months[parseInt(p[1],10)-1] + ' ' + p[0];
-    }
-    var TYPE_LABELS = {
-      conference:'Conférence', retraite:'Retraite', programme:'Programme',
-      reunion:'Réunion', culte:'Culte Spécial', autre:'Autre'
-    };
-    fetch('data/evenements.json')
-      .then(function(r){return r.json();})
-      .then(function(data) {
-        document.getElementById('evtLoading').style.display = 'none';
-        var items = data.filter(function(e){return e.publie && e.dans_carousel;});
-        if (!items.length) {
-          document.getElementById('evtEmpty').style.display = 'block';
-          document.getElementById('evtCarouselWrap').style.display = 'none';
-          return;
-        }
-        var slides = document.getElementById('evtSlides');
-        items.forEach(function(e) {
-          var dates = fmtDate(e.date_debut) + (e.date_fin && e.date_fin !== e.date_debut ? ' — ' + fmtDate(e.date_fin) : '');
-          var imgStyle = e.image ? 'background-image:url(' + e.image + ')' : 'background:#2a2c72';
-          var btnHtml = e.lien_inscription
-            ? '<a href="' + e.lien_inscription + '" target="_blank" rel="noopener" class="evt-card-btn"><i class="fa fa-arrow-right"></i> S\'inscrire</a>'
-            : '<span class="evt-card-btn" style="color:rgba(255,255,255,.3);cursor:default;"><i class="fa fa-info-circle"></i> Bientôt les détails</span>';
-          var card = document.createElement('div');
-          card.className = 'evt-card';
-          card.innerHTML =
-            '<div class="evt-card-img" style="' + imgStyle + '">' +
-              '<div class="evt-card-img-overlay"></div>' +
-              '<span class="evt-type-badge">' + (TYPE_LABELS[e.type] || e.type) + '</span>' +
-            '</div>' +
-            '<div class="evt-card-body">' +
-              '<h3 class="evt-card-title">' + e.titre + '</h3>' +
-              '<div class="evt-card-meta">' +
-                (dates ? '<span><i class="fa fa-calendar"></i>' + dates + '</span>' : '') +
-                (e.heure ? '<span><i class="fa fa-clock"></i>' + e.heure + '</span>' : '') +
-                ([e.lieu, e.ville].filter(Boolean).length ? '<span><i class="fa fa-map-marker-alt"></i>' + [e.lieu, e.ville].filter(Boolean).join(', ') + '</span>' : '') +
-              '</div>' +
-              (e.description ? '<p style="font-size:.83rem;color:rgba(255,255,255,.5);margin:.25rem 0 0;line-height:1.5;">' + e.description.substring(0, 100) + (e.description.length > 100 ? '…' : '') + '</p>' : '') +
-              btnHtml +
-            '</div>';
-          slides.appendChild(card);
-        });
-        /* Arrows scroll */
-        var wrap = document.getElementById('evtSlides');
-        document.getElementById('evtPrev').addEventListener('click', function() { wrap.scrollBy({left:-340,behavior:'smooth'}); });
-        document.getElementById('evtNext').addEventListener('click', function() { wrap.scrollBy({left:340,behavior:'smooth'}); });
-      })
-      .catch(function() { document.getElementById('evtLoading').style.display = 'none'; });
-  })();
-  </script>
-
+  <!-- ═══════════════ CTA SOUTIEN (placeholder to keep structure) ═══════════════ -->
   <!-- ═══════════════ CTA SOUTIEN ═══════════════ -->
   <section class="cta-section">
     <div class="cta-glow"></div>
@@ -755,3 +614,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
