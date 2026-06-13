@@ -246,7 +246,7 @@ body {
    HERO
 ═══════════════════════════════════════════════ */
 .hero {
-  min-height: 80vh;
+  min-height: 85vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -1699,7 +1699,7 @@ body {
 ═══════════════════════════════════════════════ */
 .hero-bg-img {
   position: absolute; inset: 0;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   filter: saturate(0.85) brightness(0.9);
   opacity: 0;
