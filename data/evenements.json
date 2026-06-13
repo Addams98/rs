@@ -1,0 +1,50 @@
+[
+  {
+    "id": "conference-reveil-2025",
+    "titre": "Conférence Réveil des Nations 2025",
+    "type": "conference",
+    "description": "Grande conférence annuelle du ministère — enseignements, louange et rencontres spirituelles pour les croyants de toutes les nations.",
+    "date_debut": "2025-08-14",
+    "date_fin": "2025-08-16",
+    "heure": "08h00",
+    "lieu": "Église de la Grâce",
+    "ville": "Libreville, Gabon",
+    "image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop",
+    "lien_inscription": "",
+    "publie": true,
+    "dans_carousel": true,
+    "date_creation": "2025-01-01"
+  },
+  {
+    "id": "retraite-priere-juin",
+    "titre": "Retraite de Prière & Jeûne",
+    "type": "retraite",
+    "description": "Trois jours de retraite spirituelle intense — prière, jeûne et étude de la Parole pour approfondir votre relation avec l'Éternel.",
+    "date_debut": "2025-06-20",
+    "date_fin": "2025-06-22",
+    "heure": "18h00",
+    "lieu": "Centre Chrétien",
+    "ville": "Libreville, Gabon",
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1920&auto=format&fit=crop",
+    "lien_inscription": "",
+    "publie": true,
+    "dans_carousel": true,
+    "date_creation": "2025-01-15"
+  },
+  {
+    "id": "school-bible-juillet",
+    "titre": "École Biblique d'Été",
+    "type": "programme",
+    "description": "Programme de formation intensive sur les fondements de la Torah, la prophétie et l'identité hébraïque du peuple de Dieu.",
+    "date_debut": "2025-07-07",
+    "date_fin": "2025-07-11",
+    "heure": "09h00",
+    "lieu": "Salle Communautaire RS",
+    "ville": "Libreville, Gabon",
+    "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1920&auto=format&fit=crop",
+    "lien_inscription": "",
+    "publie": true,
+    "dans_carousel": false,
+    "date_creation": "2025-02-01"
+  }
+]

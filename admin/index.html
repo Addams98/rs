@@ -23,6 +23,7 @@
       <a href="audios.html"><i class="fa fa-headphones"></i> Audios</a>
       <a href="videos.html"><i class="fab fa-youtube"></i> Vidéos</a>
       <a href="projets.html"><i class="fa fa-tasks"></i> Projets</a>
+      <a href="evenements.html"><i class="fa fa-calendar-alt"></i> Événements</a>
       <div class="sidebar-section-label" style="margin-top:1rem;">Paramètres</div>
       <a href="config.html"><i class="fa fa-cog"></i> Configuration</a>
       <a href="../index.html" target="_blank"><i class="fa fa-external-link-alt"></i> Voir le site</a>
@@ -64,6 +65,11 @@
           <div class="stat-num" id="statProjets">—</div>
           <div class="stat-label">Projets actifs</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(234,169,0,.15);color:var(--gold);"><i class="fa fa-calendar-alt"></i></div>
+          <div class="stat-num" id="statEvts">—</div>
+          <div class="stat-label">Événements</div>
+        </div>
       </div>
 
       <!-- Quick actions -->
@@ -74,6 +80,7 @@
           <a href="audios.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter un Audio</a>
           <a href="videos.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter une Vidéo</a>
           <a href="projets.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter un Projet</a>
+          <a href="evenements.html" class="btn-admin btn-admin-primary"><i class="fa fa-plus"></i> Ajouter un Événement</a>
           <a href="config.html" class="btn-admin btn-admin-ghost"><i class="fa fa-cog"></i> Configurer le Site</a>
         </div>
       </div>
@@ -100,12 +107,15 @@ Promise.all([
   fetch('../data/livres.json').then(r=>r.json()),
   fetch('../data/audios.json').then(r=>r.json()),
   fetch('../data/videos.json').then(r=>r.json()),
-  fetch('../data/projets.json').then(r=>r.json())
-]).then(function([livres, audios, videos, projets]) {
-  document.getElementById('statLivres').textContent  = livres.filter(x=>x.publie).length;
-  document.getElementById('statAudios').textContent  = audios.filter(x=>x.publie).length;
-  document.getElementById('statVideos').textContent  = videos.filter(x=>x.publie).length;
-  document.getElementById('statProjets').textContent = projets.filter(x=>x.publie).length;
+  fetch('../data/projets.json').then(r=>r.json()),
+  fetch('../data/evenements.json').then(r=>r.json())
+]).then(function(results) {
+  var livres = results[0], audios = results[1], videos = results[2], projets = results[3], evts = results[4];
+  document.getElementById('statLivres').textContent  = livres.filter(function(x){return x.publie;}).length;
+  document.getElementById('statAudios').textContent  = audios.filter(function(x){return x.publie;}).length;
+  document.getElementById('statVideos').textContent  = videos.filter(function(x){return x.publie;}).length;
+  document.getElementById('statProjets').textContent = projets.filter(function(x){return x.publie;}).length;
+  document.getElementById('statEvts').textContent    = evts.filter(function(x){return x.publie;}).length;
 }).catch(function(e) { console.error(e); });
 </script>
 </body>
