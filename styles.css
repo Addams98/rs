@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    RÉVEIL SPIRITUEL — Proposition 7
    Charte officielle : Bleu #5557CB · Navy #16174E · Or #EAA900
    Typographies : Cormorant Garamond · Inter · Bebas Neue
@@ -246,7 +246,7 @@ body {
    HERO
 ═══════════════════════════════════════════════ */
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -284,7 +284,7 @@ body {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 120px 2rem 80px;
+  padding: 80px 2rem 60px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -318,7 +318,7 @@ body {
 }
 .title-display {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(5.5rem, 17vw, 12rem);
+  font-size: clamp(4rem, 13vw, 9rem);
   line-height: 0.82;
   letter-spacing: 0.1em;
   color: #ffffff;
@@ -424,7 +424,7 @@ body {
    MISSION
 ═══════════════════════════════════════════════ */
 .mission-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: var(--navy);
 }
 .mission-grid {
@@ -463,7 +463,7 @@ body {
    PILLARS
 ═══════════════════════════════════════════════ */
 .pillars-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: var(--navy-mid);
 }
 .pillars-grid {
@@ -517,7 +517,7 @@ body {
    VERSE
 ═══════════════════════════════════════════════ */
 .verse-section {
-  padding: 7rem 0;
+  padding: 4rem 0;
   background: var(--navy);
   position: relative;
   overflow: hidden;
@@ -564,7 +564,7 @@ body {
    NEWS
 ═══════════════════════════════════════════════ */
 .news-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: var(--navy-mid);
 }
 .news-grid {
@@ -629,7 +629,7 @@ body {
    EVENTS CAROUSEL — fond bleu brand
 ═══════════════════════════════════════════════ */
 .events-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: var(--brand-blue);
   position: relative;
   overflow: hidden;
@@ -724,7 +724,7 @@ body {
    BOOKS
 ═══════════════════════════════════════════════ */
 .books-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: var(--navy-mid);
 }
 .books-grid {
@@ -779,7 +779,7 @@ body {
    CTA SOUTIEN
 ═══════════════════════════════════════════════ */
 .cta-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: var(--navy);
   position: relative;
   overflow: hidden;
@@ -1722,7 +1722,7 @@ body {
    TESTIMONIALS
 ═══════════════════════════════════════════════ */
 .testimonials-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: var(--navy-mid);
   position: relative; overflow: hidden;
 }
@@ -1790,7 +1790,7 @@ body {
    NEWSLETTER
 ═══════════════════════════════════════════════ */
 .newsletter-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: var(--white-bg);
   border-top: 3px solid var(--brand-blue);
   border-bottom: 3px solid var(--brand-blue);
@@ -2132,7 +2132,7 @@ body {
 /* ═══════════════════════════════════════════════
    GALLERY SECTION — grille de photos
 ═══════════════════════════════════════════════ */
-.gallery-section { padding: 6rem 0; background: var(--navy); }
+.gallery-section { padding: 4rem 0; background: var(--navy); }
 .gallery-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -2417,7 +2417,7 @@ body {
    GABON SECTION — design immersif
 ═══════════════════════════════════════════════ */
 .gabon-section {
-  padding: 7rem 0;
+  padding: 4rem 0;
   background: var(--navy);
   position: relative;
   overflow: hidden;
@@ -3314,7 +3314,7 @@ body {
 .lib-cat-select:focus { border-color: var(--gold); }
 
 /* ── Section bibliothèque ── */
-.lib-library-section { background: var(--navy); padding: 5rem 0 7rem; }
+.lib-library-section { background: var(--navy); padding: 3rem 0 5rem; }
 
 /* ── Grille ── */
 .lib-grid {
@@ -3935,3 +3935,4 @@ body {
   text-transform: uppercase;
   color: var(--gold);
 }
+
