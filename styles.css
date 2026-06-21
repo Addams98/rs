@@ -832,8 +832,9 @@ p {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.8fr;
+  grid-template-columns: 1.8fr 1fr 1.2fr;
   gap: 3rem;
+  justify-content: center;
   padding-bottom: 4rem;
 }
 .footer-logo {
@@ -912,7 +913,7 @@ p {
 ═══════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
 }
 @media (max-width: 900px) {
   .mission-grid { grid-template-columns: 1fr; gap: 3rem; }
