@@ -928,7 +928,13 @@ p {
 }
 @media (max-width: 768px) {
   .nav-logo-text { display: none; }
-  .nav-logo-icon { height: 36px; }
+  .nav-logo-icon { height: 40px; }
+  .nav-inner { position: relative; }
+  .nav-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .nav-links {
     display: none;
     flex-direction: column;
