@@ -2818,7 +2818,6 @@ p {
   z-index: 90;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-  overflow: hidden;
 }
 .vid-controls-inner {
   display: flex;
