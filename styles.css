@@ -3804,6 +3804,19 @@ p {
   gap: .75rem;
   flex-wrap: wrap;
 }
+@media (max-width: 768px) {
+  .lib-hero-btns {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .lib-hero-btn-read,
+  .lib-hero-btn-dl {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
 
 .lib-hero-btn-read {
   display: inline-flex;

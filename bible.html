@@ -363,8 +363,14 @@
     .bib-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* responsive */
+    @media(max-width: 768px) {
+      .bib-hero-actions { justify-content: center; }
+      .bib-hero-inner { text-align: center; }
+      .bib-hero-eyebrow { justify-content: center; }
+      .bib-hero-verse-box { margin-left: auto; margin-right: auto; }
+    }
     @media(max-width: 600px) {
-      .bib-hero-inner { padding: 100px 1.5rem 70px; }
+      .bib-hero-inner { padding: 90px 1.5rem 50px; }
       .bib-tab-bar { max-width: 100%; }
       .bib-tab-btn { font-size: .75rem; padding: .75rem .8rem; }
     }

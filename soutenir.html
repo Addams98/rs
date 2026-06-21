@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -15,185 +15,424 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Ways to support ── */
-    .support-ways-grid {
+
+    /* ═══════════════════════════════════════════
+       HERO SOUTENIR
+    ═══════════════════════════════════════════ */
+    .sout-hero {
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .sout-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    .sout-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(10,11,45,0.93) 0%,
+        rgba(22,23,78,0.80) 50%,
+        rgba(22,23,78,0.60) 100%
+      );
+    }
+    .sout-hero-inner {
+      position: relative; z-index: 2;
+      padding: 90px 2rem 55px;
+      max-width: 800px;
+    }
+    .sout-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .sout-hero-eyebrow::before,
+    .sout-hero-eyebrow::after {
+      content: ''; display: block;
+      width: 28px; height: 1px;
+      background: var(--gold); opacity: .55;
+    }
+    .sout-hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: .92; letter-spacing: .05em;
+      color: #fff; margin: 0 0 .25em;
+    }
+    .sout-hero-title span { color: var(--gold); display: block; }
+    .sout-hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-style: italic; color: rgba(248,243,232,.7);
+      line-height: 1.65; max-width: 520px; margin-bottom: 1.8rem;
+    }
+    .sout-hero-verse {
+      border-left: 3px solid var(--gold);
+      padding: .85rem 1.4rem;
+      background: rgba(234,169,0,.07);
+      border-radius: 0 8px 8px 0;
+      max-width: 580px; margin-bottom: 2.2rem;
+    }
+    .sout-hero-verse blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-style: italic;
+      color: rgba(255,255,255,.85); line-height: 1.75; margin: 0 0 .4rem;
+    }
+    .sout-hero-verse cite {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--gold);
+    }
+    .sout-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════════════
+       SECTION 1 — 3 PILIERS (cartes illustrées)
+    ═══════════════════════════════════════════ */
+    .sout-pillars-section {
+      background: #f7f6ff;
+      padding: 5rem 0;
+    }
+    .sout-pillars-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1.5rem;
       margin-top: 3rem;
     }
-    .support-way-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      box-shadow: 0 4px 24px rgba(10,22,40,.08);
-      border-top: 4px solid var(--brand-blue);
-      transition: transform .3s, box-shadow .3s;
+    .sout-pillar {
+      border-radius: 14px; overflow: hidden;
+      position: relative; min-height: 380px;
+      display: flex; align-items: flex-end;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(22,23,78,.12);
+      transition: transform .3s ease, box-shadow .3s ease;
     }
-    .support-way-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(10,22,40,.14); }
-    .support-way-card.gold-top { border-top-color: var(--gold); }
-    .support-way-icon {
-      width: 70px; height: 70px;
-      background: var(--ivory-bg);
-      border-radius: 50%;
+    .sout-pillar:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 56px rgba(22,23,78,.22);
+    }
+    .sout-pillar-img {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transition: transform .6s ease;
+    }
+    .sout-pillar:hover .sout-pillar-img { transform: scale(1.06); }
+    .sout-pillar-mask {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top,
+        rgba(10,10,40,0.96) 0%,
+        rgba(10,10,40,0.5) 55%,
+        rgba(10,10,40,0.1) 100%);
+    }
+    .sout-pillar-num {
+      position: absolute; top: 1.4rem; right: 1.4rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem; line-height: 1;
+      color: rgba(255,255,255,.08); z-index: 2;
+    }
+    .sout-pillar-content {
+      position: relative; z-index: 2;
+      padding: 2rem;
+    }
+    .sout-pillar-icon-wrap {
+      width: 48px; height: 48px;
+      border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-size: 1.7rem;
-      color: var(--brand-blue);
+      font-size: 1.2rem; margin-bottom: 1rem;
     }
-    .support-way-card.gold-top .support-way-icon { color: var(--gold); }
-    .support-way-card h3 {
+    .sout-pillar-content h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 700;
-      color: var(--navy); margin-bottom: .9rem;
+      font-size: 1.55rem; font-weight: 700;
+      color: #fff; margin: 0 0 .6rem; line-height: 1.15;
     }
-    .support-way-card p {
-      color: #555; font-size: .92rem; line-height: 1.75;
+    .sout-pillar-content p {
+      font-size: .86rem; color: rgba(255,255,255,.62);
+      line-height: 1.65; margin: 0;
+    }
+    .sout-pillar-tag {
+      display: inline-block; margin-bottom: .8rem;
+      font-size: .65rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      padding: .25rem .85rem; border-radius: 999px;
     }
 
-    /* ── Donate cards ── */
-    .donate-grid {
+    /* ═══════════════════════════════════════════
+       SECTION 2 — MOYENS DE PAIEMENT
+    ═══════════════════════════════════════════ */
+    .sout-payment-section {
+      background: var(--navy-deep);
+      padding: 5rem 0;
+    }
+    .sout-payment-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1.5rem;
       margin-top: 3rem;
     }
-    .donate-card {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(212,168,67,.18);
-      border-radius: 8px;
-      padding: 2.5rem 2rem;
-      text-align: center;
+    .sout-pay-card {
+      border-radius: 14px; overflow: hidden;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
       transition: transform .3s, border-color .3s, box-shadow .3s;
     }
-    .donate-card:hover {
+    .sout-pay-card:hover {
       transform: translateY(-6px);
-      border-color: var(--gold);
-      box-shadow: 0 16px 40px rgba(0,0,0,.3);
+      border-color: rgba(234,169,0,.35);
+      box-shadow: 0 20px 48px rgba(0,0,0,.4);
     }
-    .donate-card.featured-card {
-      background: rgba(212,168,67,.12);
-      border-color: var(--gold);
-      position: relative;
+    .sout-pay-header {
+      padding: 1.8rem 1.8rem 1.4rem;
+      display: flex; align-items: center; gap: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,.07);
     }
-    .donate-card.featured-card::before {
-      content: 'Recommandé';
-      position: absolute; top: -12px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--gold); color: var(--navy);
-      font-size: .72rem; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase;
-      padding: .3rem 1rem; border-radius: 2rem; white-space: nowrap;
-    }
-    .donate-icon {
-      width: 64px; height: 64px;
-      background: rgba(212,168,67,.15);
-      border: 1.5px solid var(--gold);
-      border-radius: 50%;
+    .sout-pay-logo {
+      flex-shrink: 0;
+      height: 48px; width: 48px;
+      border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-size: 1.5rem; color: var(--gold);
+      font-weight: 900; font-size: 1.1rem; font-style: italic;
+      letter-spacing: -.02em;
     }
-    .donate-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--ivory); margin-bottom:1rem; }
-    .donate-card p  { color:rgba(245,241,232,.7); font-size:.9rem; line-height:1.8; margin-bottom:1.8rem; }
+    /* Airtel Money logo */
+    .logo-airtel { background: #E40000; color: #fff; font-family: 'Inter', sans-serif; }
+    /* MoovMoney logo */
+    .logo-moov   { background: #0D5FAF; color: #fff; font-family: 'Inter', sans-serif; }
+    /* PayPal logo */
+    .logo-paypal { background: #003087; color: #fff; font-size: 1.4rem; }
+    .sout-pay-name {
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem; font-weight: 700;
+      color: #fff; line-height: 1.2;
+    }
+    .sout-pay-name span {
+      display: block; font-size: .72rem; font-weight: 400;
+      color: rgba(255,255,255,.4); margin-top: .2rem; letter-spacing: .04em;
+    }
+    .sout-pay-body { padding: 1.4rem 1.8rem; }
+    .sout-pay-numbers { display: flex; flex-direction: column; gap: .8rem; margin-bottom: 1.2rem; }
+    .sout-pay-number {
+      display: flex; align-items: center; justify-content: space-between; gap: .6rem;
+      background: rgba(255,255,255,.05); border-radius: 8px;
+      padding: .75rem 1rem;
+    }
+    .sout-pay-number-left { display: flex; align-items: center; gap: .75rem; }
+    .sout-pay-number-left i { font-size: .8rem; color: var(--gold); }
+    .sout-pay-number-val {
+      font-size: .9rem; font-weight: 600; color: #fff;
+      font-family: 'Inter', sans-serif; letter-spacing: .02em;
+    }
+    .sout-pay-number-name {
+      font-size: .7rem; color: rgba(255,255,255,.4);
+      display: block; margin-top: .1rem;
+    }
+    .sout-copy-btn {
+      background: none; border: none; cursor: pointer;
+      color: rgba(255,255,255,.3); font-size: .8rem;
+      padding: .3rem; border-radius: 4px;
+      transition: color .2s;
+    }
+    .sout-copy-btn:hover { color: var(--gold); }
+    .sout-pay-note {
+      font-size: .78rem; color: rgba(255,255,255,.35);
+      line-height: 1.55; font-style: italic;
+    }
+    .sout-pay-soon {
+      display: flex; align-items: center; gap: .6rem;
+      background: rgba(255,255,255,.04); border-radius: 8px;
+      padding: .9rem 1rem; margin-bottom: 1rem;
+    }
+    .sout-pay-soon i { color: var(--gold); }
+    .sout-pay-soon span { font-size: .85rem; color: rgba(255,255,255,.5); }
 
-    /* ── Contact boxes ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      margin-top: 3rem;
+    /* Logos officiels */
+    .sout-logos-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; flex-wrap: wrap;
+      margin-top: 3rem; padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,.08);
     }
-    .contact-box {
-      background: #fff; border-radius: 8px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 24px rgba(10,22,40,.08);
-      border-top: 4px solid var(--gold);
+    .sout-logo-badge {
+      display: flex; align-items: center; gap: .8rem;
+      padding: .75rem 1.4rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px;
     }
-    .contact-box h3 {
-      font-family:'Cormorant Garamond',serif;
-      font-size:1.6rem; font-weight:600; color:var(--navy);
-      margin-bottom:2rem; padding-bottom:1rem;
-      border-bottom:1px solid rgba(10,22,40,.1);
-    }
-    .contact-row {
-      display:flex; align-items:flex-start; gap:1.2rem;
-      padding:.9rem 0; border-bottom:1px solid rgba(10,22,40,.06);
-    }
-    .contact-row:last-child { border-bottom:none; }
-    .contact-row-icon {
-      width:36px; height:36px;
-      background:rgba(10,22,40,.06); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      color:var(--navy); font-size:.85rem; flex-shrink:0;
-    }
-    .contact-row-info { flex:1; }
-    .contact-row-label {
-      font-size:.73rem; font-weight:700;
-      text-transform:uppercase; letter-spacing:.1em;
-      color:var(--gold); margin-bottom:.2rem;
-    }
-    .contact-row-val {
-      font-size:.92rem; color:var(--navy); font-weight:500;
-    }
-    .contact-row-note {
-      font-size:.78rem; color:#888; margin-top:.15rem;
+    .sout-logo-badge img { height: 28px; width: auto; object-fit: contain; }
+    .sout-logo-badge span {
+      font-size: .78rem; color: rgba(255,255,255,.45);
+      font-weight: 500;
     }
 
-    /* ── Persons grid ── */
-    .persons-grid {
+    /* ═══════════════════════════════════════════
+       SECTION 3 — CONTACTS DIRECTS
+    ═══════════════════════════════════════════ */
+    .sout-contacts-section {
+      background: #f7f6ff;
+      padding: 5rem 0;
+    }
+    .sout-contacts-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      max-width: 800px; margin-left: auto; margin-right: auto;
     }
-    .person-card {
+    .sout-contact-card {
       background: #fff;
-      border-radius: 8px;
-      padding: 1.75rem;
-      box-shadow: 0 4px 20px rgba(10,22,40,.07);
-      border-left: 4px solid var(--brand-blue);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(22,23,78,.08);
+      transition: transform .3s, box-shadow .3s;
     }
-    .person-name {
-      font-family:'Cormorant Garamond',serif;
-      font-size:1.15rem; font-weight:700;
-      color:var(--navy); margin-bottom:.6rem;
+    .sout-contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(22,23,78,.14);
     }
-    .person-phone {
-      display:flex; align-items:center; gap:.6rem;
-      color:var(--navy); font-size:.92rem; font-weight:500;
-      text-decoration:none;
-    }
-    .person-phone i { color:var(--brand-blue); }
-    .person-phone:hover { color:var(--brand-blue); }
-
-    /* ── Tagline banner ── */
-    .soutenir-tagline {
+    .sout-contact-top {
       background: var(--navy);
-      padding: 4rem 0;
+      padding: 1.6rem 1.8rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .sout-contact-avatar {
+      width: 50px; height: 50px; border-radius: 50%;
+      background: rgba(234,169,0,.2);
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--gold); flex-shrink: 0;
+    }
+    .sout-contact-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 700; color: #fff;
+      line-height: 1.25;
+    }
+    .sout-contact-role {
+      font-size: .7rem; color: var(--gold);
+      letter-spacing: .1em; text-transform: uppercase;
+      margin-top: .2rem;
+    }
+    .sout-contact-body { padding: 1.4rem 1.8rem; display: flex; flex-direction: column; gap: .7rem; }
+    .sout-contact-row {
+      display: flex; align-items: center; gap: .9rem;
+      padding: .65rem .9rem;
+      background: var(--ivory-bg);
+      border-radius: 8px; text-decoration: none;
+      transition: background .2s;
+    }
+    .sout-contact-row:hover { background: rgba(85,87,203,.08); }
+    .sout-contact-row i { color: var(--brand-blue); font-size: .85rem; width: 16px; text-align: center; flex-shrink: 0; }
+    .sout-contact-row span { font-size: .9rem; color: var(--navy); font-weight: 500; }
+
+    /* Virement bancaire box */
+    .sout-bank-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 4px 24px rgba(22,23,78,.08);
+      border-top: 4px solid var(--gold);
+      margin-top: 3rem;
+    }
+    .sout-bank-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--navy);
+      margin: 0 0 1.4rem; padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(22,23,78,.08);
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .sout-bank-box h3 i { color: var(--gold); font-size: 1.1rem; }
+    .sout-bank-rows { display: flex; flex-direction: column; gap: .6rem; }
+    .sout-bank-row {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: .75rem .9rem; background: var(--ivory-bg); border-radius: 8px;
+    }
+    .sout-bank-row i { color: var(--navy); font-size: .8rem; margin-top: .15rem; flex-shrink: 0; }
+    .sout-bank-label {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .15rem;
+    }
+    .sout-bank-val { font-size: .9rem; color: var(--navy); font-weight: 500; }
+
+    /* ═══════════════════════════════════════════
+       CTA FINAL
+    ═══════════════════════════════════════════ */
+    .sout-cta {
+      position: relative;
+      padding: 5rem 0;
+      background: var(--navy);
+      overflow: hidden;
       text-align: center;
     }
-    .soutenir-tagline p {
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(1.4rem,3vw,2rem);
-      font-style:italic;
-      color:rgba(255,255,255,.85);
-      max-width:700px;
-      margin:0 auto 1rem;
-      line-height:1.5;
+    .sout-cta::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(234,169,0,.12) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .soutenir-tagline cite {
-      font-size:.8rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase;
-      color:var(--gold);
+    .sout-cta::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(85,87,203,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .sout-cta-inner { position: relative; z-index: 2; }
+    .sout-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      color: #fff; font-weight: 600;
+      margin: .5rem 0 .8rem; line-height: 1.3;
+    }
+    .sout-cta-verse {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-style: italic; color: rgba(255,255,255,.65);
+      max-width: 600px; margin: 0 auto 2.2rem; line-height: 1.7;
+    }
+    .sout-cta-verse cite {
+      display: block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold); margin-top: .6rem; font-style: normal;
+    }
+    .sout-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* Toast de copie */
+    .copy-toast {
+      position: fixed; bottom: 2rem; left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--navy); color: #fff;
+      padding: .75rem 1.5rem; border-radius: 50px;
+      font-size: .82rem; font-weight: 600;
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+      border: 1px solid var(--gold);
+      z-index: 9999;
+      opacity: 0;
+      transition: transform .3s ease, opacity .3s ease;
+      pointer-events: none;
+    }
+    .copy-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
     }
 
-    @media (max-width:768px) {
-      .support-ways-grid { grid-template-columns:1fr; }
-      .donate-grid        { grid-template-columns:1fr; }
-      .contact-grid       { grid-template-columns:1fr; }
-      .persons-grid       { grid-template-columns:1fr; }
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .sout-payment-grid { grid-template-columns: 1fr; max-width: 440px; margin: 3rem auto 0; }
+    }
+    @media (max-width: 768px) {
+      .sout-pillars-grid { grid-template-columns: 1fr; max-width: 420px; margin: 3rem auto 0; }
+      .sout-contacts-grid { grid-template-columns: 1fr; max-width: 420px; }
+    }
+    @media (max-width: 600px) {
+      .sout-hero-inner { padding: 80px 1.5rem 45px; }
     }
   </style>
 </head>
@@ -229,198 +468,326 @@
     </div>
   </header>
 
-  <!-- ═══════════════ PAGE HERO ═══════════════ -->
-  <section class="page-hero">
-    <img src="imag/logo reveil spirituel_Plan de travail 1 copie.png" alt="" class="page-hero-deco" loading="lazy" />
-    <div class="container page-hero-inner">
-      <nav class="breadcrumb">
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="sout-hero">
+    <div class="sout-hero-bg"></div>
+    <div class="sout-hero-overlay"></div>
+    <div class="container sout-hero-inner">
+      <nav class="breadcrumb" style="position:relative;z-index:2;margin-bottom:2rem;">
         <a href="index.html">Accueil</a>
         <span class="sep">/</span>
         <span>Nous Soutenir</span>
       </nav>
-      <h1>Nous Soutenir</h1>
-      <p>Participez à l'avancement du Royaume — votre soutien transforme des vies, des familles et des nations pour la gloire de Dieu.</p>
-      <div class="page-hero-verse">
-        <p>"Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie."</p>
-        <cite>2 Corinthiens 9:7</cite>
+      <div class="sout-hero-eyebrow"><span>Partenariat &amp; Soutien</span></div>
+      <h1 class="sout-hero-title">Faites Avancer<span>le Royaume</span></h1>
+      <p class="sout-hero-sub">Votre soutien transforme des vies, des familles et des nations entières pour la gloire de Dieu.</p>
+      <div class="sout-hero-verse">
+        <blockquote>"Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie."</blockquote>
+        <cite>— 2 Corinthiens 9:7</cite>
+      </div>
+      <div class="sout-hero-actions">
+        <a href="#moyens-don" class="btn btn-gold"><i class="fa fa-heart"></i> Faire un Don</a>
+        <a href="#coordonnees" class="btn" style="border:1.5px solid rgba(255,255,255,.28);color:#fff;padding:.85rem 1.8rem;border-radius:4px;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;background:transparent;">
+          <i class="fa fa-phone"></i> Contacts Directs
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 1 — 3 FAÇONS DE SOUTENIR ═══════════════ -->
-  <section class="pillars-section white-bg">
+  <!-- ═══════════════ SECTION 1 — 3 FAÇONS ═══════════════ -->
+  <section class="sout-pillars-section">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header reveal" style="text-align:center;">
         <p class="section-num centered">01</p>
-        <h2 class="section-title centered">3 Façons de Soutenir</h2>
+        <h2 class="section-title centered" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--navy);">3 Façons de Soutenir</h2>
         <div class="gold-rule centered"></div>
-        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
-          Le soutien au ministère ne se limite pas aux dons financiers. Vous pouvez participer à l'œuvre de Dieu de bien des façons.
+        <p style="text-align:center;max-width:580px;margin:0 auto;color:rgba(22,23,78,.6);font-size:.95rem;line-height:1.7;">
+          Le soutien ne se limite pas aux dons financiers — chaque forme de participation est précieuse et nécessaire.
         </p>
       </div>
-      <div class="support-ways-grid">
-        <div class="support-way-card stagger">
-          <div class="support-way-icon"><i class="fa fa-pray"></i></div>
-          <h3>La Prière</h3>
-          <p>Intercédez pour le ministère, ses projets et ses équipes. La prière est le fondement de toute œuvre de Dieu — elle est la première forme de soutien que vous puissiez offrir.</p>
+      <div class="sout-pillars-grid reveal">
+
+        <!-- Prière -->
+        <div class="sout-pillar">
+          <div class="sout-pillar-img" style="background-image:url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=700&auto=format&fit=crop');"></div>
+          <div class="sout-pillar-mask"></div>
+          <div class="sout-pillar-num">01</div>
+          <div class="sout-pillar-content">
+            <div class="sout-pillar-icon-wrap" style="background:rgba(234,169,0,.2);">
+              <i class="fa fa-hands-praying" style="color:var(--gold);"></i>
+            </div>
+            <span class="sout-pillar-tag" style="background:rgba(234,169,0,.2);color:var(--gold);">Fondement</span>
+            <h3>La Prière</h3>
+            <p>Intercédez pour le ministère, ses projets et ses équipes. La prière est le fondement de toute œuvre de Dieu — elle est la première forme de soutien.</p>
+          </div>
         </div>
-        <div class="support-way-card stagger">
-          <div class="support-way-icon"><i class="fa fa-bullhorn"></i></div>
-          <h3>La Communication</h3>
-          <p>Partagez la vision, parlez du ministère autour de vous, diffusez nos ressources et devenez ambassadeur de l'œuvre de Réveil Spirituel dans votre entourage et votre nation.</p>
+
+        <!-- Communication -->
+        <div class="sout-pillar">
+          <div class="sout-pillar-img" style="background-image:url('https://images.unsplash.com/photo-1493934558415-9d19f0b2b4d2?q=80&w=700&auto=format&fit=crop');"></div>
+          <div class="sout-pillar-mask"></div>
+          <div class="sout-pillar-num">02</div>
+          <div class="sout-pillar-content">
+            <div class="sout-pillar-icon-wrap" style="background:rgba(85,87,203,.2);">
+              <i class="fa fa-bullhorn" style="color:#a0a2f0;"></i>
+            </div>
+            <span class="sout-pillar-tag" style="background:rgba(85,87,203,.2);color:#a0a2f0;">Impact</span>
+            <h3>La Communication</h3>
+            <p>Partagez la vision, parlez du ministère, diffusez nos ressources. Devenez ambassadeur de l'œuvre de Réveil Spirituel dans votre entourage et votre nation.</p>
+          </div>
         </div>
-        <div class="support-way-card gold-top stagger">
-          <div class="support-way-icon"><i class="fa fa-hand-holding-heart"></i></div>
-          <h3>Les Dons</h3>
-          <p>Votre soutien financier ou matériel est un investissement précieux dans le Royaume de Dieu — il finance l'évangélisation, les formations et l'équipement des nations.</p>
+
+        <!-- Dons -->
+        <div class="sout-pillar">
+          <div class="sout-pillar-img" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=700&auto=format&fit=crop');"></div>
+          <div class="sout-pillar-mask"></div>
+          <div class="sout-pillar-num">03</div>
+          <div class="sout-pillar-content">
+            <div class="sout-pillar-icon-wrap" style="background:rgba(234,169,0,.2);">
+              <i class="fa fa-hand-holding-heart" style="color:var(--gold);"></i>
+            </div>
+            <span class="sout-pillar-tag" style="background:rgba(234,169,0,.2);color:var(--gold);">Partenariat</span>
+            <h3>Les Dons</h3>
+            <p>Votre soutien financier ou matériel est un investissement dans le Royaume — il finance l'évangélisation, les formations bibliques et l'équipement des nations.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 2 — MODES DE DON ═══════════════ -->
-  <section class="events-section" style="padding:7rem 0;">
+  <!-- ═══════════════ SECTION 2 — MOYENS DE DON ═══════════════ -->
+  <section class="sout-payment-section" id="moyens-don">
     <div class="container">
-      <div class="section-header reveal">
-        <p class="section-num centered">02</p>
-        <h2 class="section-title centered">Modes de Don</h2>
+      <div class="section-header reveal" style="text-align:center;">
+        <p class="section-num centered" style="color:rgba(234,169,0,.25);">02</p>
+        <h2 class="section-title centered" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;">Moyens de Paiement</h2>
         <div class="gold-rule centered"></div>
-        <p style="text-align:center;max-width:600px;margin:0 auto;color:rgba(245,241,232,.75);">
-          Que votre contribution soit ponctuelle ou régulière, petite ou grande, elle est précieuse aux yeux de Dieu et du ministère.
+        <p style="text-align:center;max-width:560px;margin:0 auto;color:rgba(245,241,232,.55);font-size:.92rem;line-height:1.7;">
+          Choisissez le moyen qui vous convient — chaque contribution, aussi modeste soit-elle, fait avancer le Royaume.
         </p>
       </div>
-      <div class="donate-grid">
-        <div class="donate-card stagger">
-          <div class="donate-icon"><i class="fa fa-hand-holding-usd"></i></div>
-          <h3>Don Ponctuel</h3>
-          <p>Contribuez selon votre cœur et vos possibilités, à tout moment. Un don unique, aussi modeste soit-il, fait une réelle différence dans l'avancement du Royaume.</p>
-          <a href="#coordonnees" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Voir les Coordonnées <i class="fa fa-arrow-down"></i></a>
+      <div class="sout-payment-grid reveal">
+
+        <!-- AirtelMoney -->
+        <div class="sout-pay-card">
+          <div class="sout-pay-header">
+            <div class="sout-pay-logo logo-airtel">A</div>
+            <div>
+              <div class="sout-pay-name">
+                Airtel Money
+                <span>Mobile Money — Gabon</span>
+              </div>
+            </div>
+          </div>
+          <div class="sout-pay-body">
+            <div class="sout-pay-numbers">
+              <div class="sout-pay-number">
+                <div class="sout-pay-number-left">
+                  <i class="fa fa-phone"></i>
+                  <div>
+                    <div class="sout-pay-number-val">+241 74 255 323</div>
+                    <span class="sout-pay-number-name">Engonga Stephanas Grace</span>
+                  </div>
+                </div>
+                <button class="sout-copy-btn" data-copy="+241742553233" title="Copier">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+              <div class="sout-pay-number">
+                <div class="sout-pay-number-left">
+                  <i class="fa fa-phone"></i>
+                  <div>
+                    <div class="sout-pay-number-val">+241 62 438 323</div>
+                    <span class="sout-pay-number-name">Nfono Nzogobe Germaine</span>
+                  </div>
+                </div>
+                <button class="sout-copy-btn" data-copy="+24162438323" title="Copier">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <p class="sout-pay-note">Indiquez <strong style="color:rgba(255,255,255,.6);">"Don RS"</strong> en message lors du transfert.</p>
+          </div>
         </div>
-        <div class="donate-card featured-card stagger">
-          <div class="donate-icon"><i class="fa fa-calendar-check"></i></div>
-          <h3>Don Mensuel</h3>
-          <p>Devenez un partenaire régulier du ministère. Un engagement mensuel nous permet de planifier des projets à long terme et d'avoir un impact durable sur les nations.</p>
-          <a href="#coordonnees" class="btn btn-gold" style="width:100%;text-align:center;display:block;">Devenir Partenaire <i class="fa fa-heart"></i></a>
+
+        <!-- MoovMoney -->
+        <div class="sout-pay-card">
+          <div class="sout-pay-header">
+            <div class="sout-pay-logo logo-moov" style="font-size:.85rem;letter-spacing:.02em;">M</div>
+            <div>
+              <div class="sout-pay-name">
+                Moov Money
+                <span>Mobile Money — Gabon</span>
+              </div>
+            </div>
+          </div>
+          <div class="sout-pay-body">
+            <div class="sout-pay-numbers">
+              <div class="sout-pay-number">
+                <div class="sout-pay-number-left">
+                  <i class="fa fa-phone"></i>
+                  <div>
+                    <div class="sout-pay-number-val">+241 74 255 323</div>
+                    <span class="sout-pay-number-name">Engonga Stephanas Grace</span>
+                  </div>
+                </div>
+                <button class="sout-copy-btn" data-copy="+24174255323" title="Copier">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+              <div class="sout-pay-number">
+                <div class="sout-pay-number-left">
+                  <i class="fa fa-phone"></i>
+                  <div>
+                    <div class="sout-pay-number-val">+241 62 438 323</div>
+                    <span class="sout-pay-number-name">Nfono Nzogobe Germaine</span>
+                  </div>
+                </div>
+                <button class="sout-copy-btn" data-copy="+24162438323" title="Copier">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <p class="sout-pay-note">Indiquez <strong style="color:rgba(255,255,255,.6);">"Don RS"</strong> en message lors du transfert.</p>
+          </div>
         </div>
-        <div class="donate-card stagger">
-          <div class="donate-icon"><i class="fa fa-box-open"></i></div>
-          <h3>Don en Nature</h3>
-          <p>Vous pouvez également soutenir le ministère par des dons en nature : matériel informatique, livres, équipements audiovisuels ou tout autre bien utile à l'œuvre.</p>
-          <a href="mailto:reunion2reveilspirituel@gmail.com" class="btn btn-ghost" style="width:100%;text-align:center;display:block;">Nous Contacter <i class="fa fa-envelope"></i></a>
+
+        <!-- PayPal -->
+        <div class="sout-pay-card">
+          <div class="sout-pay-header">
+            <div class="sout-pay-logo logo-paypal"><i class="fab fa-paypal"></i></div>
+            <div>
+              <div class="sout-pay-name">
+                PayPal
+                <span>Paiement international</span>
+              </div>
+            </div>
+          </div>
+          <div class="sout-pay-body">
+            <div class="sout-pay-soon">
+              <i class="fa fa-clock"></i>
+              <span>En cours de configuration — bientôt disponible.</span>
+            </div>
+            <p class="sout-pay-note">
+              En attendant, contactez-nous par email pour tout don international. Nous vous transmettrons les coordonnées adaptées.
+            </p>
+            <div style="margin-top:1.2rem;">
+              <a href="mailto:reunion2reveilspirituel@gmail.com" class="btn btn-ghost" style="display:block;text-align:center;font-size:.8rem;">
+                <i class="fa fa-envelope"></i> Nous écrire
+              </a>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SECTION 3 — COORDONNÉES ═══════════════ -->
-  <section class="books-section light-bg" id="coordonnees" style="padding:7rem 0;">
+  <!-- ═══════════════ SECTION 3 — CONTACTS ═══════════════ -->
+  <section class="sout-contacts-section" id="coordonnees">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header reveal" style="text-align:center;">
         <p class="section-num centered">03</p>
-        <h2 class="section-title centered">Coordonnées &amp; Contact</h2>
+        <h2 class="section-title centered" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--navy);">Contacts Directs</h2>
         <div class="gold-rule centered"></div>
-        <p class="body-text" style="text-align:center;max-width:600px;margin:0 auto 3rem;">
-          Pour tout envoi ou virement, merci d'indiquer votre nom et <strong>"Don RS"</strong> en référence. Vous pouvez aussi contacter directement nos responsables ci-dessous.
+        <p style="text-align:center;max-width:560px;margin:0 auto;color:rgba(22,23,78,.55);font-size:.92rem;line-height:1.7;">
+          Nos responsables sont disponibles pour vous accompagner dans votre démarche de soutien.
         </p>
       </div>
 
-      <!-- Personnes à contacter -->
-      <div class="persons-grid reveal" style="max-width:700px;margin:0 auto 3.5rem;">
-        <div class="person-card">
-          <div class="person-name"><i class="fa fa-user" style="color:var(--brand-blue);margin-right:.5rem;font-size:.9rem;"></i>Engonga Stephanas Grace</div>
-          <a class="person-phone" href="tel:+24174255323">
-            <i class="fa fa-phone"></i> +241 74 255 323
-          </a>
+      <div class="sout-contacts-grid reveal">
+
+        <div class="sout-contact-card">
+          <div class="sout-contact-top">
+            <div class="sout-contact-avatar"><i class="fa fa-user"></i></div>
+            <div>
+              <div class="sout-contact-name">Engonga Stephanas Grace</div>
+              <div class="sout-contact-role">Responsable Partenariats</div>
+            </div>
+          </div>
+          <div class="sout-contact-body">
+            <a href="tel:+24174255323" class="sout-contact-row">
+              <i class="fa fa-phone"></i>
+              <span>+241 74 255 323</span>
+            </a>
+            <a href="https://wa.me/24174255323" target="_blank" rel="noopener" class="sout-contact-row">
+              <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
         </div>
-        <div class="person-card">
-          <div class="person-name"><i class="fa fa-user" style="color:var(--brand-blue);margin-right:.5rem;font-size:.9rem;"></i>Nfono Nzogobe Germaine</div>
-          <a class="person-phone" href="tel:+24162438323">
-            <i class="fa fa-phone"></i> +241 62 438 323
-          </a>
+
+        <div class="sout-contact-card">
+          <div class="sout-contact-top">
+            <div class="sout-contact-avatar"><i class="fa fa-user"></i></div>
+            <div>
+              <div class="sout-contact-name">Nfono Nzogobe Germaine</div>
+              <div class="sout-contact-role">Responsable Partenariats</div>
+            </div>
+          </div>
+          <div class="sout-contact-body">
+            <a href="tel:+24162438323" class="sout-contact-row">
+              <i class="fa fa-phone"></i>
+              <span>+241 62 438 323</span>
+            </a>
+            <a href="https://wa.me/24162438323" target="_blank" rel="noopener" class="sout-contact-row">
+              <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
         </div>
+
       </div>
 
-      <div class="contact-grid reveal">
-        <!-- Mobile Money -->
-        <div class="contact-box">
-          <h3><i class="fa fa-mobile-alt" style="color:var(--gold);margin-right:.8rem;"></i>Mobile Money</h3>
-          <div class="contact-row">
-            <div class="contact-row-icon" style="background:rgba(255,102,0,.12);"><i class="fa fa-phone" style="color:#FF6600;"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Airtel Money / Moov</div>
-              <div class="contact-row-val">+241 74 255 323</div>
-              <div class="contact-row-note">Engonga Stephanas Grace</div>
-            </div>
+      <!-- Virement Bancaire -->
+      <div class="sout-bank-box reveal" style="max-width:800px;margin:2rem auto 0;">
+        <h3><i class="fa fa-university"></i> Virement Bancaire</h3>
+        <div class="sout-bank-rows">
+          <div class="sout-bank-row">
+            <i class="fa fa-building"></i>
+            <div><div class="sout-bank-label">Banque</div><div class="sout-bank-val">À confirmer</div></div>
           </div>
-          <div class="contact-row">
-            <div class="contact-row-icon" style="background:rgba(255,102,0,.12);"><i class="fa fa-phone" style="color:#FF6600;"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Airtel Money / Moov</div>
-              <div class="contact-row-val">+241 62 438 323</div>
-              <div class="contact-row-note">Nfono Nzogobe Germaine</div>
-            </div>
+          <div class="sout-bank-row">
+            <i class="fa fa-hashtag"></i>
+            <div><div class="sout-bank-label">IBAN / RIB</div><div class="sout-bank-val">À communiquer sur demande</div></div>
           </div>
-          <div class="contact-row">
-            <div class="contact-row-icon" style="background:rgba(0,112,196,.12);"><i class="fab fa-paypal" style="color:#0070C4;"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">PayPal</div>
-              <div class="contact-row-val" style="color:#aaa;font-style:italic;">En cours de configuration</div>
-            </div>
+          <div class="sout-bank-row">
+            <i class="fa fa-user"></i>
+            <div><div class="sout-bank-label">Titulaire</div><div class="sout-bank-val">Réveil Spirituel</div></div>
           </div>
-          <div class="contact-row">
-            <div class="contact-row-icon"><i class="fa fa-envelope"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Email</div>
-              <div class="contact-row-val">
-                <a href="mailto:reunion2reveilspirituel@gmail.com" style="color:var(--navy);text-decoration:none;">reunion2reveilspirituel@gmail.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Virement Bancaire -->
-        <div class="contact-box">
-          <h3><i class="fa fa-university" style="color:var(--gold);margin-right:.8rem;"></i>Virement Bancaire</h3>
-          <div class="contact-row">
-            <div class="contact-row-icon"><i class="fa fa-building"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Banque</div>
-              <div class="contact-row-val">À confirmer</div>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon"><i class="fa fa-hashtag"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">IBAN / RIB</div>
-              <div class="contact-row-val">À communiquer sur demande</div>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon"><i class="fa fa-user"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Titulaire du Compte</div>
-              <div class="contact-row-val">Réveil Spirituel</div>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon"><i class="fa fa-info-circle"></i></div>
-            <div class="contact-row-info">
-              <div class="contact-row-label">Pour obtenir les coordonnées</div>
-              <div class="contact-row-val">
-                <a href="mailto:reunion2reveilspirituel@gmail.com" style="color:var(--brand-blue);text-decoration:none;font-size:.88rem;">Écrire au ministère <i class="fa fa-arrow-right" style="font-size:.75rem;"></i></a>
+          <div class="sout-bank-row">
+            <i class="fa fa-envelope"></i>
+            <div>
+              <div class="sout-bank-label">Pour obtenir les coordonnées</div>
+              <div class="sout-bank-val">
+                <a href="mailto:reunion2reveilspirituel@gmail.com" style="color:var(--brand-blue);text-decoration:none;font-size:.88rem;">
+                  reunion2reveilspirituel@gmail.com <i class="fa fa-arrow-right" style="font-size:.75rem;"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ═══════════════ TAGLINE FINALE ═══════════════ -->
-  <div class="soutenir-tagline">
-    <p>"Le réveil des peuples est en marche avec Yéhoshou'a !"</p>
-    <cite>— Réveil Spirituel, Gabon</cite>
-  </div>
+  <!-- ═══════════════ CTA FINAL ═══════════════ -->
+  <section class="sout-cta">
+    <div class="container sout-cta-inner">
+      <p class="section-num centered" style="color:rgba(234,169,0,.18);">04</p>
+      <h2>"Le réveil des peuples est en marche<br>avec Yéhoshou'a !"</h2>
+      <div class="sout-cta-verse">
+        "Donnez, et il vous sera donné : on versera dans votre sein une bonne mesure, serrée, secouée et qui déborde."
+        <cite>— Luc 6:38</cite>
+      </div>
+      <div class="sout-cta-actions">
+        <a href="#moyens-don" class="btn btn-gold"><i class="fa fa-heart"></i> Faire un Don</a>
+        <a href="contact.html" class="btn btn-ghost"><i class="fa fa-envelope"></i> Nous Contacter</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
@@ -467,9 +834,30 @@
     </div>
   </footer>
 
+  <!-- Toast copie -->
+  <div class="copy-toast" id="copyToast">
+    <i class="fa fa-check" style="color:var(--gold);margin-right:.5rem;"></i> Numéro copié !
+  </div>
+
   <script src="script.js"></script>
+  <script>
+    // Copier numéro au clic
+    document.querySelectorAll('.sout-copy-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var num = btn.dataset.copy;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(num);
+        } else {
+          var el = document.createElement('textarea');
+          el.value = num; document.body.appendChild(el);
+          el.select(); document.execCommand('copy');
+          document.body.removeChild(el);
+        }
+        var toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        setTimeout(function() { toast.classList.remove('show'); }, 2200);
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
