@@ -184,13 +184,10 @@ p {
   text-decoration: none;
   flex-shrink: 0;
 }
-.nav-logo {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-  background: rgba(255,255,255,0.94);
-  border-radius: 6px;
-  padding: 3px 8px;
+.nav-logo-icon { height: 44px; width: auto; object-fit: contain; }
+.nav-logo-text {
+  height: 26px; width: auto; object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 .nav-links { display: flex; align-items: center; gap: 0.15rem; }
 .nav-link {
@@ -930,7 +927,8 @@ p {
   .gold-rule:not(.centered) { margin-left: auto; margin-right: auto; }
 }
 @media (max-width: 768px) {
-  .nav-logo { height: 34px; }
+  .nav-logo-text { display: none; }
+  .nav-logo-icon { height: 36px; }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -3117,8 +3115,15 @@ p {
 @media (max-width: 768px) {
   .vid-controls-inner { flex-direction: column; align-items: stretch; }
   .vid-search-wrap { flex: 1 1 100%; }
-  .vid-tabs { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
-  .vid-modal-box { border-radius: 8px; }
+  .vid-tabs { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .vid-modal { padding: 0; align-items: flex-end; }
+  .vid-modal-box { border-radius: 12px 12px 0 0; max-height: 92vh; overflow-y: auto; }
+  .vid-modal-title { white-space: normal; font-size: 1rem; }
+}
+@media (max-width: 480px) {
+  .vid-grid { grid-template-columns: 1fr; }
+  .vid-tab { font-size: 0.72rem; padding: 0.4rem 0.85rem; }
+  .vid-library-section { padding: 2.5rem 0 4rem; }
 }
 
 /* ============================================================
