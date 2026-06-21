@@ -88,6 +88,13 @@
       letter-spacing: .12em; text-transform: uppercase; color: var(--gold);
     }
     .sout-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .sout-hero-actions { flex-direction: column; align-items: center; width: 100%; }
+      .sout-hero-actions .btn { width: 100%; max-width: 280px; justify-content: center; text-align: center; }
+      .sout-hero-inner { text-align: center; }
+      .sout-hero-eyebrow { justify-content: center; }
+      .sout-hero-verse { margin-left: auto; margin-right: auto; }
+    }
 
     /* ═══════════════════════════════════════════
        SECTION 1 — 3 PILIERS (cartes illustrées)
