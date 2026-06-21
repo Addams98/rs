@@ -2818,12 +2818,15 @@ p {
   z-index: 90;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  overflow: hidden;
 }
 .vid-controls-inner {
   display: flex;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
 }
 .vid-search-wrap {
   position: relative;
@@ -3113,9 +3116,17 @@ p {
 }
 
 @media (max-width: 768px) {
-  .vid-controls-inner { flex-direction: column; align-items: stretch; }
-  .vid-search-wrap { flex: 1 1 100%; }
-  .vid-tabs { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .vid-controls-inner { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .vid-search-wrap { flex: 1 1 100%; min-width: 0; }
+  .vid-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 4px;
+  }
   .vid-modal { padding: 0; align-items: flex-end; }
   .vid-modal-box { border-radius: 12px 12px 0 0; max-height: 92vh; overflow-y: auto; }
   .vid-modal-title { white-space: normal; font-size: 1rem; }
@@ -3132,6 +3143,7 @@ p {
 .yt-sub-banner {
   background: linear-gradient(90deg, #ff0000 0%, #cc0000 100%);
   padding: 1rem 0;
+  overflow: hidden;
 }
 .yt-sub-inner {
   display: flex;
